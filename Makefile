@@ -18,11 +18,13 @@ clean:
 	$(RM) -rf $(BUILD_DIR)
 
 distclean: clean
+	$(MAKE) -C tools distclean
 	$(RM) -rf $(BASE_DIR) asm
 
 setup:
+	$(MAKE) -C tools
 	cd $(BASE_DIR) && $(AR) xo ../$(BASE_AR)
-	chmod -R +r $(BASE_DIR)
+	chmod -R +rw $(BASE_DIR)
 
 disasm: $(DISASM_TARGETS)
 
