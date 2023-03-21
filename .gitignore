@@ -56,7 +56,7 @@ dkms.conf
 
 
 asm/
-.vscode/
+.vscode/launch.json
 ctx.c
 *.m2c
 asdf.c

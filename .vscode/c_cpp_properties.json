@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "include/",
+                "include/libultra/",
+                "include/libultra/PR",
+                "include/hvqm"
+            ],
+            "defines": [
+                "_LANGUAGE_C"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPath": "/usr/bin/clang",
+            "intelliSenseMode": "linux-clang-x86",
+            "compilerArgs": [
+                "-m32",
+                "-nostdinc++"
+            ],
+            "cStandard": "gnu89"
+        }
+    ],
+    "version": 4
+}
