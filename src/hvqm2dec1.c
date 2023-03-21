@@ -1,4 +1,8 @@
+#include "hvqm/hvqm2dec.h"
+#include "hvqm/HVQM2File.h"
+#include "hvqm/HVQmd.h"
 #include "include_asm.h"
+#include "custom_macros.h"
 
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_00000040);
 

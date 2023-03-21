@@ -1,8 +1,5 @@
 #include "libultra/ultra64.h"
 #include "hvqm/adpcmdec.h"
-#include "hvqm/hvqm2dec.h"
-#include "hvqm/HVQM2File.h"
-#include "hvqm/HVQmd.h"
 #include "custom_macros.h"
 
 STATIC s32 D_0001D0[] = {
