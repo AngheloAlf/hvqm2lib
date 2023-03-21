@@ -62,7 +62,7 @@ O_FILES  := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f)
 BASE_OBJS       := $(wildcard $(BASE_DIR)/*.o)
 DISASM_TARGETS  := $(BASE_OBJS:$(BASE_DIR)/%.o=asm/full/%/.disasm)
 
-$(shell mkdir -p asm $(BASE_DIR) $(PATCHED_DIR) src $(BUILD_DIR)/$(BASE_DIR) $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(BUILD_DIR)/$(dir)))
+$(shell mkdir -p asm $(BASE_DIR) $(PATCHED_DIR) src $(foreach dir,$(ASM_DIRS) $(SRC_DIRS),$(BUILD_DIR)/$(dir)))
 
 all: $(O_FILES)
 
