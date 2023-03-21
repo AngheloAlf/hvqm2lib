@@ -19,8 +19,6 @@
         "\t.end\t"#NAME"\n" \
         ".end"#NAME":\n" \
         "\t.size\t"#NAME",.end"#NAME"-"#NAME "\n" \
-        "\t.globl\t" #NAME ".NON_MATCHING\n" \
-        "\t" #NAME ".NON_MATCHING" " = " #NAME "\n" \
     )
 #endif
 #ifndef INCLUDE_RODATA

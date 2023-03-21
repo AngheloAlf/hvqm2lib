@@ -56,3 +56,9 @@ dkms.conf
 
 
 asm/
+.vscode/
+ctx.c
+*.m2c
+asdf.c
+asdf.txt
+context/
