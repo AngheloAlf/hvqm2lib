@@ -6,162 +6,163 @@
 #include "custom_macros.h"
 
 STATIC s32 D_0001D0[] = {
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0x00000002,
-    0x00000004,
-    0x00000006,
-    0x00000008,
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0xFFFFFFFF,
-    0x00000002,
-    0x00000004,
-    0x00000006,
-    0x00000008,
+    -1,
+    -1,
+    -1,
+    -1,
+    2,
+    4,
+    6,
+    8,
+    -1,
+    -1,
+    -1,
+    -1,
+    2,
+    4,
+    6,
+    8,
 };
 
 STATIC s32 D_000210[] = {
-    0x00000007,
-    0x00000008,
-    0x00000009,
-    0x0000000A,
-    0x0000000B,
-    0x0000000C,
-    0x0000000D,
-    0x0000000E,
-    0x00000010,
-    0x00000011,
-    0x00000013,
-    0x00000015,
-    0x00000017,
-    0x00000019,
-    0x0000001C,
-    0x0000001F,
-    0x00000022,
-    0x00000025,
-    0x00000029,
-    0x0000002D,
-    0x00000032,
-    0x00000037,
-    0x0000003C,
-    0x00000042,
-    0x00000049,
-    0x00000050,
-    0x00000058,
-    0x00000061,
-    0x0000006B,
-    0x00000076,
-    0x00000082,
-    0x0000008F,
-    0x0000009D,
-    0x000000AD,
-    0x000000BE,
-    0x000000D1,
-    0x000000E6,
-    0x000000FD,
-    0x00000117,
-    0x00000133,
-    0x00000151,
-    0x00000173,
-    0x00000198,
-    0x000001C1,
-    0x000001EE,
-    0x00000220,
-    0x00000256,
-    0x00000292,
-    0x000002D4,
-    0x0000031C,
-    0x0000036C,
-    0x000003C3,
-    0x00000424,
-    0x0000048E,
-    0x00000502,
-    0x00000583,
-    0x00000610,
-    0x000006AB,
-    0x00000756,
-    0x00000812,
-    0x000008E0,
-    0x000009C3,
-    0x00000ABD,
-    0x00000BD0,
-    0x00000CFF,
-    0x00000E4C,
-    0x00000FBA,
-    0x0000114C,
-    0x00001307,
-    0x000014EE,
-    0x00001706,
-    0x00001954,
-    0x00001BDC,
-    0x00001EA5,
-    0x000021B6,
-    0x00002515,
-    0x000028CA,
-    0x00002CDF,
-    0x0000315B,
-    0x0000364B,
-    0x00003BB9,
-    0x000041B2,
-    0x00004844,
-    0x00004F7E,
-    0x00005771,
-    0x0000602F,
-    0x000069CE,
-    0x00007462,
-    0x00007FFF,
+    0x0007,
+    0x0008,
+    0x0009,
+    0x000A,
+    0x000B,
+    0x000C,
+    0x000D,
+    0x000E,
+    0x0010,
+    0x0011,
+    0x0013,
+    0x0015,
+    0x0017,
+    0x0019,
+    0x001C,
+    0x001F,
+    0x0022,
+    0x0025,
+    0x0029,
+    0x002D,
+    0x0032,
+    0x0037,
+    0x003C,
+    0x0042,
+    0x0049,
+    0x0050,
+    0x0058,
+    0x0061,
+    0x006B,
+    0x0076,
+    0x0082,
+    0x008F,
+    0x009D,
+    0x00AD,
+    0x00BE,
+    0x00D1,
+    0x00E6,
+    0x00FD,
+    0x0117,
+    0x0133,
+    0x0151,
+    0x0173,
+    0x0198,
+    0x01C1,
+    0x01EE,
+    0x0220,
+    0x0256,
+    0x0292,
+    0x02D4,
+    0x031C,
+    0x036C,
+    0x03C3,
+    0x0424,
+    0x048E,
+    0x0502,
+    0x0583,
+    0x0610,
+    0x06AB,
+    0x0756,
+    0x0812,
+    0x08E0,
+    0x09C3,
+    0x0ABD,
+    0x0BD0,
+    0x0CFF,
+    0x0E4C,
+    0x0FBA,
+    0x114C,
+    0x1307,
+    0x14EE,
+    0x1706,
+    0x1954,
+    0x1BDC,
+    0x1EA5,
+    0x21B6,
+    0x2515,
+    0x28CA,
+    0x2CDF,
+    0x315B,
+    0x364B,
+    0x3BB9,
+    0x41B2,
+    0x4844,
+    0x4F7E,
+    0x5771,
+    0x602F,
+    0x69CE,
+    0x7462,
+    0x7FFF,
 };
 
 void adpcmDecode(void* instream, u32 format, u32 samples, s16* outstream, u32 ex_stereo, ADPCMstate* state) {
     s32 var_t0;
-    s32 temp_a0_2;
-    s32 var_v1;
-    u32 var_a1;
-    u32 var_a2;
-    u8 temp_a0;
-    u8 t;
-    s32 var_t1;
-    s32 var_t3;
-    u32 temp_t2;
-    u8* var_t2;
+    s32 stepIndex;
+    s32 hiNibble;
+    u8* streamP;
 
     if (outstream == NULL) {
         outstream = state->outPtr;
     }
+
     if (instream != NULL) {
-        var_t2 = instream;
-        if (format == 0) {
-            temp_a0 = *var_t2++;
-            t = *var_t2++;
+        streamP = instream;
+        if (format == ADPCM_RESET) {
+            u8 temp_a0 = *streamP++;
+            u8 t = *streamP++;
+
             state->previous = (temp_a0 << 8) | (t & 0x80);
             state->step_index = t & 0x7F;
             *outstream =  state->previous;
             outstream++;
-            if (ex_stereo != 0) {
+            if (ex_stereo) {
                 *outstream = state->previous;
                 outstream++;
             }
-            samples -= 1;
+            samples--;
         }
-        var_t3 = 1;
+
+        hiNibble = 1;
     } else {
-        var_t2 = state->inPtr;
-        var_t3 = state->hi_nibble;
+        streamP = state->inPtr;
+        hiNibble = state->hi_nibble;
     }
 
     var_t0 = state->previous;
-    var_t1 = state->step_index;
-    while (samples != 0) {
-        if (var_t3 != 0) {
-            var_a1 = (u8) *var_t2 >> 4;
+    stepIndex = state->step_index;
+    while (samples > 0) {
+        u32 var_a1;
+        s32 temp_a0_2;
+        s32 var_v1;
+
+        if (hiNibble) {
+            var_a1 = *streamP >> 4;
         } else {
-            var_a1 = *var_t2++ & 0xF;
+            var_a1 = *streamP++ & 0xF;
         }
-        temp_a0_2 = D_000210[var_t1];
+
+        temp_a0_2 = D_000210[stepIndex];
         var_v1 = temp_a0_2 >> 3;
         if (var_a1 & 1) {
             var_v1 += temp_a0_2 >> 2;
@@ -175,6 +176,7 @@ void adpcmDecode(void* instream, u32 format, u32 samples, s16* outstream, u32 ex
         if (var_a1 & 8) {
             var_v1 = -var_v1;
         }
+
         var_t0 += var_v1;
         if (var_t0 > 0x7FFF) {
             var_t0 = 0x7FFF;
@@ -182,11 +184,11 @@ void adpcmDecode(void* instream, u32 format, u32 samples, s16* outstream, u32 ex
             var_t0 = -0x8000;
         }
 
-        var_t1 += D_0001D0[var_a1];
-        if (var_t1 < 0) {
-            var_t1 = 0;
-        } else if (var_t1 >= ARRAY_COUNT(D_000210)) {
-            var_t1 = ARRAY_COUNT(D_000210) - 1;
+        stepIndex += D_0001D0[var_a1];
+        if (stepIndex < 0) {
+            stepIndex = 0;
+        } else if (stepIndex >= ARRAY_COUNT(D_000210)) {
+            stepIndex = ARRAY_COUNT(D_000210) - 1;
         }
 
         *outstream++ = var_t0;
@@ -194,12 +196,14 @@ void adpcmDecode(void* instream, u32 format, u32 samples, s16* outstream, u32 ex
             *outstream = var_t0;
             outstream += 1;
         }
-        samples -= 1;
-        var_t3 ^= 1;
+
+        samples--;
+        hiNibble ^= 1;
     }
-    state->inPtr = var_t2;
-    state->hi_nibble = var_t3;
+
+    state->inPtr = streamP;
+    state->hi_nibble = hiNibble;
     state->outPtr = outstream;
     state->previous = var_t0;
-    state->step_index = var_t1;
+    state->step_index = stepIndex;
 }
