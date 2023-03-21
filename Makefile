@@ -28,7 +28,7 @@ DISASSEMBLER        := elfObjDisasm
 DISASSEMBLER_FLAGS  := --Mreg-names o32 --no-use-fpccsr --compiler GCC --asm-referencee-symbols
 
 
-IINC       := -Iinclude
+IINC       := -I include -I include/libultra/ -I include/libultra/PR  -I include/hvqm/
 
 
 CFLAGS          += -nostdinc -fno-PIC -G 0 -mgp32 -mfp32 -fno-common -funsigned-char
@@ -45,7 +45,6 @@ C_DEFINES       := -D_LANGUAGE_C
 ENDIAN          := -EB
 
 OPTFLAGS        := -O2
-OPTFLAGS        += -g
 MIPS_VERSION    := -mips3
 
 
