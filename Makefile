@@ -66,6 +66,10 @@ $(shell mkdir -p asm $(BASE_DIR) $(PATCHED_DIR) src $(foreach dir,$(ASM_DIRS) $(
 
 all: $(O_FILES)
 
+diff-init: all
+	$(RM) -rf expected/
+	cp -r build/ expected/
+
 clean:
 	$(RM) -rf $(BUILD_DIR)
 

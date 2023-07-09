@@ -4,7 +4,126 @@
 #include "include_asm.h"
 #include "custom_macros.h"
 
+extern u16 B_009222;
+
+typedef struct struct_00000040_arg0 {
+    /* 0x0 */ u32 unk_0;
+    /* 0x4 */ s32 unk_4;
+    /* 0x8 */ s32 *unk_8;
+} struct_00000040_arg0; // size >= 0xC
+
+u32 func_00000040(struct_00000040_arg0 *arg0, u16 *arg1);
+#ifdef NON_EQUIVALENT
+u32 func_00000040(struct_00000040_arg0 *arg0, u16 *arg1) {
+    u16 temp_s1;
+    u16 *temp_s0;
+
+    u32 temp7;
+    u32 temp6;
+    u32 temp5;
+    u32 temp4;
+    u32 temp3;
+    u32 temp2;
+    u32 temp1;
+    u32 temp0;
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    arg0->unk_0 >>= 1;
+
+    if (arg0->unk_4 & arg0->unk_0) {
+        temp_s1 = B_009222;
+        temp_s0 = &arg1[temp_s1];
+        B_009222 += 1;
+        #if 0
+        temp_s0->unk_2 = func_00000040(arg0, arg1);
+        temp_s0->unk_402 = func_00000040(arg0, arg1);
+        #endif
+        temp_s0[1] = func_00000040(arg0, arg1);
+        temp_s0[0x402/2] = func_00000040(arg0, arg1);
+        return (s16)temp_s1;
+    }
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp7 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 = arg0->unk_0 >> 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp6 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp5 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp4 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp3 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp2 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp1 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    temp0 = ((arg0->unk_4 & arg0->unk_0) != 0);
+    arg0->unk_0 >>= 1;
+
+
+    return (temp7 << 7) | (temp6 << 6) | (temp5 << 5) | (temp4 << 4) | (temp3 << 3) | (temp2 << 2) | (temp1 << 1) | (temp0 << 0);
+}
+#else
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_00000040);
+#endif
 
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000002F8);
 
@@ -24,10 +143,10 @@ INCLUDE_ASM("asm/functions/hvqm2dec1", func_000033D8);
 
 // not even attempted
 #if 0
-u16 func_00000040(u32 *, u16 *);                    /* extern */
-s16 func_000002F8(u32 *, u16 *);                    /* extern */
-s8 func_000004A8(u8 *, u32 *, u32 *, u8 *);         /* extern */
-? func_000033D8(u16 *, u8 *, u8 *, u8 *);           /* extern */
+//u16 func_00000040(u32 *, u16 *);                    /* extern */
+//s16 func_000002F8(u32 *, u16 *);                    /* extern */
+//s8 func_000004A8(u8 *, u32 *, u32 *, u8 *);         /* extern */
+//? func_000033D8(u16 *, u8 *, u8 *, u8 *);           /* extern */
 extern u8 B_005EB0;
 extern u32 B_006914;
 extern s32 B_006918;
@@ -427,7 +546,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         temp_v0_5 = &temp_v0_4[B_00A0FC];
         B_009230 = temp_v0_5;
         B_00923C = &temp_v0_5[B_00A0FC];
-        temp_v1 = code + code->unk_0;
+        temp_v1 = code + *((u32*)code + 0);
         if (*temp_v1 != 0) {
             B_006938 = temp_v1 + 4;
             B_006930 = 0;
@@ -439,14 +558,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006938 = NULL;
             B_006930 = 0;
         }
-        temp_v1_2 = code + code->unk_4;
+        temp_v1_2 = code + *((u32*)code + 1);
         if (*temp_v1_2 != 0) {
             B_0071F0 = (void *) (temp_v1_2 + 4);
         } else {
             B_006944 = NULL;
         }
         B_00693C = 0;
-        temp_v1_3 = code + code->unk_8;
+        temp_v1_3 = code + *((u32*)code + 2);
         if (*temp_v1_3 != 0) {
             B_006950 = temp_v1_3 + 4;
             B_006948 = 0;
@@ -458,14 +577,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006950 = NULL;
             B_006948 = 0;
         }
-        temp_v1_4 = code + code->unk_C;
+        temp_v1_4 = code + *((u32*)code + 3);
         if (*temp_v1_4 != 0) {
             B_007A00 = (void *) (temp_v1_4 + 4);
         } else {
             B_00695C = NULL;
         }
         B_006954 = 0;
-        temp_v1_5 = code + code->unk_10;
+        temp_v1_5 = code + *((u32*)code + 4);
         if (*temp_v1_5 != 0) {
             B_006968 = temp_v1_5 + 4;
             B_006960 = 0;
@@ -477,21 +596,21 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006968 = NULL;
             B_006960 = 0;
         }
-        temp_v1_6 = code + code->unk_14;
+        temp_v1_6 = code + *((u32*)code + 5);
         if (*temp_v1_6 != 0) {
             B_008210 = (void *) (temp_v1_6 + 4);
         } else {
             B_006974 = NULL;
         }
         B_00696C = 0;
-        temp_v1_7 = code + code->unk_18;
+        temp_v1_7 = code + *((u32*)code + 6);
         if (*temp_v1_7 != 0) {
             B_006974 = temp_v1_7 + 4;
         } else {
             B_006980 = 0;
         }
         B_006978 = 0;
-        temp_v1_8 = code + code->unk_28;
+        temp_v1_8 = code + *((u32*)code + 10);
         if (*temp_v1_8 != 0) {
             B_006990 = temp_v1_8 + 4;
             B_006988 = 0;
@@ -503,14 +622,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006990 = NULL;
             B_006988 = 0;
         }
-        temp_v1_9 = code + code->unk_2C;
+        temp_v1_9 = code + *((u32*)code + 11);
         if (*temp_v1_9 != 0) {
             B_0069E0 = (void *) (temp_v1_9 + 4);
         } else {
             B_00699C = NULL;
         }
         B_006994 = 0;
-        temp_v1_10 = code + code->unk_30;
+        temp_v1_10 = code + *((u32*)code + 12);
         if (*temp_v1_10 != 0) {
             B_00699C = temp_v1_10 + 4;
         } else {
@@ -521,7 +640,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         var_a0_2 = &B_0069D4;
         var_v1_2 = code;
         do {
-            temp_v0_6 = var_v1_2->unk_1C;
+            temp_v0_6 = *((u32*)var_v1_2 + 7);;
             var_v1_2 += 4;
             var_a1_2 += 1;
             *var_a0_2 = code + temp_v0_6 + 4;
@@ -536,12 +655,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 var_a1_3 = sp2C;
                 do {
                     temp_v1_11 = code + *var_a1_3;
+                    #if 0
                     if (*temp_v1_11 != 0) {
                         var_a0_3->unk_8 = (void *) (temp_v1_11 + 4);
                     } else {
                         var_a0_3->unk_8 = NULL;
                     }
                     var_a0_3->unk_0 = 0;
+                    #endif
                     var_a0_3 += 0xC;
                     var_a2 += 1;
                     var_a1_3 += 4;
@@ -563,6 +684,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 temp_v1_12 = B_006934 & B_006930;
                                 B_006930 = (u32) B_006930 >> 1;
                                 temp_v0_8 = var_a1_4 << 0x10;
+                                #if 0
                                 if (temp_v1_12 != 0) {
                                     var_a1_4 = ((temp_v0_8 >> 0xF) + &B_0071F0)->unk_402;
                                     var_v0 = var_a1_4 << 0x10;
@@ -570,6 +692,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     var_a1_4 = ((temp_v0_8 >> 0xF) + &B_0071F0)->unk_2;
                                     var_v0 = var_a1_4 << 0x10;
                                 }
+                                #endif
                                 var_v1_3 = var_a1_4;
                             } while ((var_v0 >> 0x10) >= 0x100);
                         }
@@ -591,6 +714,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     temp_v1_13 = B_00694C & B_006948;
                                     B_006948 = (u32) B_006948 >> 1;
                                     temp_v0_10 = var_a1_5 << 0x10;
+                                    #if 0
                                     if (temp_v1_13 != 0) {
                                         var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007A00)->unk_402;
                                         var_v0_3 = var_a1_5 << 0x10;
@@ -598,6 +722,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007A00)->unk_2;
                                         var_v0_3 = var_a1_5 << 0x10;
                                     }
+                                    #endif
                                     var_v0_2 = var_a1_5 & 0xFF;
                                 } while ((var_v0_3 >> 0x10) >= 0x100);
                             }
@@ -631,6 +756,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 temp_v1_14 = B_006940 & B_00693C;
                                 B_00693C = (u32) B_00693C >> 1;
                                 temp_v0_12 = var_a1_6 << 0x10;
+                                #if 0
                                 if (temp_v1_14 != 0) {
                                     var_a1_6 = ((temp_v0_12 >> 0xF) + &B_0071F0)->unk_402;
                                     var_v0_5 = var_a1_6 << 0x10;
@@ -638,6 +764,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     var_a1_6 = ((temp_v0_12 >> 0xF) + &B_0071F0)->unk_2;
                                     var_v0_5 = var_a1_6 << 0x10;
                                 }
+                                #endif
                                 var_v0_4 = var_a1_6 & 0xFF;
                             } while ((var_v0_5 >> 0x10) >= 0x100);
                         }
@@ -655,6 +782,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     temp_v1_15 = B_006958 & B_006954;
                                     B_006954 = (u32) B_006954 >> 1;
                                     temp_v0_14 = var_a1_7 << 0x10;
+                                    #if 0
                                     if (temp_v1_15 != 0) {
                                         var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007A00)->unk_402;
                                         var_v0_7 = var_a1_7 << 0x10;
@@ -662,6 +790,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007A00)->unk_2;
                                         var_v0_7 = var_a1_7 << 0x10;
                                     }
+                                    #endif
                                     var_v0_6 = var_a1_7 & 0xFF;
                                 } while ((var_v0_7 >> 0x10) >= 0x100);
                             }
@@ -716,6 +845,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         temp_v1_16 = B_0069B4 & B_0069B0;
                                         B_0069B0 = (u32) B_0069B0 >> 1;
                                         temp_v0_16 = var_a1_8 << 0x10;
+                                        #if 0
                                         if (temp_v1_16 != 0) {
                                             var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_9 = var_a1_8 << 0x10;
@@ -723,6 +853,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                             var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_9 = var_a1_8 << 0x10;
                                         }
+                                        #endif
                                     } while ((var_v0_9 >> 0x10) >= 0x100);
                                 }
                                 var_v0_8 = 0;
@@ -751,6 +882,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         temp_v1_17 = B_0069B4 & B_0069B0;
                                         B_0069B0 = (u32) B_0069B0 >> 1;
                                         temp_v0_18 = var_a1_9 << 0x10;
+                                        #if 0
                                         if (temp_v1_17 != 0) {
                                             var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_11 = var_a1_9 << 0x10;
@@ -758,6 +890,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                             var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_11 = var_a1_9 << 0x10;
                                         }
+                                        #endif
                                     } while ((var_v0_11 >> 0x10) >= 0x100);
                                     sp10 = (u8) var_a1_9;
                                 }
@@ -770,7 +903,9 @@ block_122:
                         }
                         var_s2 = var_v0_10 + temp_s2;
                         var_s0[1] = var_s2;
+                        #if 0
                         var_s0 = &var_s0[1].unk_1;
+                        #endif
                         if (sp11 == 0) {
                             var_v0_12 = func_000002F8(&B_006994);
                             if (var_v0_12 == 0) {
@@ -788,6 +923,7 @@ block_122:
                                         temp_v1_18 = B_0069C0 & B_0069BC;
                                         B_0069BC = (u32) B_0069BC >> 1;
                                         temp_v0_20 = var_a1_10 << 0x10;
+                                        #if 0
                                         if (temp_v1_18 != 0) {
                                             var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_13 = var_a1_10 << 0x10;
@@ -795,6 +931,7 @@ block_122:
                                             var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_13 = var_a1_10 << 0x10;
                                         }
+                                        #endif
                                     } while ((var_v0_13 >> 0x10) >= 0x100);
                                     sp11 = (u8) var_a1_10;
                                 }
@@ -825,6 +962,7 @@ block_136:
                                         temp_v1_19 = B_0069CC & B_0069C8;
                                         B_0069C8 = (u32) B_0069C8 >> 1;
                                         temp_v0_22 = var_a1_11 << 0x10;
+                                        #if 0
                                         if (temp_v1_19 != 0) {
                                             var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_15 = var_a1_11 << 0x10;
@@ -832,6 +970,7 @@ block_136:
                                             var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_15 = var_a1_11 << 0x10;
                                         }
+                                        #endif
                                     } while ((var_v0_15 >> 0x10) >= 0x100);
                                     sp12 = (u8) var_a1_11;
                                 }
@@ -870,6 +1009,7 @@ block_150:
                                             temp_v1_20 = B_0069B4 & B_0069B0;
                                             B_0069B0 = (u32) B_0069B0 >> 1;
                                             temp_v0_24 = var_a1_12 << 0x10;
+                                            #if 0
                                             if (temp_v1_20 != 0) {
                                                 var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007A00)->unk_402;
                                                 var_v0_17 = var_a1_12 << 0x10;
@@ -877,6 +1017,7 @@ block_150:
                                                 var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007A00)->unk_2;
                                                 var_v0_17 = var_a1_12 << 0x10;
                                             }
+                                            #endif
                                         } while ((var_v0_17 >> 0x10) >= 0x100);
                                         sp10 = (u8) var_a1_12;
                                     }
@@ -907,6 +1048,7 @@ block_168:
                                             temp_v1_21 = B_0069B4 & B_0069B0;
                                             B_0069B0 = (u32) B_0069B0 >> 1;
                                             temp_v0_27 = var_a1_13 << 0x10;
+                                            #if 0
                                             if (temp_v1_21 != 0) {
                                                 var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007A00)->unk_402;
                                                 var_v0_19 = var_a1_13 << 0x10;
@@ -914,6 +1056,7 @@ block_168:
                                                 var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007A00)->unk_2;
                                                 var_v0_19 = var_a1_13 << 0x10;
                                             }
+                                            #endif
                                         } while ((var_v0_19 >> 0x10) >= 0x100);
                                         sp10 = (u8) var_a1_13;
                                     }
@@ -924,10 +1067,12 @@ block_168:
 block_182:
                                 var_v0_18 = 0;
                             }
+                            #if 0
                             var_s1 = &var_s1[1].unk_1;
                             temp_v0_28 = var_v0_18 + temp_s2_2;
                             var_s0[1] = temp_v0_28;
                             var_s0 = &var_s0[1].unk_1;
+                            #endif
                             var_s3_2 -= 1;
                             var_s2_2 = (u8) ((u32) (*var_s1 + (temp_v0_28 & 0xFF)) >> 1);
                         } while (var_s3_2 > 0);
@@ -958,6 +1103,7 @@ block_182:
                                                 temp_v1_22 = B_0069B4 & B_0069B0;
                                                 B_0069B0 = (u32) B_0069B0 >> 1;
                                                 temp_v0_30 = var_a1_14 << 0x10;
+                                                #if 0
                                                 if (temp_v1_22 != 0) {
                                                     var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_21 = var_a1_14 << 0x10;
@@ -965,6 +1111,7 @@ block_182:
                                                     var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_21 = var_a1_14 << 0x10;
                                                 }
+                                                #endif
                                             } while ((var_v0_21 >> 0x10) >= 0x100);
                                         }
                                         var_v0_20 = 0;
@@ -994,6 +1141,7 @@ block_182:
                                                 temp_v1_23 = B_0069B4 & B_0069B0;
                                                 B_0069B0 = (u32) B_0069B0 >> 1;
                                                 temp_v0_33 = var_a1_15 << 0x10;
+                                                #if 0
                                                 if (temp_v1_23 != 0) {
                                                     var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_23 = var_a1_15 << 0x10;
@@ -1001,6 +1149,7 @@ block_182:
                                                     var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_23 = var_a1_15 << 0x10;
                                                 }
+                                                #endif
                                             } while ((var_v0_23 >> 0x10) >= 0x100);
                                             sp10 = (u8) var_a1_15;
                                         }
@@ -1011,10 +1160,12 @@ block_182:
 block_212:
                                     var_v0_22 = 0;
                                 }
+                                #if 0
                                 var_s1 = &var_s1[1].unk_1;
                                 temp_v0_34 = var_v0_22 + temp_s2_3;
                                 var_s0[1] = temp_v0_34;
                                 var_s0 = &var_s0[1].unk_1;
+                                #endif
                                 var_s2_3 = (u8) ((u32) (*var_s1 + (temp_v0_34 & 0xFF)) >> 1);
                                 if (sp11 == 0) {
                                     var_v0_24 = func_000002F8(&B_006994);
@@ -1033,6 +1184,7 @@ block_212:
                                                 temp_v1_24 = B_0069C0 & B_0069BC;
                                                 B_0069BC = (u32) B_0069BC >> 1;
                                                 temp_v0_36 = var_a1_16 << 0x10;
+                                                #if 0
                                                 if (temp_v1_24 != 0) {
                                                     var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_25 = var_a1_16 << 0x10;
@@ -1040,6 +1192,7 @@ block_212:
                                                     var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_25 = var_a1_16 << 0x10;
                                                 }
+                                                #endif
                                             } while ((var_v0_25 >> 0x10) >= 0x100);
                                             sp11 = (u8) var_a1_16;
                                         }
@@ -1072,6 +1225,7 @@ block_226:
                                                 temp_v1_25 = B_0069CC & B_0069C8;
                                                 B_0069C8 = (u32) B_0069C8 >> 1;
                                                 temp_v0_39 = var_a1_17 << 0x10;
+                                                #if 0
                                                 if (temp_v1_25 != 0) {
                                                     var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_27 = var_a1_17 << 0x10;
@@ -1079,6 +1233,7 @@ block_226:
                                                     var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_27 = var_a1_17 << 0x10;
                                                 }
+                                                #endif
                                             } while ((var_v0_27 >> 0x10) >= 0x100);
                                             sp12 = (u8) var_a1_17;
                                         }
@@ -1119,6 +1274,7 @@ block_240:
                                                     temp_v1_26 = B_0069B4 & B_0069B0;
                                                     B_0069B0 = (u32) B_0069B0 >> 1;
                                                     temp_v0_42 = var_a1_18 << 0x10;
+                                                    #if 0
                                                     if (temp_v1_26 != 0) {
                                                         var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007A00)->unk_402;
                                                         var_v0_29 = var_a1_18 << 0x10;
@@ -1126,6 +1282,7 @@ block_240:
                                                         var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007A00)->unk_2;
                                                         var_v0_29 = var_a1_18 << 0x10;
                                                     }
+                                                    #endif
                                                 } while ((var_v0_29 >> 0x10) >= 0x100);
                                                 sp10 = (u8) var_a1_18;
                                             }
@@ -1156,6 +1313,7 @@ block_258:
                                                     temp_v1_27 = B_0069B4 & B_0069B0;
                                                     B_0069B0 = (u32) B_0069B0 >> 1;
                                                     temp_v0_45 = var_a1_19 << 0x10;
+                                                    #if 0
                                                     if (temp_v1_27 != 0) {
                                                         var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007A00)->unk_402;
                                                         var_v0_31 = var_a1_19 << 0x10;
@@ -1163,6 +1321,7 @@ block_258:
                                                         var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007A00)->unk_2;
                                                         var_v0_31 = var_a1_19 << 0x10;
                                                     }
+                                                    #endif
                                                 } while ((var_v0_31 >> 0x10) >= 0x100);
                                                 sp10 = (u8) var_a1_19;
                                             }
@@ -1173,10 +1332,12 @@ block_258:
 block_272:
                                         var_v0_30 = 0;
                                     }
+                                    #if 0
                                     var_s1 = &var_s1[1].unk_1;
                                     temp_v0_46 = var_v0_30 + temp_s2_4;
                                     var_s0[1] = temp_v0_46;
                                     var_s0 = &var_s0[1].unk_1;
+                                    #endif
                                     var_s3_4 -= 1;
                                     var_s2_4 = (u8) ((u32) (*var_s1 + (temp_v0_46 & 0xFF)) >> 1);
                                 } while (var_s3_4 > 0);
@@ -1187,7 +1348,9 @@ block_272:
                     } while (temp_t6 >= 2);
                 }
                 var_a2_4 = B_00A100;
+                #if 0
                 var_a0_4 = &B_009234[sp2C->unk_C + (sp2C->unk_E * B_00A0E8)];
+                #endif
                 var_t0_4 = B_00A0E8;
                 if (B_00A0E8 < B_00A104) {
                     var_t2 = B_00A104 - var_t0_4;
@@ -1286,7 +1449,7 @@ block_348:
                 func_000033D8(sp1C, var_a1_21, var_a2_4, var_a3_5);
                 return;
             case 0x1:
-                temp_v1_28 = code + code->unk_34;
+                temp_v1_28 = code + *((u32*)code + 13);
                 if (*temp_v1_28 != 0) {
                     B_006928 = temp_v1_28 + 4;
                     B_006920 = 0;
@@ -1298,12 +1461,14 @@ block_348:
                     B_006928 = NULL;
                     B_006920 = 0;
                 }
+                #if 0
                 temp_a0 = code + (code + 0x34)->unk_4;
                 if (*temp_a0 != 0) {
                     B_008A20 = (void *) (temp_a0 + 4);
                 } else {
                     B_00691C = NULL;
                 }
+                #endif
                 B_006914 = 0;
                 var_s3_5 = 0;
                 var_a2_4 = B_00922C;
@@ -1358,6 +1523,7 @@ block_348:
                                             temp_v1_29 = B_006924 & B_006920;
                                             B_006920 = (u32) B_006920 >> 1;
                                             temp_v0_51 = var_a1_22 << 0x10;
+                                            #if 0
                                             if (temp_v1_29 != 0) {
                                                 var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008A20)->unk_402;
                                                 var_v0_32 = var_a1_22 << 0x10;
@@ -1365,6 +1531,7 @@ block_348:
                                                 var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008A20)->unk_2;
                                                 var_v0_32 = var_a1_22 << 0x10;
                                             }
+                                            #endif
                                         } while ((var_v0_32 >> 0x10) >= 0x100);
                                     }
                                     var_a1_23 = B_008A20;
@@ -1380,6 +1547,7 @@ block_348:
                                             temp_v1_30 = B_006924 & B_006920;
                                             B_006920 = (u32) B_006920 >> 1;
                                             temp_v0_53 = var_a1_23 << 0x10;
+                                            #if 0
                                             if (temp_v1_30 != 0) {
                                                 var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008A20)->unk_402;
                                                 var_v0_33 = var_a1_23 << 0x10;
@@ -1387,6 +1555,7 @@ block_348:
                                                 var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008A20)->unk_2;
                                                 var_v0_33 = var_a1_23 << 0x10;
                                             }
+                                            #endif
                                         } while ((var_v0_33 >> 0x10) >= 0x100);
                                     }
                                     temp_v0_54 = sp7F + (var_a1_23 & 0xFF);
@@ -1584,10 +1753,12 @@ loop_333:
                         }
                         var_a1_21 = (u8 *) B_00A0E8;
                         var_a3_5 = B_00A0D8;
+                        #if 0
                         var_a2_4 = &B_009254[var_a1_21];
                         B_009248 += var_a1_21;
                         B_00924C = &B_00924C[var_a1_21];
                         B_009250 += var_a1_21;
+                        #endif
                         B_009254 = var_a2_4;
                         if (var_a3_5 == NULL) {
                             var_a1_21 = &B_0092A8[B_00A0F4];
