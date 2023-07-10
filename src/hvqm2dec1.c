@@ -193,7 +193,7 @@ extern u16 B_0071F0;
 extern u16 B_007A00;
 extern u16 B_008210;
 extern u16 B_008A20;
-extern s16 B_009222;
+// extern s16 B_009222;
 extern u16 *B_009228;
 extern u8 *B_00922C;
 extern u8 *B_009230;
@@ -233,7 +233,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
     u8 sp12;
     u16 *sp1C;
     u16 *sp24;
-    s32 *sp2C;
+    HVQM2KeyFrame *sp2C;
     u8 *sp34;
     u8 *sp3C;
     u8 *sp44;
@@ -546,7 +546,8 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         temp_v0_5 = &temp_v0_4[B_00A0FC];
         B_009230 = temp_v0_5;
         B_00923C = &temp_v0_5[B_00A0FC];
-        temp_v1 = code + *((u32*)code + 0);
+
+        temp_v1 = code + ((HVQM2Frame*)code)->basisnum_offset[0];
         if (*temp_v1 != 0) {
             B_006938 = temp_v1 + 4;
             B_006930 = 0;
@@ -558,14 +559,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006938 = NULL;
             B_006930 = 0;
         }
-        temp_v1_2 = code + *((u32*)code + 1);
+        temp_v1_2 = code + ((HVQM2Frame*)code)->basisnum_offset[1];
         if (*temp_v1_2 != 0) {
             B_0071F0 = (void *) (temp_v1_2 + 4);
         } else {
             B_006944 = NULL;
         }
         B_00693C = 0;
-        temp_v1_3 = code + *((u32*)code + 2);
+        temp_v1_3 = code + ((HVQM2Frame*)code)->basnumrn_offset[0];
         if (*temp_v1_3 != 0) {
             B_006950 = temp_v1_3 + 4;
             B_006948 = 0;
@@ -577,14 +578,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006950 = NULL;
             B_006948 = 0;
         }
-        temp_v1_4 = code + *((u32*)code + 3);
+        temp_v1_4 = code + ((HVQM2Frame*)code)->basnumrn_offset[1];
         if (*temp_v1_4 != 0) {
             B_007A00 = (void *) (temp_v1_4 + 4);
         } else {
             B_00695C = NULL;
         }
         B_006954 = 0;
-        temp_v1_5 = code + *((u32*)code + 4);
+        temp_v1_5 = code + ((HVQM2Frame*)code)->scale_offset[0];
         if (*temp_v1_5 != 0) {
             B_006968 = temp_v1_5 + 4;
             B_006960 = 0;
@@ -596,21 +597,21 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006968 = NULL;
             B_006960 = 0;
         }
-        temp_v1_6 = code + *((u32*)code + 5);
+        temp_v1_6 = code + ((HVQM2Frame*)code)->scale_offset[1];
         if (*temp_v1_6 != 0) {
             B_008210 = (void *) (temp_v1_6 + 4);
         } else {
             B_006974 = NULL;
         }
         B_00696C = 0;
-        temp_v1_7 = code + *((u32*)code + 6);
+        temp_v1_7 = code + ((HVQM2Frame*)code)->scale_offset[2];
         if (*temp_v1_7 != 0) {
             B_006974 = temp_v1_7 + 4;
         } else {
             B_006980 = 0;
         }
         B_006978 = 0;
-        temp_v1_8 = code + *((u32*)code + 10);
+        temp_v1_8 = code + ((HVQM2Frame*)code)->dcval_offset[0];
         if (*temp_v1_8 != 0) {
             B_006990 = temp_v1_8 + 4;
             B_006988 = 0;
@@ -622,14 +623,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             B_006990 = NULL;
             B_006988 = 0;
         }
-        temp_v1_9 = code + *((u32*)code + 11);
+        temp_v1_9 = code + ((HVQM2Frame*)code)->dcval_offset[1];
         if (*temp_v1_9 != 0) {
             B_0069E0 = (void *) (temp_v1_9 + 4);
         } else {
             B_00699C = NULL;
         }
         B_006994 = 0;
-        temp_v1_10 = code + *((u32*)code + 12);
+        temp_v1_10 = code + ((HVQM2Frame*)code)->dcval_offset[2];
         if (*temp_v1_10 != 0) {
             B_00699C = temp_v1_10 + 4;
         } else {
@@ -638,10 +639,8 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         B_0069A0 = 0;
         var_a1_2 = 0;
         var_a0_2 = &B_0069D4;
-        var_v1_2 = code;
         do {
-            temp_v0_6 = *((u32*)var_v1_2 + 7);;
-            var_v1_2 += 4;
+            temp_v0_6 = ((HVQM2Frame*)code)->fixvl_offset[var_a1_2];
             var_a1_2 += 1;
             *var_a0_2 = code + temp_v0_6 + 4;
             var_a0_2 += 4;
@@ -651,10 +650,9 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
             case 0x0:
                 var_a2 = 0;
                 var_a0_3 = &B_0069B0;
-                sp2C = code + 0x34;
-                var_a1_3 = sp2C;
+                sp2C = (u8*)code + sizeof(HVQM2Frame);
                 do {
-                    temp_v1_11 = code + *var_a1_3;
+                    temp_v1_11 = code + sp2C->dcrun_offset[var_a2];
                     #if 0
                     if (*temp_v1_11 != 0) {
                         var_a0_3->unk_8 = (void *) (temp_v1_11 + 4);
@@ -665,7 +663,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                     #endif
                     var_a0_3 += 0xC;
                     var_a2 += 1;
-                    var_a1_3 += 4;
                 } while (var_a2 < 3);
                 var_t0_2 = B_00A0F0;
                 var_a2_2 = B_009228;
@@ -1348,8 +1345,8 @@ block_272:
                     } while (temp_t6 >= 2);
                 }
                 var_a2_4 = B_00A100;
-                #if 0
-                var_a0_4 = &B_009234[sp2C->unk_C + (sp2C->unk_E * B_00A0E8)];
+                #if 1
+                var_a0_4 = &B_009234[sp2C->nest_start_x + (sp2C->nest_start_y * B_00A0E8)];
                 #endif
                 var_t0_4 = B_00A0E8;
                 if (B_00A0E8 < B_00A104) {
@@ -1449,7 +1446,7 @@ block_348:
                 func_000033D8(sp1C, var_a1_21, var_a2_4, var_a3_5);
                 return;
             case 0x1:
-                temp_v1_28 = code + *((u32*)code + 13);
+                temp_v1_28 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->movevector_offset;
                 if (*temp_v1_28 != 0) {
                     B_006928 = temp_v1_28 + 4;
                     B_006920 = 0;
@@ -1461,8 +1458,8 @@ block_348:
                     B_006928 = NULL;
                     B_006920 = 0;
                 }
-                #if 0
-                temp_a0 = code + (code + 0x34)->unk_4;
+                #if 1
+                temp_a0 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->macroblock_offset;
                 if (*temp_a0 != 0) {
                     B_008A20 = (void *) (temp_a0 + 4);
                 } else {
