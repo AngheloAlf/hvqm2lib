@@ -4,6 +4,8 @@
 #include "include_asm.h"
 #include "custom_macros.h"
 
+#define UNK_SIZE 1
+
 extern u16 B_009222;
 
 typedef struct struct_00000040_arg0 {
@@ -12,12 +14,32 @@ typedef struct struct_00000040_arg0 {
     /* 0x8 */ s32 *unk_8;
 } struct_00000040_arg0; // size >= 0xC
 
-u32 func_00000040(struct_00000040_arg0 *arg0, u16 *arg1);
-#ifdef NON_EQUIVALENT
-u32 func_00000040(struct_00000040_arg0 *arg0, u16 *arg1) {
-    u16 temp_s1;
-    u16 *temp_s0;
+typedef struct struct_00000040_arg1 {
+    /* 0x000 */ char unk_000[2];
+    /* 0x002 */ u16 unk_002[UNK_SIZE];
+    /* 0x000 */ char unk_004[0x3FE];
+    /* 0x402 */ u16 unk_402[UNK_SIZE];
+} struct_00000040_arg1; // size >= 0x204
 
+STATIC_INLINE u32 inlined_func_00(struct_00000040_arg0 *arg0) {
+    u32 ret;
+
+    if (arg0->unk_0 == 0) {
+        arg0->unk_4 = *arg0->unk_8++;
+        arg0->unk_0 = 0x80000000;
+    }
+
+    ret = !!(arg0->unk_4 & arg0->unk_0);
+    arg0->unk_0 >>= 1;
+
+    return ret;
+}
+
+STATIC_INLINE s16 inlined_func_01(void) {
+    return B_009222++;
+}
+
+STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
     u32 temp7;
     u32 temp6;
     u32 temp5;
@@ -27,103 +49,32 @@ u32 func_00000040(struct_00000040_arg0 *arg0, u16 *arg1) {
     u32 temp1;
     u32 temp0;
 
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
+    if (inlined_func_00(arg0)) {
+        s16 temp_s1 = inlined_func_01();
+
+        arg1->unk_002[temp_s1] = func_00000040(arg0, arg1);
+        arg1->unk_402[temp_s1] = func_00000040(arg0, arg1);
+        return temp_s1;
     }
 
-    arg0->unk_0 >>= 1;
+    temp7 = inlined_func_00(arg0);
 
-    if (arg0->unk_4 & arg0->unk_0) {
-        temp_s1 = B_009222;
-        temp_s0 = &arg1[temp_s1];
-        B_009222 += 1;
-        #if 0
-        temp_s0->unk_2 = func_00000040(arg0, arg1);
-        temp_s0->unk_402 = func_00000040(arg0, arg1);
-        #endif
-        temp_s0[1] = func_00000040(arg0, arg1);
-        temp_s0[0x402/2] = func_00000040(arg0, arg1);
-        return (s16)temp_s1;
-    }
+    temp6 = inlined_func_00(arg0);
 
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
+    temp5 = inlined_func_00(arg0);
 
-    temp7 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 = arg0->unk_0 >> 1;
+    temp4 = inlined_func_00(arg0);
 
+    temp3 = inlined_func_00(arg0);
 
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
+    temp2 = inlined_func_00(arg0);
 
-    temp6 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
+    temp1 = inlined_func_00(arg0);
 
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp5 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp4 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp3 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp2 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp1 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
-
-    if (arg0->unk_0 == 0) {
-        arg0->unk_4 = *arg0->unk_8++;
-        arg0->unk_0 = 0x80000000;
-    }
-
-    temp0 = ((arg0->unk_4 & arg0->unk_0) != 0);
-    arg0->unk_0 >>= 1;
-
+    temp0 = inlined_func_00(arg0);
 
     return (temp7 << 7) | (temp6 << 6) | (temp5 << 5) | (temp4 << 4) | (temp3 << 3) | (temp2 << 2) | (temp1 << 1) | (temp0 << 0);
 }
-#else
-INCLUDE_ASM("asm/functions/hvqm2dec1", func_00000040);
-#endif
 
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000002F8);
 

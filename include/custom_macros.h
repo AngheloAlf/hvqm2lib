@@ -10,7 +10,18 @@
 #endif
 
 #ifndef STATIC
+#if REAL_STATIC
 #define STATIC static
+#else
+#define STATIC
+#endif
+#endif
+
+#define STATIC_INLINE static inline
+#ifdef PERMUTER
+#define INLINE static inline
+#else
+#define INLINE inline
 #endif
 
 #endif
