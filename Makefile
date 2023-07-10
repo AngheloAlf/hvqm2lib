@@ -68,6 +68,7 @@ all: $(O_FILES)
 
 diff-init: all
 	$(RM) -rf expected/
+	mkdir expected/
 	cp -r build/ expected/
 
 clean:
@@ -88,6 +89,7 @@ setup:
 
 disasm: $(DISASM_TARGETS)
 
+.PHONY: all diff-init clean distclean setup
 
 
 asm/full/%/.disasm: $(BASE_DIR)/%.o
