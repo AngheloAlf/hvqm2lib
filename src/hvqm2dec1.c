@@ -6,7 +6,515 @@
 
 #define UNK_SIZE 1
 
+
+// extern u8 B_005EB0[];
+// static u8 B_005EB0[];
+/* .space 0xA64 */
+
+// extern u8 B_006914[];
+// static u8 B_006914[];
+/* .space 0x04 */
+
+// extern u8 B_006918[];
+// static u8 B_006918[];
+/* .space 0x04 */
+
+// extern u8 B_00691C[];
+// static u8 B_00691C[];
+/* .space 0x04 */
+
+// extern u8 B_006920[];
+// static u8 B_006920[];
+/* .space 0x04 */
+
+// extern u8 B_006924[];
+// static u8 B_006924[];
+/* .space 0x04 */
+
+// extern u8 B_006928[];
+// static u8 B_006928[];
+/* .space 0x08 */
+
+// extern u8 B_006930[];
+// static u8 B_006930[];
+/* .space 0x04 */
+
+// extern u8 B_006934[];
+// static u8 B_006934[];
+/* .space 0x04 */
+
+// extern u8 B_006938[];
+// static u8 B_006938[];
+/* .space 0x04 */
+
+// extern u8 B_00693C[];
+// static u8 B_00693C[];
+/* .space 0x04 */
+
+// extern u8 B_006940[];
+// static u8 B_006940[];
+/* .space 0x04 */
+
+// extern u8 B_006944[];
+// static u8 B_006944[];
+/* .space 0x04 */
+
+// extern u8 B_006948[];
+// static u8 B_006948[];
+/* .space 0x04 */
+
+// extern u8 B_00694C[];
+// static u8 B_00694C[];
+/* .space 0x04 */
+
+// extern u8 B_006950[];
+// static u8 B_006950[];
+/* .space 0x04 */
+
+// extern u8 B_006954[];
+// static u8 B_006954[];
+/* .space 0x04 */
+
+// extern u8 B_006958[];
+// static u8 B_006958[];
+/* .space 0x04 */
+
+// extern u8 B_00695C[];
+// static u8 B_00695C[];
+/* .space 0x04 */
+
+// extern u8 B_006960[];
+// static u8 B_006960[];
+/* .space 0x08 */
+
+// extern u8 B_006968[];
+// static u8 B_006968[];
+/* .space 0x04 */
+
+// extern u8 B_00696C[];
+// static u8 B_00696C[];
+/* .space 0x08 */
+
+// extern u8 B_006974[];
+// static u8 B_006974[];
+/* .space 0x04 */
+
+// extern u8 B_006978[];
+// static u8 B_006978[];
+/* .space 0x08 */
+
+// extern u8 B_006980[];
+// static u8 B_006980[];
+/* .space 0x08 */
+
+// extern u8 B_006988[];
+// static u8 B_006988[];
+/* .space 0x08 */
+
+// extern u8 B_006990[];
+// static u8 B_006990[];
+/* .space 0x04 */
+
+// extern u8 B_006994[];
+// static u8 B_006994[];
+/* .space 0x08 */
+
+// extern u8 B_00699C[];
+// static u8 B_00699C[];
+/* .space 0x04 */
+
+// extern u8 B_0069A0[];
+// static u8 B_0069A0[];
+/* .space 0x08 */
+
+// extern u8 B_0069A8[];
+// static u8 B_0069A8[];
+/* .space 0x08 */
+
+// extern u8 B_0069B0[];
+// static u8 B_0069B0[];
+/* .space 0x04 */
+
+// extern u8 B_0069B4[];
+// static u8 B_0069B4[];
+/* .space 0x04 */
+
+// extern u8 B_0069B8[];
+// static u8 B_0069B8[];
+/* .space 0x04 */
+
+// extern u8 B_0069BC[];
+// static u8 B_0069BC[];
+/* .space 0x04 */
+
+// extern u8 B_0069C0[];
+// static u8 B_0069C0[];
+/* .space 0x04 */
+
+// extern u8 B_0069C4[];
+// static u8 B_0069C4[];
+/* .space 0x04 */
+
+// extern u8 B_0069C8[];
+// static u8 B_0069C8[];
+/* .space 0x04 */
+
+// extern u8 B_0069CC[];
+// static u8 B_0069CC[];
+/* .space 0x04 */
+
+// extern u8 B_0069D0[];
+// static u8 B_0069D0[];
+/* .space 0x04 */
+
+// extern u8 B_0069D4[];
+// static u8 B_0069D4[];
+/* .space 0x0C */
+
+// extern u8 B_0069E0[];
+// static u8 B_0069E0[];
+/* .space 0x02 */
+
+// extern u8 B_0069E2[];
+// static u8 B_0069E2[];
+/* .space 0x80E */
+
+// extern u8 B_0071F0[];
+// static u8 B_0071F0[];
+/* .space 0x810 */
+
+// extern u8 B_007A00[];
+// static u8 B_007A00[];
+/* .space 0x810 */
+
+// extern u8 B_008210[];
+// static u8 B_008210[];
+/* .space 0x02 */
+
+// extern u8 B_008212[];
+// static u8 B_008212[];
+/* .space 0x80E */
+
+// extern u8 B_008A20[];
+// static u8 B_008A20[];
+/* .space 0x802 */
+
 extern u16 B_009222;
+// static u16 B_009222;
+/* .space 0x02 */
+
+// extern u8 B_009224[];
+// static u8 B_009224[];
+/* .space 0x02 */
+
+// extern u8 B_009226[];
+// static u8 B_009226[];
+/* .space 0x02 */
+
+// extern u8 B_009228[];
+// static u8 B_009228[];
+/* .space 0x04 */
+
+// extern u8 B_00922C[];
+// static u8 B_00922C[];
+/* .space 0x04 */
+
+// extern u8 B_009230[];
+// static u8 B_009230[];
+/* .space 0x04 */
+
+// extern u8 B_009234[];
+// static u8 B_009234[];
+/* .space 0x04 */
+
+// extern u8 B_009238[];
+// static u8 B_009238[];
+/* .space 0x04 */
+
+// extern u8 B_00923C[];
+// static u8 B_00923C[];
+/* .space 0x04 */
+
+// extern u8 B_009240[];
+// static u8 B_009240[];
+/* .space 0x04 */
+
+// extern u8 B_009244[];
+// static u8 B_009244[];
+/* .space 0x04 */
+
+// extern u8 B_009248[];
+// static u8 B_009248[];
+/* .space 0x04 */
+
+// extern u8 B_00924C[];
+// static u8 B_00924C[];
+/* .space 0x04 */
+
+// extern u8 B_009250[];
+// static u8 B_009250[];
+/* .space 0x04 */
+
+// extern u8 B_009254[];
+// static u8 B_009254[];
+/* .space 0x04 */
+
+// extern u8 B_009258[];
+// static u8 B_009258[];
+/* .space 0x01 */
+
+// extern u8 B_009259[];
+// static u8 B_009259[];
+/* .space 0x01 */
+
+// extern u8 B_00925A[];
+// static u8 B_00925A[];
+/* .space 0x01 */
+
+// extern u8 B_00925B[];
+// static u8 B_00925B[];
+/* .space 0x01 */
+
+// extern u8 B_00925C[];
+// static u8 B_00925C[];
+/* .space 0x04 */
+
+// extern u8 B_009260[];
+// static u8 B_009260[];
+/* .space 0x04 */
+
+// extern u8 B_009264[];
+// static u8 B_009264[];
+/* .space 0x04 */
+
+// extern u8 B_009268[];
+// static u8 B_009268[];
+/* .space 0x04 */
+
+// extern u8 B_00926C[];
+// static u8 B_00926C[];
+/* .space 0x04 */
+
+// extern u8 B_009270[];
+// static u8 B_009270[];
+/* .space 0x04 */
+
+// extern u8 B_009274[];
+// static u8 B_009274[];
+/* .space 0x04 */
+
+// extern u8 B_009278[];
+// static u8 B_009278[];
+/* .space 0x01 */
+
+// extern u8 B_009279[];
+// static u8 B_009279[];
+/* .space 0x01 */
+
+// extern u8 B_00927A[];
+// static u8 B_00927A[];
+/* .space 0x01 */
+
+// extern u8 B_00927B[];
+// static u8 B_00927B[];
+/* .space 0x01 */
+
+// extern u8 B_00927C[];
+// static u8 B_00927C[];
+/* .space 0x04 */
+
+// extern u8 B_009280[];
+// static u8 B_009280[];
+/* .space 0x04 */
+
+// extern u8 B_009284[];
+// static u8 B_009284[];
+/* .space 0x04 */
+
+// extern u8 B_009288[];
+// static u8 B_009288[];
+/* .space 0x04 */
+
+// extern u8 B_00928C[];
+// static u8 B_00928C[];
+/* .space 0x04 */
+
+// extern u8 B_009290[];
+// static u8 B_009290[];
+/* .space 0x04 */
+
+// extern u8 B_009294[];
+// static u8 B_009294[];
+/* .space 0x04 */
+
+// extern u8 B_009298[];
+// static u8 B_009298[];
+/* .space 0x01 */
+
+// extern u8 B_009299[];
+// static u8 B_009299[];
+/* .space 0x01 */
+
+// extern u8 B_00929A[];
+// static u8 B_00929A[];
+/* .space 0x01 */
+
+// extern u8 B_00929B[];
+// static u8 B_00929B[];
+/* .space 0x01 */
+
+// extern u8 B_00929C[];
+// static u8 B_00929C[];
+/* .space 0x04 */
+
+// extern u8 B_0092A0[];
+// static u8 B_0092A0[];
+/* .space 0x04 */
+
+// extern u8 B_0092A4[];
+// static u8 B_0092A4[];
+/* .space 0x04 */
+
+// extern u8 B_0092A8[];
+// static u8 B_0092A8[];
+/* .space 0x04 */
+
+// extern u8 B_0092AC[];
+// static u8 B_0092AC[];
+/* .space 0x04 */
+
+// extern u8 B_0092B0[];
+// static u8 B_0092B0[];
+/* .space 0x04 */
+
+// extern u8 B_0092B4[];
+// static u8 B_0092B4[];
+/* .space 0x04 */
+
+// extern u8 B_0092B8[];
+// static u8 B_0092B8[];
+/* .space 0x01 */
+
+// extern u8 B_0092B9[];
+// static u8 B_0092B9[];
+/* .space 0x01 */
+
+// extern u8 B_0092BA[];
+// static u8 B_0092BA[];
+/* .space 0x01 */
+
+// extern u8 B_0092BB[];
+// static u8 B_0092BB[];
+/* .space 0x01 */
+
+// extern u8 B_0092BC[];
+// static u8 B_0092BC[];
+/* .space 0x04 */
+
+// extern u8 B_0092C0[];
+// static u8 B_0092C0[];
+/* .space 0x800 */
+
+// extern u8 B_009AC0[];
+// static u8 B_009AC0[];
+/* .space 0x300 */
+
+// extern u8 B_009DC0[];
+// static u8 B_009DC0[];
+/* .space 0x300 */
+
+// extern u8 B_00A0C0[];
+// static u8 B_00A0C0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0C4[];
+// static u8 B_00A0C4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0C8[];
+// static u8 B_00A0C8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0CC[];
+// static u8 B_00A0CC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D0[];
+// static u8 B_00A0D0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D4[];
+// static u8 B_00A0D4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D8[];
+// static u8 B_00A0D8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0DC[];
+// static u8 B_00A0DC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E0[];
+// static u8 B_00A0E0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E4[];
+// static u8 B_00A0E4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E8[];
+// static u8 B_00A0E8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0EC[];
+// static u8 B_00A0EC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F0[];
+// static u8 B_00A0F0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F4[];
+// static u8 B_00A0F4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F8[];
+// static u8 B_00A0F8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0FC[];
+// static u8 B_00A0FC[];
+/* .space 0x04 */
+
+// extern u8 B_00A100[];
+// static u8 B_00A100[];
+/* .space 0x04 */
+
+// extern u8 B_00A104[];
+// static u8 B_00A104[];
+/* .space 0x04 */
+
+// extern u8 B_00A108[];
+// static u8 B_00A108[];
+/* .space 0x04 */
+
+// extern u8 B_00A10C[];
+// static u8 B_00A10C[];
+/* .space 0x04 */
+
+// extern u8 B_00A110[];
+// static u8 B_00A110[];
+/* .space 0x80 */
+
+// extern u8 B_00A190[];
+// static u8 B_00A190[];
+/* .space 0x20 */
+
+// extern u8 B_00A1B0[];
+// static u8 B_00A1B0[];
+/* .space 0x20 */
+
 
 typedef struct struct_00000040_arg0 {
     /* 0x0 */ u32 unk_0;
@@ -94,40 +602,39 @@ INCLUDE_ASM("asm/functions/hvqm2dec1", func_000033D8);
 
 // not even attempted
 #if 0
-//u16 func_00000040(u32 *, u16 *);                    /* extern */
-//s16 func_000002F8(u32 *, u16 *);                    /* extern */
-//s8 func_000004A8(u8 *, u32 *, u32 *, u8 *);         /* extern */
-//? func_000033D8(u16 *, u8 *, u8 *, u8 *);           /* extern */
+s16 func_000002F8(struct_00000040_arg0 *, u16 *);   /* extern */
+s8 func_000004A8(u8 *, struct_00000040_arg0 *, struct_00000040_arg0 *, u8 *); /* extern */
+? func_000033D8(u16 *, u8 *, u8 *, u8 *);           /* extern */
 extern u8 B_005EB0;
 extern u32 B_006914;
 extern s32 B_006918;
 extern s32 *B_00691C;
-extern u32 B_006920;
+extern struct_00000040_arg0 B_006920;
 extern s32 B_006924;
 extern s32 *B_006928;
-extern u32 B_006930;
+extern struct_00000040_arg0 B_006930;
 extern s32 B_006934;
 extern s32 *B_006938;
-extern u32 B_00693C;
+extern struct_00000040_arg0 B_00693C;
 extern s32 B_006940;
 extern s32 *B_006944;
-extern u32 B_006948;
+extern struct_00000040_arg0 B_006948;
 extern s32 B_00694C;
 extern s32 *B_006950;
-extern u32 B_006954;
+extern struct_00000040_arg0 B_006954;
 extern s32 B_006958;
 extern s32 *B_00695C;
-extern u32 B_006960;
+extern struct_00000040_arg0 B_006960;
 extern void *B_006968;
 extern s32 B_00696C;
 extern void *B_006974;
 extern s32 B_006978;
 extern s32 B_006980;
-extern u32 B_006988;
+extern struct_00000040_arg0 B_006988;
 extern void *B_006990;
-extern u32 B_006994;
+extern struct_00000040_arg0 B_006994;
 extern void *B_00699C;
-extern u32 B_0069A0;
+extern struct_00000040_arg0 B_0069A0;
 extern s32 B_0069A8;
 extern u32 B_0069B0;
 extern s32 B_0069B4;
@@ -139,12 +646,11 @@ extern u32 B_0069C8;
 extern s32 B_0069CC;
 extern s32 *B_0069D0;
 extern void *B_0069D4;
-extern u16 B_0069E0;
-extern u16 B_0071F0;
-extern u16 B_007A00;
-extern u16 B_008210;
-extern u16 B_008A20;
-// extern s16 B_009222;
+extern struct_00000040_arg1 B_0069E0;
+extern struct_00000040_arg1 B_0071F0;
+extern struct_00000040_arg1 B_007A00;
+extern struct_00000040_arg1 B_008210;
+extern struct_00000040_arg1 B_008A20;
 extern u16 *B_009228;
 extern u8 *B_00922C;
 extern u8 *B_009230;
@@ -501,14 +1007,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         temp_v1 = code + ((HVQM2Frame*)code)->basisnum_offset[0];
         if (*temp_v1 != 0) {
             B_006938 = temp_v1 + 4;
-            B_006930 = 0;
+            B_006930.unk_0 = 0;
             if (&B_0071F0 != NULL) {
                 B_009222 = 0x100;
-                B_0071F0 = func_00000040(&B_006930, &B_0071F0);
+                B_0071F0.unk_0 = func_00000040(&B_006930, &B_0071F0);
             }
         } else {
             B_006938 = NULL;
-            B_006930 = 0;
+            B_006930.unk_0 = 0;
         }
         temp_v1_2 = code + ((HVQM2Frame*)code)->basisnum_offset[1];
         if (*temp_v1_2 != 0) {
@@ -516,18 +1022,18 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         } else {
             B_006944 = NULL;
         }
-        B_00693C = 0;
+        B_00693C.unk_0 = 0;
         temp_v1_3 = code + ((HVQM2Frame*)code)->basnumrn_offset[0];
         if (*temp_v1_3 != 0) {
             B_006950 = temp_v1_3 + 4;
-            B_006948 = 0;
+            B_006948.unk_0 = 0;
             if (&B_007A00 != NULL) {
                 B_009222 = 0x100;
-                B_007A00 = func_00000040(&B_006948, &B_007A00);
+                B_007A00.unk_0 = func_00000040(&B_006948, &B_007A00);
             }
         } else {
             B_006950 = NULL;
-            B_006948 = 0;
+            B_006948.unk_0 = 0;
         }
         temp_v1_4 = code + ((HVQM2Frame*)code)->basnumrn_offset[1];
         if (*temp_v1_4 != 0) {
@@ -535,18 +1041,18 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         } else {
             B_00695C = NULL;
         }
-        B_006954 = 0;
+        B_006954.unk_0 = 0;
         temp_v1_5 = code + ((HVQM2Frame*)code)->scale_offset[0];
         if (*temp_v1_5 != 0) {
             B_006968 = temp_v1_5 + 4;
-            B_006960 = 0;
+            B_006960.unk_0 = 0;
             if (&B_008210 != NULL) {
                 B_009222 = 0x100;
-                B_008210 = func_00000040(&B_006960, &B_008210);
+                B_008210.unk_0 = func_00000040(&B_006960, &B_008210);
             }
         } else {
             B_006968 = NULL;
-            B_006960 = 0;
+            B_006960.unk_0 = 0;
         }
         temp_v1_6 = code + ((HVQM2Frame*)code)->scale_offset[1];
         if (*temp_v1_6 != 0) {
@@ -565,14 +1071,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         temp_v1_8 = code + ((HVQM2Frame*)code)->dcval_offset[0];
         if (*temp_v1_8 != 0) {
             B_006990 = temp_v1_8 + 4;
-            B_006988 = 0;
+            B_006988.unk_0 = 0;
             if (&B_0069E0 != NULL) {
                 B_009222 = 0x100;
-                B_0069E0 = func_00000040(&B_006988, &B_0069E0);
+                B_0069E0.unk_0 = func_00000040(&B_006988, &B_0069E0);
             }
         } else {
             B_006990 = NULL;
-            B_006988 = 0;
+            B_006988.unk_0 = 0;
         }
         temp_v1_9 = code + ((HVQM2Frame*)code)->dcval_offset[1];
         if (*temp_v1_9 != 0) {
@@ -580,14 +1086,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
         } else {
             B_00699C = NULL;
         }
-        B_006994 = 0;
+        B_006994.unk_0 = 0;
         temp_v1_10 = code + ((HVQM2Frame*)code)->dcval_offset[2];
         if (*temp_v1_10 != 0) {
             B_00699C = temp_v1_10 + 4;
         } else {
             B_0069A8 = 0;
         }
-        B_0069A0 = 0;
+        B_0069A0.unk_0 = 0;
         var_a1_2 = 0;
         var_a0_2 = &B_0069D4;
         do {
@@ -604,14 +1110,12 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 sp2C = (u8*)code + sizeof(HVQM2Frame);
                 do {
                     temp_v1_11 = code + sp2C->dcrun_offset[var_a2];
-                    #if 0
                     if (*temp_v1_11 != 0) {
                         var_a0_3->unk_8 = (void *) (temp_v1_11 + 4);
                     } else {
                         var_a0_3->unk_8 = NULL;
                     }
                     var_a0_3->unk_0 = 0;
-                    #endif
                     var_a0_3 += 0xC;
                     var_a2 += 1;
                 } while (var_a2 < 3);
@@ -619,20 +1123,19 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 var_a2_2 = B_009228;
                 if (var_t0_2 > 0) {
                     do {
-                        var_a1_4 = B_0071F0;
+                        var_a1_4 = B_0071F0.unk_0;
                         var_v1_3 = var_a1_4;
-                        if ((s16) B_0071F0 >= 0x100) {
+                        if ((s16) B_0071F0.unk_0 >= 0x100) {
                             do {
-                                if (B_006930 == 0) {
+                                if (B_006930.unk_0 == 0) {
                                     temp_v0_7 = B_006938;
                                     B_006938 = temp_v0_7 + 4;
-                                    B_006930 = 0x80000000;
+                                    B_006930.unk_0 = 0x80000000;
                                     B_006934 = *temp_v0_7;
                                 }
-                                temp_v1_12 = B_006934 & B_006930;
-                                B_006930 = (u32) B_006930 >> 1;
+                                temp_v1_12 = B_006934 & B_006930.unk_0;
+                                B_006930.unk_0 = (u32) B_006930.unk_0 >> 1;
                                 temp_v0_8 = var_a1_4 << 0x10;
-                                #if 0
                                 if (temp_v1_12 != 0) {
                                     var_a1_4 = ((temp_v0_8 >> 0xF) + &B_0071F0)->unk_402;
                                     var_v0 = var_a1_4 << 0x10;
@@ -640,7 +1143,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     var_a1_4 = ((temp_v0_8 >> 0xF) + &B_0071F0)->unk_2;
                                     var_v0 = var_a1_4 << 0x10;
                                 }
-                                #endif
                                 var_v1_3 = var_a1_4;
                             } while ((var_v0 >> 0x10) >= 0x100);
                         }
@@ -649,20 +1151,19 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                             var_a2_2 += 1;
                             var_t0_2 -= 1;
                         } else {
-                            var_a1_5 = B_007A00;
+                            var_a1_5 = B_007A00.unk_0;
                             var_v0_2 = var_a1_5 & 0xFF;
-                            if ((s16) B_007A00 >= 0x100) {
+                            if ((s16) B_007A00.unk_0 >= 0x100) {
                                 do {
-                                    if (B_006948 == 0) {
+                                    if (B_006948.unk_0 == 0) {
                                         temp_v0_9 = B_006950;
                                         B_006950 = temp_v0_9 + 4;
-                                        B_006948 = 0x80000000;
+                                        B_006948.unk_0 = 0x80000000;
                                         B_00694C = *temp_v0_9;
                                     }
-                                    temp_v1_13 = B_00694C & B_006948;
-                                    B_006948 = (u32) B_006948 >> 1;
+                                    temp_v1_13 = B_00694C & B_006948.unk_0;
+                                    B_006948.unk_0 = (u32) B_006948.unk_0 >> 1;
                                     temp_v0_10 = var_a1_5 << 0x10;
-                                    #if 0
                                     if (temp_v1_13 != 0) {
                                         var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007A00)->unk_402;
                                         var_v0_3 = var_a1_5 << 0x10;
@@ -670,7 +1171,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007A00)->unk_2;
                                         var_v0_3 = var_a1_5 << 0x10;
                                     }
-                                    #endif
                                     var_v0_2 = var_a1_5 & 0xFF;
                                 } while ((var_v0_3 >> 0x10) >= 0x100);
                             }
@@ -691,20 +1191,19 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 var_a3_2 = B_009230;
                 if (var_t0_3 > 0) {
                     do {
-                        var_a1_6 = B_0071F0;
+                        var_a1_6 = B_0071F0.unk_0;
                         var_v0_4 = var_a1_6 & 0xFF;
-                        if ((s16) B_0071F0 >= 0x100) {
+                        if ((s16) B_0071F0.unk_0 >= 0x100) {
                             do {
-                                if (B_00693C == 0) {
+                                if (B_00693C.unk_0 == 0) {
                                     temp_v0_11 = B_006944;
                                     B_006944 = temp_v0_11 + 4;
-                                    B_00693C = 0x80000000;
+                                    B_00693C.unk_0 = 0x80000000;
                                     B_006940 = *temp_v0_11;
                                 }
-                                temp_v1_14 = B_006940 & B_00693C;
-                                B_00693C = (u32) B_00693C >> 1;
+                                temp_v1_14 = B_006940 & B_00693C.unk_0;
+                                B_00693C.unk_0 = (u32) B_00693C.unk_0 >> 1;
                                 temp_v0_12 = var_a1_6 << 0x10;
-                                #if 0
                                 if (temp_v1_14 != 0) {
                                     var_a1_6 = ((temp_v0_12 >> 0xF) + &B_0071F0)->unk_402;
                                     var_v0_5 = var_a1_6 << 0x10;
@@ -712,25 +1211,23 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     var_a1_6 = ((temp_v0_12 >> 0xF) + &B_0071F0)->unk_2;
                                     var_v0_5 = var_a1_6 << 0x10;
                                 }
-                                #endif
                                 var_v0_4 = var_a1_6 & 0xFF;
                             } while ((var_v0_5 >> 0x10) >= 0x100);
                         }
                         if (var_v0_4 == 0) {
-                            var_a1_7 = B_007A00;
+                            var_a1_7 = B_007A00.unk_0;
                             var_v0_6 = var_a1_7 & 0xFF;
-                            if ((s16) B_007A00 >= 0x100) {
+                            if ((s16) B_007A00.unk_0 >= 0x100) {
                                 do {
-                                    if (B_006954 == 0) {
+                                    if (B_006954.unk_0 == 0) {
                                         temp_v0_13 = B_00695C;
                                         B_00695C = temp_v0_13 + 4;
-                                        B_006954 = 0x80000000;
+                                        B_006954.unk_0 = 0x80000000;
                                         B_006958 = *temp_v0_13;
                                     }
-                                    temp_v1_15 = B_006958 & B_006954;
-                                    B_006954 = (u32) B_006954 >> 1;
+                                    temp_v1_15 = B_006958 & B_006954.unk_0;
+                                    B_006954.unk_0 = (u32) B_006954.unk_0 >> 1;
                                     temp_v0_14 = var_a1_7 << 0x10;
-                                    #if 0
                                     if (temp_v1_15 != 0) {
                                         var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007A00)->unk_402;
                                         var_v0_7 = var_a1_7 << 0x10;
@@ -738,7 +1235,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007A00)->unk_2;
                                         var_v0_7 = var_a1_7 << 0x10;
                                     }
-                                    #endif
                                     var_v0_6 = var_a1_7 & 0xFF;
                                 } while ((var_v0_7 >> 0x10) >= 0x100);
                             }
@@ -781,8 +1277,8 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp10 == 0) {
                             var_v0_8 = func_000002F8(&B_006988);
                             if (var_v0_8 == 0) {
-                                var_a1_8 = B_007A00;
-                                if ((s16) B_007A00 >= 0x100) {
+                                var_a1_8 = B_007A00.unk_0;
+                                if ((s16) B_007A00.unk_0 >= 0x100) {
                                     do {
                                         if (B_0069B0 == 0) {
                                             temp_v0_15 = B_0069B8;
@@ -793,7 +1289,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         temp_v1_16 = B_0069B4 & B_0069B0;
                                         B_0069B0 = (u32) B_0069B0 >> 1;
                                         temp_v0_16 = var_a1_8 << 0x10;
-                                        #if 0
                                         if (temp_v1_16 != 0) {
                                             var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_9 = var_a1_8 << 0x10;
@@ -801,7 +1296,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                             var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_9 = var_a1_8 << 0x10;
                                         }
-                                        #endif
                                     } while ((var_v0_9 >> 0x10) >= 0x100);
                                 }
                                 var_v0_8 = 0;
@@ -816,8 +1310,8 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp10 == 0) {
                             var_v0_10 = func_000002F8(&B_006988);
                             if (var_v0_10 == 0) {
-                                var_a1_9 = B_007A00;
-                                if ((s16) B_007A00 < 0x100) {
+                                var_a1_9 = B_007A00.unk_0;
+                                if ((s16) B_007A00.unk_0 < 0x100) {
                                     sp10 = (u8) var_a1_9;
                                 } else {
                                     do {
@@ -830,7 +1324,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                         temp_v1_17 = B_0069B4 & B_0069B0;
                                         B_0069B0 = (u32) B_0069B0 >> 1;
                                         temp_v0_18 = var_a1_9 << 0x10;
-                                        #if 0
                                         if (temp_v1_17 != 0) {
                                             var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_11 = var_a1_9 << 0x10;
@@ -838,7 +1331,6 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                             var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_11 = var_a1_9 << 0x10;
                                         }
-                                        #endif
                                     } while ((var_v0_11 >> 0x10) >= 0x100);
                                     sp10 = (u8) var_a1_9;
                                 }
@@ -851,14 +1343,12 @@ block_122:
                         }
                         var_s2 = var_v0_10 + temp_s2;
                         var_s0[1] = var_s2;
-                        #if 0
                         var_s0 = &var_s0[1].unk_1;
-                        #endif
                         if (sp11 == 0) {
                             var_v0_12 = func_000002F8(&B_006994);
                             if (var_v0_12 == 0) {
-                                var_a1_10 = B_007A00;
-                                if ((s16) B_007A00 < 0x100) {
+                                var_a1_10 = B_007A00.unk_0;
+                                if ((s16) B_007A00.unk_0 < 0x100) {
                                     sp11 = (u8) var_a1_10;
                                 } else {
                                     do {
@@ -871,7 +1361,6 @@ block_122:
                                         temp_v1_18 = B_0069C0 & B_0069BC;
                                         B_0069BC = (u32) B_0069BC >> 1;
                                         temp_v0_20 = var_a1_10 << 0x10;
-                                        #if 0
                                         if (temp_v1_18 != 0) {
                                             var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_13 = var_a1_10 << 0x10;
@@ -879,7 +1368,6 @@ block_122:
                                             var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_13 = var_a1_10 << 0x10;
                                         }
-                                        #endif
                                     } while ((var_v0_13 >> 0x10) >= 0x100);
                                     sp11 = (u8) var_a1_10;
                                 }
@@ -896,8 +1384,8 @@ block_136:
                         if (sp12 == 0) {
                             var_v0_14 = func_000002F8(&B_0069A0);
                             if (var_v0_14 == 0) {
-                                var_a1_11 = B_007A00;
-                                if ((s16) B_007A00 < 0x100) {
+                                var_a1_11 = B_007A00.unk_0;
+                                if ((s16) B_007A00.unk_0 < 0x100) {
                                     sp12 = (u8) var_a1_11;
                                 } else {
                                     do {
@@ -910,7 +1398,6 @@ block_136:
                                         temp_v1_19 = B_0069CC & B_0069C8;
                                         B_0069C8 = (u32) B_0069C8 >> 1;
                                         temp_v0_22 = var_a1_11 << 0x10;
-                                        #if 0
                                         if (temp_v1_19 != 0) {
                                             var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007A00)->unk_402;
                                             var_v0_15 = var_a1_11 << 0x10;
@@ -918,7 +1405,6 @@ block_136:
                                             var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007A00)->unk_2;
                                             var_v0_15 = var_a1_11 << 0x10;
                                         }
-                                        #endif
                                     } while ((var_v0_15 >> 0x10) >= 0x100);
                                     sp12 = (u8) var_a1_11;
                                 }
@@ -943,8 +1429,8 @@ block_150:
                             if (sp10 == 0) {
                                 var_v0_16 = func_000002F8(&B_006988);
                                 if (var_v0_16 == 0) {
-                                    var_a1_12 = B_007A00;
-                                    if ((s16) B_007A00 < 0x100) {
+                                    var_a1_12 = B_007A00.unk_0;
+                                    if ((s16) B_007A00.unk_0 < 0x100) {
                                         sp10 = (u8) var_a1_12;
                                     } else {
                                         do {
@@ -957,7 +1443,6 @@ block_150:
                                             temp_v1_20 = B_0069B4 & B_0069B0;
                                             B_0069B0 = (u32) B_0069B0 >> 1;
                                             temp_v0_24 = var_a1_12 << 0x10;
-                                            #if 0
                                             if (temp_v1_20 != 0) {
                                                 var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007A00)->unk_402;
                                                 var_v0_17 = var_a1_12 << 0x10;
@@ -965,7 +1450,6 @@ block_150:
                                                 var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007A00)->unk_2;
                                                 var_v0_17 = var_a1_12 << 0x10;
                                             }
-                                            #endif
                                         } while ((var_v0_17 >> 0x10) >= 0x100);
                                         sp10 = (u8) var_a1_12;
                                     }
@@ -982,8 +1466,8 @@ block_168:
                             if (sp10 == 0) {
                                 var_v0_18 = func_000002F8(&B_006988);
                                 if (var_v0_18 == 0) {
-                                    var_a1_13 = B_007A00;
-                                    if ((s16) B_007A00 < 0x100) {
+                                    var_a1_13 = B_007A00.unk_0;
+                                    if ((s16) B_007A00.unk_0 < 0x100) {
                                         sp10 = (u8) var_a1_13;
                                     } else {
                                         do {
@@ -996,7 +1480,6 @@ block_168:
                                             temp_v1_21 = B_0069B4 & B_0069B0;
                                             B_0069B0 = (u32) B_0069B0 >> 1;
                                             temp_v0_27 = var_a1_13 << 0x10;
-                                            #if 0
                                             if (temp_v1_21 != 0) {
                                                 var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007A00)->unk_402;
                                                 var_v0_19 = var_a1_13 << 0x10;
@@ -1004,7 +1487,6 @@ block_168:
                                                 var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007A00)->unk_2;
                                                 var_v0_19 = var_a1_13 << 0x10;
                                             }
-                                            #endif
                                         } while ((var_v0_19 >> 0x10) >= 0x100);
                                         sp10 = (u8) var_a1_13;
                                     }
@@ -1015,12 +1497,10 @@ block_168:
 block_182:
                                 var_v0_18 = 0;
                             }
-                            #if 0
                             var_s1 = &var_s1[1].unk_1;
                             temp_v0_28 = var_v0_18 + temp_s2_2;
                             var_s0[1] = temp_v0_28;
                             var_s0 = &var_s0[1].unk_1;
-                            #endif
                             var_s3_2 -= 1;
                             var_s2_2 = (u8) ((u32) (*var_s1 + (temp_v0_28 & 0xFF)) >> 1);
                         } while (var_s3_2 > 0);
@@ -1039,8 +1519,8 @@ block_182:
                                 if (sp10 == 0) {
                                     var_v0_20 = func_000002F8(&B_006988);
                                     if (var_v0_20 == 0) {
-                                        var_a1_14 = B_007A00;
-                                        if ((s16) B_007A00 >= 0x100) {
+                                        var_a1_14 = B_007A00.unk_0;
+                                        if ((s16) B_007A00.unk_0 >= 0x100) {
                                             do {
                                                 if (B_0069B0 == 0) {
                                                     temp_v0_29 = B_0069B8;
@@ -1051,7 +1531,6 @@ block_182:
                                                 temp_v1_22 = B_0069B4 & B_0069B0;
                                                 B_0069B0 = (u32) B_0069B0 >> 1;
                                                 temp_v0_30 = var_a1_14 << 0x10;
-                                                #if 0
                                                 if (temp_v1_22 != 0) {
                                                     var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_21 = var_a1_14 << 0x10;
@@ -1059,7 +1538,6 @@ block_182:
                                                     var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_21 = var_a1_14 << 0x10;
                                                 }
-                                                #endif
                                             } while ((var_v0_21 >> 0x10) >= 0x100);
                                         }
                                         var_v0_20 = 0;
@@ -1075,8 +1553,8 @@ block_182:
                                 if (sp10 == 0) {
                                     var_v0_22 = func_000002F8(&B_006988);
                                     if (var_v0_22 == 0) {
-                                        var_a1_15 = B_007A00;
-                                        if ((s16) B_007A00 < 0x100) {
+                                        var_a1_15 = B_007A00.unk_0;
+                                        if ((s16) B_007A00.unk_0 < 0x100) {
                                             sp10 = (u8) var_a1_15;
                                         } else {
                                             do {
@@ -1089,7 +1567,6 @@ block_182:
                                                 temp_v1_23 = B_0069B4 & B_0069B0;
                                                 B_0069B0 = (u32) B_0069B0 >> 1;
                                                 temp_v0_33 = var_a1_15 << 0x10;
-                                                #if 0
                                                 if (temp_v1_23 != 0) {
                                                     var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_23 = var_a1_15 << 0x10;
@@ -1097,7 +1574,6 @@ block_182:
                                                     var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_23 = var_a1_15 << 0x10;
                                                 }
-                                                #endif
                                             } while ((var_v0_23 >> 0x10) >= 0x100);
                                             sp10 = (u8) var_a1_15;
                                         }
@@ -1108,18 +1584,16 @@ block_182:
 block_212:
                                     var_v0_22 = 0;
                                 }
-                                #if 0
                                 var_s1 = &var_s1[1].unk_1;
                                 temp_v0_34 = var_v0_22 + temp_s2_3;
                                 var_s0[1] = temp_v0_34;
                                 var_s0 = &var_s0[1].unk_1;
-                                #endif
                                 var_s2_3 = (u8) ((u32) (*var_s1 + (temp_v0_34 & 0xFF)) >> 1);
                                 if (sp11 == 0) {
                                     var_v0_24 = func_000002F8(&B_006994);
                                     if (var_v0_24 == 0) {
-                                        var_a1_16 = B_007A00;
-                                        if ((s16) B_007A00 < 0x100) {
+                                        var_a1_16 = B_007A00.unk_0;
+                                        if ((s16) B_007A00.unk_0 < 0x100) {
                                             sp11 = (u8) var_a1_16;
                                         } else {
                                             do {
@@ -1132,7 +1606,6 @@ block_212:
                                                 temp_v1_24 = B_0069C0 & B_0069BC;
                                                 B_0069BC = (u32) B_0069BC >> 1;
                                                 temp_v0_36 = var_a1_16 << 0x10;
-                                                #if 0
                                                 if (temp_v1_24 != 0) {
                                                     var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_25 = var_a1_16 << 0x10;
@@ -1140,7 +1613,6 @@ block_212:
                                                     var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_25 = var_a1_16 << 0x10;
                                                 }
-                                                #endif
                                             } while ((var_v0_25 >> 0x10) >= 0x100);
                                             sp11 = (u8) var_a1_16;
                                         }
@@ -1159,8 +1631,8 @@ block_226:
                                 if (sp12 == 0) {
                                     var_v0_26 = func_000002F8(&B_0069A0);
                                     if (var_v0_26 == 0) {
-                                        var_a1_17 = B_007A00;
-                                        if ((s16) B_007A00 < 0x100) {
+                                        var_a1_17 = B_007A00.unk_0;
+                                        if ((s16) B_007A00.unk_0 < 0x100) {
                                             sp12 = (u8) var_a1_17;
                                         } else {
                                             do {
@@ -1173,7 +1645,6 @@ block_226:
                                                 temp_v1_25 = B_0069CC & B_0069C8;
                                                 B_0069C8 = (u32) B_0069C8 >> 1;
                                                 temp_v0_39 = var_a1_17 << 0x10;
-                                                #if 0
                                                 if (temp_v1_25 != 0) {
                                                     var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007A00)->unk_402;
                                                     var_v0_27 = var_a1_17 << 0x10;
@@ -1181,7 +1652,6 @@ block_226:
                                                     var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007A00)->unk_2;
                                                     var_v0_27 = var_a1_17 << 0x10;
                                                 }
-                                                #endif
                                             } while ((var_v0_27 >> 0x10) >= 0x100);
                                             sp12 = (u8) var_a1_17;
                                         }
@@ -1208,8 +1678,8 @@ block_240:
                                     if (sp10 == 0) {
                                         var_v0_28 = func_000002F8(&B_006988);
                                         if (var_v0_28 == 0) {
-                                            var_a1_18 = B_007A00;
-                                            if ((s16) B_007A00 < 0x100) {
+                                            var_a1_18 = B_007A00.unk_0;
+                                            if ((s16) B_007A00.unk_0 < 0x100) {
                                                 sp10 = (u8) var_a1_18;
                                             } else {
                                                 do {
@@ -1222,7 +1692,6 @@ block_240:
                                                     temp_v1_26 = B_0069B4 & B_0069B0;
                                                     B_0069B0 = (u32) B_0069B0 >> 1;
                                                     temp_v0_42 = var_a1_18 << 0x10;
-                                                    #if 0
                                                     if (temp_v1_26 != 0) {
                                                         var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007A00)->unk_402;
                                                         var_v0_29 = var_a1_18 << 0x10;
@@ -1230,7 +1699,6 @@ block_240:
                                                         var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007A00)->unk_2;
                                                         var_v0_29 = var_a1_18 << 0x10;
                                                     }
-                                                    #endif
                                                 } while ((var_v0_29 >> 0x10) >= 0x100);
                                                 sp10 = (u8) var_a1_18;
                                             }
@@ -1247,8 +1715,8 @@ block_258:
                                     if (sp10 == 0) {
                                         var_v0_30 = func_000002F8(&B_006988);
                                         if (var_v0_30 == 0) {
-                                            var_a1_19 = B_007A00;
-                                            if ((s16) B_007A00 < 0x100) {
+                                            var_a1_19 = B_007A00.unk_0;
+                                            if ((s16) B_007A00.unk_0 < 0x100) {
                                                 sp10 = (u8) var_a1_19;
                                             } else {
                                                 do {
@@ -1261,7 +1729,6 @@ block_258:
                                                     temp_v1_27 = B_0069B4 & B_0069B0;
                                                     B_0069B0 = (u32) B_0069B0 >> 1;
                                                     temp_v0_45 = var_a1_19 << 0x10;
-                                                    #if 0
                                                     if (temp_v1_27 != 0) {
                                                         var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007A00)->unk_402;
                                                         var_v0_31 = var_a1_19 << 0x10;
@@ -1269,7 +1736,6 @@ block_258:
                                                         var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007A00)->unk_2;
                                                         var_v0_31 = var_a1_19 << 0x10;
                                                     }
-                                                    #endif
                                                 } while ((var_v0_31 >> 0x10) >= 0x100);
                                                 sp10 = (u8) var_a1_19;
                                             }
@@ -1280,12 +1746,10 @@ block_258:
 block_272:
                                         var_v0_30 = 0;
                                     }
-                                    #if 0
                                     var_s1 = &var_s1[1].unk_1;
                                     temp_v0_46 = var_v0_30 + temp_s2_4;
                                     var_s0[1] = temp_v0_46;
                                     var_s0 = &var_s0[1].unk_1;
-                                    #endif
                                     var_s3_4 -= 1;
                                     var_s2_4 = (u8) ((u32) (*var_s1 + (temp_v0_46 & 0xFF)) >> 1);
                                 } while (var_s3_4 > 0);
@@ -1296,9 +1760,7 @@ block_272:
                     } while (temp_t6 >= 2);
                 }
                 var_a2_4 = B_00A100;
-                #if 1
                 var_a0_4 = &B_009234[sp2C->nest_start_x + (sp2C->nest_start_y * B_00A0E8)];
-                #endif
                 var_t0_4 = B_00A0E8;
                 if (B_00A0E8 < B_00A104) {
                     var_t2 = B_00A104 - var_t0_4;
@@ -1400,23 +1862,21 @@ block_348:
                 temp_v1_28 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->movevector_offset;
                 if (*temp_v1_28 != 0) {
                     B_006928 = temp_v1_28 + 4;
-                    B_006920 = 0;
+                    B_006920.unk_0 = 0;
                     if (&B_008A20 != NULL) {
                         B_009222 = 0x100;
-                        B_008A20 = func_00000040(&B_006920, &B_008A20);
+                        B_008A20.unk_0 = func_00000040(&B_006920, &B_008A20);
                     }
                 } else {
                     B_006928 = NULL;
-                    B_006920 = 0;
+                    B_006920.unk_0 = 0;
                 }
-                #if 1
                 temp_a0 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->macroblock_offset;
                 if (*temp_a0 != 0) {
                     B_008A20 = (void *) (temp_a0 + 4);
                 } else {
                     B_00691C = NULL;
                 }
-                #endif
                 B_006914 = 0;
                 var_s3_5 = 0;
                 var_a2_4 = B_00922C;
@@ -1459,19 +1919,18 @@ block_348:
                                 temp_a0_2 = (u32) B_006914 >> 1;
                                 B_006914 = temp_a0_2;
                                 if (!(B_006918 & B_006914)) {
-                                    var_a1_22 = B_008A20;
-                                    if ((s16) B_008A20 >= 0x100) {
+                                    var_a1_22 = B_008A20.unk_0;
+                                    if ((s16) B_008A20.unk_0 >= 0x100) {
                                         do {
-                                            if (B_006920 == 0) {
+                                            if (B_006920.unk_0 == 0) {
                                                 temp_v0_50 = B_006928;
                                                 B_006928 = temp_v0_50 + 4;
-                                                B_006920 = 0x80000000;
+                                                B_006920.unk_0 = 0x80000000;
                                                 B_006924 = *temp_v0_50;
                                             }
-                                            temp_v1_29 = B_006924 & B_006920;
-                                            B_006920 = (u32) B_006920 >> 1;
+                                            temp_v1_29 = B_006924 & B_006920.unk_0;
+                                            B_006920.unk_0 = (u32) B_006920.unk_0 >> 1;
                                             temp_v0_51 = var_a1_22 << 0x10;
-                                            #if 0
                                             if (temp_v1_29 != 0) {
                                                 var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008A20)->unk_402;
                                                 var_v0_32 = var_a1_22 << 0x10;
@@ -1479,23 +1938,21 @@ block_348:
                                                 var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008A20)->unk_2;
                                                 var_v0_32 = var_a1_22 << 0x10;
                                             }
-                                            #endif
                                         } while ((var_v0_32 >> 0x10) >= 0x100);
                                     }
-                                    var_a1_23 = B_008A20;
+                                    var_a1_23 = B_008A20.unk_0;
                                     sp77 += var_a1_22 & 0xFF;
-                                    if ((s16) B_008A20 >= 0x100) {
+                                    if ((s16) B_008A20.unk_0 >= 0x100) {
                                         do {
-                                            if (B_006920 == 0) {
+                                            if (B_006920.unk_0 == 0) {
                                                 temp_v0_52 = B_006928;
                                                 B_006928 = temp_v0_52 + 4;
-                                                B_006920 = 0x80000000;
+                                                B_006920.unk_0 = 0x80000000;
                                                 B_006924 = *temp_v0_52;
                                             }
-                                            temp_v1_30 = B_006924 & B_006920;
-                                            B_006920 = (u32) B_006920 >> 1;
+                                            temp_v1_30 = B_006924 & B_006920.unk_0;
+                                            B_006920.unk_0 = (u32) B_006920.unk_0 >> 1;
                                             temp_v0_53 = var_a1_23 << 0x10;
-                                            #if 0
                                             if (temp_v1_30 != 0) {
                                                 var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008A20)->unk_402;
                                                 var_v0_33 = var_a1_23 << 0x10;
@@ -1503,7 +1960,6 @@ block_348:
                                                 var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008A20)->unk_2;
                                                 var_v0_33 = var_a1_23 << 0x10;
                                             }
-                                            #endif
                                         } while ((var_v0_33 >> 0x10) >= 0x100);
                                     }
                                     temp_v0_54 = sp7F + (var_a1_23 & 0xFF);
@@ -1701,12 +2157,10 @@ loop_333:
                         }
                         var_a1_21 = (u8 *) B_00A0E8;
                         var_a3_5 = B_00A0D8;
-                        #if 0
                         var_a2_4 = &B_009254[var_a1_21];
                         B_009248 += var_a1_21;
                         B_00924C = &B_00924C[var_a1_21];
                         B_009250 += var_a1_21;
-                        #endif
                         B_009254 = var_a2_4;
                         if (var_a3_5 == NULL) {
                             var_a1_21 = &B_0092A8[B_00A0F4];
@@ -1730,7 +2184,6 @@ loop_333:
         }
     }
 }
-
 #else
 INCLUDE_ASM("asm/functions/hvqm2dec1", hvqm2Decode1);
 #endif

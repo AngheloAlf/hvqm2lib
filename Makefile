@@ -31,7 +31,7 @@ DISASSEMBLER_FLAGS  := --Mreg-names o32 --no-use-fpccsr --compiler GCC --asm-ref
 IINC       := -I include -I include/libultra/ -I include/libultra/PR  -I include/hvqm/
 
 
-CFLAGS          += -nostdinc -fno-PIC -G 0 -mgp32 -mfp32 -fno-common -funsigned-char
+CFLAGS          += -nostdinc -fno-PIC -G 0 -mgp32 -mfp32 -funsigned-char
 
 WARNINGS        := -w
 
@@ -94,7 +94,7 @@ disasm: $(DISASM_TARGETS)
 
 asm/full/%/.disasm: $(BASE_DIR)/%.o
 	$(RM) -rf asm/full/$* asm/functions/$*
-	$(DISASSEMBLER) $(DISASSEMBLER_FLAGS) $< asm/full/$* --split-functions asm/functions/ --save-context context/$*.csv
+	$(DISASSEMBLER) $(DISASSEMBLER_FLAGS) $< asm/full/$* --split-functions asm/functions/ --save-context context/$*.csv --symbol-addrs symbol_addrs/symbol_addrs_$*.txt
 #	@touch $@
 
 
