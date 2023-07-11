@@ -7,513 +7,7 @@
 #define UNK_SIZE 1
 
 
-// extern u8 B_005EB0[];
-// static u8 B_005EB0[];
-/* .space 0xA64 */
-
-// extern u8 B_006914[];
-// static u8 B_006914[];
-/* .space 0x04 */
-
-// extern u8 B_006918[];
-// static u8 B_006918[];
-/* .space 0x04 */
-
-// extern u8 B_00691C[];
-// static u8 B_00691C[];
-/* .space 0x04 */
-
-// extern u8 B_006920[];
-// static u8 B_006920[];
-/* .space 0x04 */
-
-// extern u8 B_006924[];
-// static u8 B_006924[];
-/* .space 0x04 */
-
-// extern u8 B_006928[];
-// static u8 B_006928[];
-/* .space 0x08 */
-
-// extern u8 B_006930[];
-// static u8 B_006930[];
-/* .space 0x04 */
-
-// extern u8 B_006934[];
-// static u8 B_006934[];
-/* .space 0x04 */
-
-// extern u8 B_006938[];
-// static u8 B_006938[];
-/* .space 0x04 */
-
-// extern u8 B_00693C[];
-// static u8 B_00693C[];
-/* .space 0x04 */
-
-// extern u8 B_006940[];
-// static u8 B_006940[];
-/* .space 0x04 */
-
-// extern u8 B_006944[];
-// static u8 B_006944[];
-/* .space 0x04 */
-
-// extern u8 B_006948[];
-// static u8 B_006948[];
-/* .space 0x04 */
-
-// extern u8 B_00694C[];
-// static u8 B_00694C[];
-/* .space 0x04 */
-
-// extern u8 B_006950[];
-// static u8 B_006950[];
-/* .space 0x04 */
-
-// extern u8 B_006954[];
-// static u8 B_006954[];
-/* .space 0x04 */
-
-// extern u8 B_006958[];
-// static u8 B_006958[];
-/* .space 0x04 */
-
-// extern u8 B_00695C[];
-// static u8 B_00695C[];
-/* .space 0x04 */
-
-// extern u8 B_006960[];
-// static u8 B_006960[];
-/* .space 0x08 */
-
-// extern u8 B_006968[];
-// static u8 B_006968[];
-/* .space 0x04 */
-
-// extern u8 B_00696C[];
-// static u8 B_00696C[];
-/* .space 0x08 */
-
-// extern u8 B_006974[];
-// static u8 B_006974[];
-/* .space 0x04 */
-
-// extern u8 B_006978[];
-// static u8 B_006978[];
-/* .space 0x08 */
-
-// extern u8 B_006980[];
-// static u8 B_006980[];
-/* .space 0x08 */
-
-// extern u8 B_006988[];
-// static u8 B_006988[];
-/* .space 0x08 */
-
-// extern u8 B_006990[];
-// static u8 B_006990[];
-/* .space 0x04 */
-
-// extern u8 B_006994[];
-// static u8 B_006994[];
-/* .space 0x08 */
-
-// extern u8 B_00699C[];
-// static u8 B_00699C[];
-/* .space 0x04 */
-
-// extern u8 B_0069A0[];
-// static u8 B_0069A0[];
-/* .space 0x08 */
-
-// extern u8 B_0069A8[];
-// static u8 B_0069A8[];
-/* .space 0x08 */
-
-// extern u8 B_0069B0[];
-// static u8 B_0069B0[];
-/* .space 0x04 */
-
-// extern u8 B_0069B4[];
-// static u8 B_0069B4[];
-/* .space 0x04 */
-
-// extern u8 B_0069B8[];
-// static u8 B_0069B8[];
-/* .space 0x04 */
-
-// extern u8 B_0069BC[];
-// static u8 B_0069BC[];
-/* .space 0x04 */
-
-// extern u8 B_0069C0[];
-// static u8 B_0069C0[];
-/* .space 0x04 */
-
-// extern u8 B_0069C4[];
-// static u8 B_0069C4[];
-/* .space 0x04 */
-
-// extern u8 B_0069C8[];
-// static u8 B_0069C8[];
-/* .space 0x04 */
-
-// extern u8 B_0069CC[];
-// static u8 B_0069CC[];
-/* .space 0x04 */
-
-// extern u8 B_0069D0[];
-// static u8 B_0069D0[];
-/* .space 0x04 */
-
-// extern u8 B_0069D4[];
-// static u8 B_0069D4[];
-/* .space 0x0C */
-
-// extern u8 B_0069E0[];
-// static u8 B_0069E0[];
-/* .space 0x02 */
-
-// extern u8 B_0069E2[];
-// static u8 B_0069E2[];
-/* .space 0x80E */
-
-// extern u8 B_0071F0[];
-// static u8 B_0071F0[];
-/* .space 0x810 */
-
-// extern u8 B_007A00[];
-// static u8 B_007A00[];
-/* .space 0x810 */
-
-// extern u8 B_008210[];
-// static u8 B_008210[];
-/* .space 0x02 */
-
-// extern u8 B_008212[];
-// static u8 B_008212[];
-/* .space 0x80E */
-
-// extern u8 B_008A20[];
-// static u8 B_008A20[];
-/* .space 0x802 */
-
-extern u16 B_009222;
-// static u16 B_009222;
-/* .space 0x02 */
-
-// extern u8 B_009224[];
-// static u8 B_009224[];
-/* .space 0x02 */
-
-// extern u8 B_009226[];
-// static u8 B_009226[];
-/* .space 0x02 */
-
-// extern u8 B_009228[];
-// static u8 B_009228[];
-/* .space 0x04 */
-
-// extern u8 B_00922C[];
-// static u8 B_00922C[];
-/* .space 0x04 */
-
-// extern u8 B_009230[];
-// static u8 B_009230[];
-/* .space 0x04 */
-
-// extern u8 B_009234[];
-// static u8 B_009234[];
-/* .space 0x04 */
-
-// extern u8 B_009238[];
-// static u8 B_009238[];
-/* .space 0x04 */
-
-// extern u8 B_00923C[];
-// static u8 B_00923C[];
-/* .space 0x04 */
-
-// extern u8 B_009240[];
-// static u8 B_009240[];
-/* .space 0x04 */
-
-// extern u8 B_009244[];
-// static u8 B_009244[];
-/* .space 0x04 */
-
-// extern u8 B_009248[];
-// static u8 B_009248[];
-/* .space 0x04 */
-
-// extern u8 B_00924C[];
-// static u8 B_00924C[];
-/* .space 0x04 */
-
-// extern u8 B_009250[];
-// static u8 B_009250[];
-/* .space 0x04 */
-
-// extern u8 B_009254[];
-// static u8 B_009254[];
-/* .space 0x04 */
-
-// extern u8 B_009258[];
-// static u8 B_009258[];
-/* .space 0x01 */
-
-// extern u8 B_009259[];
-// static u8 B_009259[];
-/* .space 0x01 */
-
-// extern u8 B_00925A[];
-// static u8 B_00925A[];
-/* .space 0x01 */
-
-// extern u8 B_00925B[];
-// static u8 B_00925B[];
-/* .space 0x01 */
-
-// extern u8 B_00925C[];
-// static u8 B_00925C[];
-/* .space 0x04 */
-
-// extern u8 B_009260[];
-// static u8 B_009260[];
-/* .space 0x04 */
-
-// extern u8 B_009264[];
-// static u8 B_009264[];
-/* .space 0x04 */
-
-// extern u8 B_009268[];
-// static u8 B_009268[];
-/* .space 0x04 */
-
-// extern u8 B_00926C[];
-// static u8 B_00926C[];
-/* .space 0x04 */
-
-// extern u8 B_009270[];
-// static u8 B_009270[];
-/* .space 0x04 */
-
-// extern u8 B_009274[];
-// static u8 B_009274[];
-/* .space 0x04 */
-
-// extern u8 B_009278[];
-// static u8 B_009278[];
-/* .space 0x01 */
-
-// extern u8 B_009279[];
-// static u8 B_009279[];
-/* .space 0x01 */
-
-// extern u8 B_00927A[];
-// static u8 B_00927A[];
-/* .space 0x01 */
-
-// extern u8 B_00927B[];
-// static u8 B_00927B[];
-/* .space 0x01 */
-
-// extern u8 B_00927C[];
-// static u8 B_00927C[];
-/* .space 0x04 */
-
-// extern u8 B_009280[];
-// static u8 B_009280[];
-/* .space 0x04 */
-
-// extern u8 B_009284[];
-// static u8 B_009284[];
-/* .space 0x04 */
-
-// extern u8 B_009288[];
-// static u8 B_009288[];
-/* .space 0x04 */
-
-// extern u8 B_00928C[];
-// static u8 B_00928C[];
-/* .space 0x04 */
-
-// extern u8 B_009290[];
-// static u8 B_009290[];
-/* .space 0x04 */
-
-// extern u8 B_009294[];
-// static u8 B_009294[];
-/* .space 0x04 */
-
-// extern u8 B_009298[];
-// static u8 B_009298[];
-/* .space 0x01 */
-
-// extern u8 B_009299[];
-// static u8 B_009299[];
-/* .space 0x01 */
-
-// extern u8 B_00929A[];
-// static u8 B_00929A[];
-/* .space 0x01 */
-
-// extern u8 B_00929B[];
-// static u8 B_00929B[];
-/* .space 0x01 */
-
-// extern u8 B_00929C[];
-// static u8 B_00929C[];
-/* .space 0x04 */
-
-// extern u8 B_0092A0[];
-// static u8 B_0092A0[];
-/* .space 0x04 */
-
-// extern u8 B_0092A4[];
-// static u8 B_0092A4[];
-/* .space 0x04 */
-
-// extern u8 B_0092A8[];
-// static u8 B_0092A8[];
-/* .space 0x04 */
-
-// extern u8 B_0092AC[];
-// static u8 B_0092AC[];
-/* .space 0x04 */
-
-// extern u8 B_0092B0[];
-// static u8 B_0092B0[];
-/* .space 0x04 */
-
-// extern u8 B_0092B4[];
-// static u8 B_0092B4[];
-/* .space 0x04 */
-
-// extern u8 B_0092B8[];
-// static u8 B_0092B8[];
-/* .space 0x01 */
-
-// extern u8 B_0092B9[];
-// static u8 B_0092B9[];
-/* .space 0x01 */
-
-// extern u8 B_0092BA[];
-// static u8 B_0092BA[];
-/* .space 0x01 */
-
-// extern u8 B_0092BB[];
-// static u8 B_0092BB[];
-/* .space 0x01 */
-
-// extern u8 B_0092BC[];
-// static u8 B_0092BC[];
-/* .space 0x04 */
-
-// extern u8 B_0092C0[];
-// static u8 B_0092C0[];
-/* .space 0x800 */
-
-// extern u8 B_009AC0[];
-// static u8 B_009AC0[];
-/* .space 0x300 */
-
-// extern u8 B_009DC0[];
-// static u8 B_009DC0[];
-/* .space 0x300 */
-
-// extern u8 B_00A0C0[];
-// static u8 B_00A0C0[];
-/* .space 0x04 */
-
-// extern u8 B_00A0C4[];
-// static u8 B_00A0C4[];
-/* .space 0x04 */
-
-// extern u8 B_00A0C8[];
-// static u8 B_00A0C8[];
-/* .space 0x04 */
-
-// extern u8 B_00A0CC[];
-// static u8 B_00A0CC[];
-/* .space 0x04 */
-
-// extern u8 B_00A0D0[];
-// static u8 B_00A0D0[];
-/* .space 0x04 */
-
-// extern u8 B_00A0D4[];
-// static u8 B_00A0D4[];
-/* .space 0x04 */
-
-// extern u8 B_00A0D8[];
-// static u8 B_00A0D8[];
-/* .space 0x04 */
-
-// extern u8 B_00A0DC[];
-// static u8 B_00A0DC[];
-/* .space 0x04 */
-
-// extern u8 B_00A0E0[];
-// static u8 B_00A0E0[];
-/* .space 0x04 */
-
-// extern u8 B_00A0E4[];
-// static u8 B_00A0E4[];
-/* .space 0x04 */
-
-// extern u8 B_00A0E8[];
-// static u8 B_00A0E8[];
-/* .space 0x04 */
-
-// extern u8 B_00A0EC[];
-// static u8 B_00A0EC[];
-/* .space 0x04 */
-
-// extern u8 B_00A0F0[];
-// static u8 B_00A0F0[];
-/* .space 0x04 */
-
-// extern u8 B_00A0F4[];
-// static u8 B_00A0F4[];
-/* .space 0x04 */
-
-// extern u8 B_00A0F8[];
-// static u8 B_00A0F8[];
-/* .space 0x04 */
-
-// extern u8 B_00A0FC[];
-// static u8 B_00A0FC[];
-/* .space 0x04 */
-
-// extern u8 B_00A100[];
-// static u8 B_00A100[];
-/* .space 0x04 */
-
-// extern u8 B_00A104[];
-// static u8 B_00A104[];
-/* .space 0x04 */
-
-// extern u8 B_00A108[];
-// static u8 B_00A108[];
-/* .space 0x04 */
-
-// extern u8 B_00A10C[];
-// static u8 B_00A10C[];
-/* .space 0x04 */
-
-// extern u8 B_00A110[];
-// static u8 B_00A110[];
-/* .space 0x80 */
-
-// extern u8 B_00A190[];
-// static u8 B_00A190[];
-/* .space 0x20 */
-
-// extern u8 B_00A1B0[];
-// static u8 B_00A1B0[];
-/* .space 0x20 */
+#define B_009AC0_LEN 0x300
 
 
 typedef struct struct_00000040_arg0 {
@@ -522,12 +16,536 @@ typedef struct struct_00000040_arg0 {
     /* 0x8 */ s32 *unk_8;
 } struct_00000040_arg0; // size >= 0xC
 
+// guessed size
 typedef struct struct_00000040_arg1 {
-    /* 0x000 */ char unk_000[2];
+    /* 0x000 */ u16 unk_000;
     /* 0x002 */ u16 unk_002[UNK_SIZE];
-    /* 0x000 */ char unk_004[0x3FE];
+    /* 0x004 */ char unk_004[0x3FE];
     /* 0x402 */ u16 unk_402[UNK_SIZE];
-} struct_00000040_arg1; // size >= 0x204
+    /* 0x404 */ char unk_404[0x3FE];
+} struct_00000040_arg1; // size = 0x802
+
+
+// extern u8 B_005EB0[];
+// STATIC u8 B_005EB0[];
+/* .space 0xA64 */
+
+// extern u8 B_006914[];
+// STATIC u8 B_006914[];
+/* .space 0x04 */
+
+// extern u8 B_006918[];
+// STATIC u8 B_006918[];
+/* .space 0x04 */
+
+// extern u8 B_00691C[];
+// STATIC u8 B_00691C[];
+/* .space 0x04 */
+
+// extern u8 B_006920[];
+// STATIC u8 B_006920[];
+/* .space 0x04 */
+
+// extern u8 B_006924[];
+// STATIC u8 B_006924[];
+/* .space 0x04 */
+
+// extern u8 B_006928[];
+// STATIC u8 B_006928[];
+/* .space 0x08 */
+
+// extern u8 B_006930[];
+// STATIC u8 B_006930[];
+/* .space 0x04 */
+
+// extern u8 B_006934[];
+// STATIC u8 B_006934[];
+/* .space 0x04 */
+
+// extern u8 B_006938[];
+// STATIC u8 B_006938[];
+/* .space 0x04 */
+
+// extern u8 B_00693C[];
+// STATIC u8 B_00693C[];
+/* .space 0x04 */
+
+// extern u8 B_006940[];
+// STATIC u8 B_006940[];
+/* .space 0x04 */
+
+// extern u8 B_006944[];
+// STATIC u8 B_006944[];
+/* .space 0x04 */
+
+// extern u8 B_006948[];
+// STATIC u8 B_006948[];
+/* .space 0x04 */
+
+// extern u8 B_00694C[];
+// STATIC u8 B_00694C[];
+/* .space 0x04 */
+
+// extern u8 B_006950[];
+// STATIC u8 B_006950[];
+/* .space 0x04 */
+
+// extern u8 B_006954[];
+// STATIC u8 B_006954[];
+/* .space 0x04 */
+
+// extern u8 B_006958[];
+// STATIC u8 B_006958[];
+/* .space 0x04 */
+
+// extern u8 B_00695C[];
+// STATIC u8 B_00695C[];
+/* .space 0x04 */
+
+// extern u8 B_006960[];
+// STATIC u8 B_006960[];
+/* .space 0x08 */
+
+// extern u8 B_006968[];
+// STATIC u8 B_006968[];
+/* .space 0x04 */
+
+// extern u8 B_00696C[];
+// STATIC u8 B_00696C[];
+/* .space 0x08 */
+
+// extern u8 B_006974[];
+// STATIC u8 B_006974[];
+/* .space 0x04 */
+
+// extern u8 B_006978[];
+// STATIC u8 B_006978[];
+/* .space 0x08 */
+
+// extern u8 B_006980[];
+// STATIC u8 B_006980[];
+/* .space 0x08 */
+
+// extern u8 B_006988[];
+// STATIC u8 B_006988[];
+/* .space 0x08 */
+
+// extern u8 B_006990[];
+// STATIC u8 B_006990[];
+/* .space 0x04 */
+
+// extern u8 B_006994[];
+// STATIC u8 B_006994[];
+/* .space 0x08 */
+
+// extern u8 B_00699C[];
+// STATIC u8 B_00699C[];
+/* .space 0x04 */
+
+// extern u8 B_0069A0[];
+// STATIC u8 B_0069A0[];
+/* .space 0x08 */
+
+// extern u8 B_0069A8[];
+// STATIC u8 B_0069A8[];
+/* .space 0x08 */
+
+// extern u8 B_0069B0[];
+// STATIC u8 B_0069B0[];
+/* .space 0x04 */
+
+// extern u8 B_0069B4[];
+// STATIC u8 B_0069B4[];
+/* .space 0x04 */
+
+// extern u8 B_0069B8[];
+// STATIC u8 B_0069B8[];
+/* .space 0x04 */
+
+// extern u8 B_0069BC[];
+// STATIC u8 B_0069BC[];
+/* .space 0x04 */
+
+// extern u8 B_0069C0[];
+// STATIC u8 B_0069C0[];
+/* .space 0x04 */
+
+// extern u8 B_0069C4[];
+// STATIC u8 B_0069C4[];
+/* .space 0x04 */
+
+// extern u8 B_0069C8[];
+// STATIC u8 B_0069C8[];
+/* .space 0x04 */
+
+// extern u8 B_0069CC[];
+// STATIC u8 B_0069CC[];
+/* .space 0x04 */
+
+// extern u8 B_0069D0[];
+// STATIC u8 B_0069D0[];
+/* .space 0x04 */
+
+// extern u8 B_0069D4[];
+// STATIC u8 B_0069D4[];
+/* .space 0x0C */
+
+extern struct_00000040_arg1 B_0069E0;
+// STATIC struct_00000040_arg1 B_0069E0;
+/* .space 0x802 */
+
+/* Automatically generated pad */
+// extern u8 B_0071E2[];
+// STATIC u8 B_0071E2[];
+/* .space 0x0E */
+
+extern struct_00000040_arg1 B_0071F0;
+// STATIC struct_00000040_arg1 B_0071F0;
+/* .space 0x802 */
+
+/* Automatically generated pad */
+// extern u8 B_0079F2[];
+// STATIC u8 B_0079F2[];
+/* .space 0x0E */
+
+extern struct_00000040_arg1 B_007A00;
+// STATIC struct_00000040_arg1 B_007A00;
+/* .space 0x802 */
+
+/* Automatically generated pad */
+// extern u8 B_008202[];
+// STATIC u8 B_008202[];
+/* .space 0x0E */
+
+extern struct_00000040_arg1 B_008210;
+// STATIC struct_00000040_arg1 B_008210;
+/* .space 0x802 */
+
+/* Automatically generated pad */
+// extern u8 B_008A12[];
+// STATIC u8 B_008A12[];
+/* .space 0x0E */
+
+extern struct_00000040_arg1 B_008A20;
+// STATIC struct_00000040_arg1 B_008A20;
+/* .space 0x802 */
+
+extern u16 B_009222;
+// STATIC u16 B_009222;
+/* .space 0x02 */
+
+extern s16 B_009224;
+// STATIC s16 B_009224;
+/* .space 0x02 */
+
+extern s16 B_009226;
+// STATIC s16 B_009226;
+/* .space 0x02 */
+
+// extern u8 B_009228[];
+// STATIC u8 B_009228[];
+/* .space 0x04 */
+
+// extern u8 B_00922C[];
+// STATIC u8 B_00922C[];
+/* .space 0x04 */
+
+// extern u8 B_009230[];
+// STATIC u8 B_009230[];
+/* .space 0x04 */
+
+// extern u8 B_009234[];
+// STATIC u8 B_009234[];
+/* .space 0x04 */
+
+// extern u8 B_009238[];
+// STATIC u8 B_009238[];
+/* .space 0x04 */
+
+// extern u8 B_00923C[];
+// STATIC u8 B_00923C[];
+/* .space 0x04 */
+
+// extern u8 B_009240[];
+// STATIC u8 B_009240[];
+/* .space 0x04 */
+
+// extern u8 B_009244[];
+// STATIC u8 B_009244[];
+/* .space 0x04 */
+
+// extern u8 B_009248[];
+// STATIC u8 B_009248[];
+/* .space 0x04 */
+
+// extern u8 B_00924C[];
+// STATIC u8 B_00924C[];
+/* .space 0x04 */
+
+// extern u8 B_009250[];
+// STATIC u8 B_009250[];
+/* .space 0x04 */
+
+// extern u8 B_009254[];
+// STATIC u8 B_009254[];
+/* .space 0x04 */
+
+// extern u8 B_009258[];
+// STATIC u8 B_009258[];
+/* .space 0x01 */
+
+// extern u8 B_009259[];
+// STATIC u8 B_009259[];
+/* .space 0x01 */
+
+// extern u8 B_00925A[];
+// STATIC u8 B_00925A[];
+/* .space 0x01 */
+
+// extern u8 B_00925B[];
+// STATIC u8 B_00925B[];
+/* .space 0x01 */
+
+// extern u8 B_00925C[];
+// STATIC u8 B_00925C[];
+/* .space 0x04 */
+
+// extern u8 B_009260[];
+// STATIC u8 B_009260[];
+/* .space 0x04 */
+
+// extern u8 B_009264[];
+// STATIC u8 B_009264[];
+/* .space 0x04 */
+
+// extern u8 B_009268[];
+// STATIC u8 B_009268[];
+/* .space 0x04 */
+
+// extern u8 B_00926C[];
+// STATIC u8 B_00926C[];
+/* .space 0x04 */
+
+// extern u8 B_009270[];
+// STATIC u8 B_009270[];
+/* .space 0x04 */
+
+// extern u8 B_009274[];
+// STATIC u8 B_009274[];
+/* .space 0x04 */
+
+// extern u8 B_009278[];
+// STATIC u8 B_009278[];
+/* .space 0x01 */
+
+// extern u8 B_009279[];
+// STATIC u8 B_009279[];
+/* .space 0x01 */
+
+// extern u8 B_00927A[];
+// STATIC u8 B_00927A[];
+/* .space 0x01 */
+
+// extern u8 B_00927B[];
+// STATIC u8 B_00927B[];
+/* .space 0x01 */
+
+// extern u8 B_00927C[];
+// STATIC u8 B_00927C[];
+/* .space 0x04 */
+
+// extern u8 B_009280[];
+// STATIC u8 B_009280[];
+/* .space 0x04 */
+
+// extern u8 B_009284[];
+// STATIC u8 B_009284[];
+/* .space 0x04 */
+
+// extern u8 B_009288[];
+// STATIC u8 B_009288[];
+/* .space 0x04 */
+
+// extern u8 B_00928C[];
+// STATIC u8 B_00928C[];
+/* .space 0x04 */
+
+// extern u8 B_009290[];
+// STATIC u8 B_009290[];
+/* .space 0x04 */
+
+// extern u8 B_009294[];
+// STATIC u8 B_009294[];
+/* .space 0x04 */
+
+// extern u8 B_009298[];
+// STATIC u8 B_009298[];
+/* .space 0x01 */
+
+// extern u8 B_009299[];
+// STATIC u8 B_009299[];
+/* .space 0x01 */
+
+// extern u8 B_00929A[];
+// STATIC u8 B_00929A[];
+/* .space 0x01 */
+
+// extern u8 B_00929B[];
+// STATIC u8 B_00929B[];
+/* .space 0x01 */
+
+// extern u8 B_00929C[];
+// STATIC u8 B_00929C[];
+/* .space 0x04 */
+
+// extern u8 B_0092A0[];
+// STATIC u8 B_0092A0[];
+/* .space 0x04 */
+
+// extern u8 B_0092A4[];
+// STATIC u8 B_0092A4[];
+/* .space 0x04 */
+
+// extern u8 B_0092A8[];
+// STATIC u8 B_0092A8[];
+/* .space 0x04 */
+
+// extern u8 B_0092AC[];
+// STATIC u8 B_0092AC[];
+/* .space 0x04 */
+
+// extern u8 B_0092B0[];
+// STATIC u8 B_0092B0[];
+/* .space 0x04 */
+
+// extern u8 B_0092B4[];
+// STATIC u8 B_0092B4[];
+/* .space 0x04 */
+
+// extern u8 B_0092B8[];
+// STATIC u8 B_0092B8[];
+/* .space 0x01 */
+
+// extern u8 B_0092B9[];
+// STATIC u8 B_0092B9[];
+/* .space 0x01 */
+
+// extern u8 B_0092BA[];
+// STATIC u8 B_0092BA[];
+/* .space 0x01 */
+
+// extern u8 B_0092BB[];
+// STATIC u8 B_0092BB[];
+/* .space 0x01 */
+
+// extern u8 B_0092BC[];
+// STATIC u8 B_0092BC[];
+/* .space 0x04 */
+
+extern s32 B_0092C0[0x200];
+// STATIC s32 B_0092C0[0x200];
+/* .space 0x800 */
+
+extern u8 B_009AC0[B_009AC0_LEN];
+// STATIC u8 B_009AC0[];
+/* .space 0x300 */
+
+extern u8 B_009DC0[B_009AC0_LEN];
+// STATIC u8 B_009DC0[];
+/* .space 0x300 */
+
+// extern u8 B_00A0C0[];
+// STATIC u8 B_00A0C0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0C4[];
+// STATIC u8 B_00A0C4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0C8[];
+// STATIC u8 B_00A0C8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0CC[];
+// STATIC u8 B_00A0CC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D0[];
+// STATIC u8 B_00A0D0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D4[];
+// STATIC u8 B_00A0D4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0D8[];
+// STATIC u8 B_00A0D8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0DC[];
+// STATIC u8 B_00A0DC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E0[];
+// STATIC u8 B_00A0E0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E4[];
+// STATIC u8 B_00A0E4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0E8[];
+// STATIC u8 B_00A0E8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0EC[];
+// STATIC u8 B_00A0EC[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F0[];
+// STATIC u8 B_00A0F0[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F4[];
+// STATIC u8 B_00A0F4[];
+/* .space 0x04 */
+
+// extern u8 B_00A0F8[];
+// STATIC u8 B_00A0F8[];
+/* .space 0x04 */
+
+// extern u8 B_00A0FC[];
+// STATIC u8 B_00A0FC[];
+/* .space 0x04 */
+
+// extern u8 B_00A100[];
+// STATIC u8 B_00A100[];
+/* .space 0x04 */
+
+// extern u8 B_00A104[];
+// STATIC u8 B_00A104[];
+/* .space 0x04 */
+
+// extern u8 B_00A108[];
+// STATIC u8 B_00A108[];
+/* .space 0x04 */
+
+// extern u8 B_00A10C[];
+// STATIC u8 B_00A10C[];
+/* .space 0x04 */
+
+// extern u8 B_00A110[];
+// STATIC u8 B_00A110[];
+/* .space 0x80 */
+
+// extern u8 B_00A190[];
+// STATIC u8 B_00A190[];
+/* .space 0x20 */
+
+// extern u8 B_00A1B0[];
+// STATIC u8 B_00A1B0[];
+/* .space 0x20 */
+
 
 STATIC_INLINE u32 inlined_func_00(struct_00000040_arg0 *arg0) {
     u32 ret;
@@ -584,20 +602,50 @@ STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1)
     return (temp7 << 7) | (temp6 << 6) | (temp5 << 5) | (temp4 << 4) | (temp3 << 3) | (temp2 << 2) | (temp1 << 1) | (temp0 << 0);
 }
 
-INCLUDE_ASM("asm/functions/hvqm2dec1", func_000002F8);
+STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    s16 var_a1 = arg1->unk_000;
 
+    while (var_a1 >= 0x100) {
+        if (inlined_func_00(arg0)) {
+            var_a1 = arg1->unk_402[var_a1];
+        } else {
+            var_a1 = arg1->unk_002[var_a1];
+        }
+    }
+
+    return arg1->unk_002[var_a1];
+}
+
+STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
+    s16 temp_v1 = inlined_func_02(arg0, &B_0069E0);
+    s16 var_t0 = temp_v1;
+
+    if ((temp_v1 == B_009226) || (temp_v1 == B_009224)) {
+        do {
+            temp_v1 = inlined_func_02(arg0, &B_0069E0);
+            var_t0 += temp_v1;
+        } while ((B_009226 >= temp_v1) || (temp_v1 >= B_009224));
+    }
+
+    return var_t0;
+}
+
+// u8 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000004A8);
 
+// void func_0000061C(u16 *arg0, u8 **arg1, s32 arg2);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_0000061C);
 
-void func_000012E4(u16 *arg0, u16 *arg1, u16 *arg2, u16 *arg3);
+// void func_000012E4(u16 *arg0, u16 *arg1, u16 *arg2, u16 *arg3);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000012E4);
 
-void func_0000187C(u16 *arg0, u16 *arg1, u16 *arg2, u16 *arg3) ;
+// void func_0000187C(u16 *arg0, u16 *arg1, u16 *arg2, u16 *arg3) ;
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_0000187C);
 
+// void func_000029F8(u16 *arg0);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000029F8);
 
+// void func_000033D8(u16 *arg0);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_000033D8);
 
 // not even attempted
@@ -2276,12 +2324,6 @@ u32 hvqm2Setup1(HVQM2Header *header, u32 outbufWidth) {
 #else
 INCLUDE_ASM("asm/functions/hvqm2dec1", hvqm2Setup1);
 #endif
-
-#define B_009AC0_LEN 0x300
-
-extern s32 B_0092C0[0x200];
-extern u8 B_009AC0[B_009AC0_LEN];
-extern u8 B_009DC0[B_009AC0_LEN];
 
 void hvqm2Init1(u8 alpha) {
     s32 i;
