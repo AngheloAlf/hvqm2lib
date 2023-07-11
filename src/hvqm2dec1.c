@@ -602,7 +602,7 @@ STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1)
     return (temp7 << 7) | (temp6 << 6) | (temp5 << 5) | (temp4 << 4) | (temp3 << 3) | (temp2 << 2) | (temp1 << 1) | (temp0 << 0);
 }
 
-STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
     s16 var_a1 = arg1->unk_000;
 
     while (var_a1 >= 0x100) {
@@ -613,7 +613,11 @@ STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_ar
         }
     }
 
-    return arg1->unk_002[var_a1];
+    return var_a1;
+}
+
+STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    return arg1->unk_002[inlined_func_03(arg0, arg1)];
 }
 
 STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
@@ -630,8 +634,21 @@ STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
     return var_t0;
 }
 
-// u8 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2);
-INCLUDE_ASM("asm/functions/hvqm2dec1", func_000004A8);
+s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2) {
+    u8 var_v0;
+
+    if (*arg0 == 0) {
+        var_v0 = inlined_func_03(arg1, &B_0071F0);
+
+        if (var_v0 != 0) {
+            return var_v0;
+        }
+        *arg0 = inlined_func_03(arg2, &B_007A00);
+    } else {
+        *arg0 -= 1;
+    }
+    return 0;
+}
 
 // void func_0000061C(u16 *arg0, u8 **arg1, s32 arg2);
 INCLUDE_ASM("asm/functions/hvqm2dec1", func_0000061C);
