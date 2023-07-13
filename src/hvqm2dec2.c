@@ -182,76 +182,76 @@ extern s32 B_009F24;
 // STATIC s32 B_009F24;
 /* .space 0x04 */
 
-// extern u8 B_009F28[];
-// STATIC u8 B_009F28[];
+extern s32 B_009F28;
+// STATIC s32 B_009F28;
 /* .space 0x04 */
 
-// extern u8 B_009F2C[];
-// STATIC u8 B_009F2C[];
+extern s32 B_009F2C;
+// STATIC s32 B_009F2C;
 /* .space 0x04 */
 
-// extern u8 B_009F30[];
-// STATIC u8 B_009F30[];
+extern s32 B_009F30;
+// STATIC s32 B_009F30;
 /* .space 0x04 */
 
-// extern u8 B_009F34[];
-// STATIC u8 B_009F34[];
+extern s32 B_009F34;
+// STATIC s32 B_009F34;
 /* .space 0x04 */
 
-// extern u8 B_009F38[];
-// STATIC u8 B_009F38[];
+extern s32 B_009F38;
+// STATIC s32 B_009F38;
 /* .space 0x04 */
 
-// extern u8 B_009F3C[];
-// STATIC u8 B_009F3C[];
+extern s32 B_009F3C;
+// STATIC s32 B_009F3C;
 /* .space 0x04 */
 
-// extern u8 B_009F40[];
-// STATIC u8 B_009F40[];
+extern s32 B_009F40;
+// STATIC s32 B_009F40;
 /* .space 0x04 */
 
-// extern u8 B_009F44[];
-// STATIC u8 B_009F44[];
+extern s32 B_009F44;
+// STATIC s32 B_009F44;
 /* .space 0x04 */
 
-// extern u8 B_009F48[];
-// STATIC u8 B_009F48[];
+extern s32 B_009F48;
+// STATIC s32 B_009F48;
 /* .space 0x04 */
 
-// extern u8 B_009F4C[];
-// STATIC u8 B_009F4C[];
+extern s32 B_009F4C;
+// STATIC s32 B_009F4C;
 /* .space 0x04 */
 
-// extern u8 B_009F50[];
-// STATIC u8 B_009F50[];
+extern s32 B_009F50;
+// STATIC s32 B_009F50;
 /* .space 0x04 */
 
-// extern u8 B_009F54[];
-// STATIC u8 B_009F54[];
+extern s32 B_009F54;
+// STATIC s32 B_009F54;
 /* .space 0x04 */
 
-// extern u8 B_009F58[];
-// STATIC u8 B_009F58[];
+extern s32 B_009F58;
+// STATIC s32 B_009F58;
 /* .space 0x04 */
 
-// extern u8 B_009F5C[];
-// STATIC u8 B_009F5C[];
+extern s32 B_009F5C;
+// STATIC s32 B_009F5C;
 /* .space 0x04 */
 
 // extern u8 B_009F60[];
 // STATIC u8 B_009F60[];
 /* .space 0x04 */
 
-// extern u8 B_009F64[];
-// STATIC u8 B_009F64[];
+extern s32 B_009F64;
+// STATIC s32 B_009F64;
 /* .space 0x04 */
 
-// extern u8 B_009F68[];
-// STATIC u8 B_009F68[];
+extern s32 B_009F68;
+// STATIC s32 B_009F68;
 /* .space 0x04 */
 
-// extern u8 B_009F6C[];
-// STATIC u8 B_009F6C[];
+extern u8 B_009F6C;
+// STATIC u8 B_009F6C;
 /* .space 0x01 */
 
 extern u8 B_009F6D;
@@ -3024,33 +3024,12 @@ loop_333:
 INCLUDE_ASM("asm/functions/hvqm2dec2", hvqm2Decode2);
 #endif
 
-#ifdef NON_MATCHING
-//#if 1
-// maybe equivalent
-extern s32 B_009F28;
-extern s32 B_009F2C;
-extern s32 B_009F30;
-extern s32 B_009F34;
-extern s32 B_009F38;
-extern s32 B_009F3C;
-extern s32 B_009F40;
-extern s32 B_009F44;
-extern s32 B_009F48;
-extern s32 B_009F4C;
-extern s32 B_009F50;
-extern s32 B_009F54;
-extern s32 B_009F58;
-extern s32 B_009F5C;
-extern s32 B_009F64;
-extern s32 B_009F68;
-extern u8 B_009F6C;
-
 u32 hvqm2Setup2(HVQM2Header *header, u32 outbufWidth) {
-    s32 var_a3;
+    s32 i;
     s8 var_a2;
     u16 *var_a0_2;
     u16 *var_a1_2;
-    u8 temp_t0_2;
+    s32 temp_t0_2;
     s32 temp;
 
     B_009F24 = outbufWidth;
@@ -3092,28 +3071,25 @@ u32 hvqm2Setup2(HVQM2Header *header, u32 outbufWidth) {
         B_009F68 = 0x46;
     }
 
+    i = 0;
     var_a2 = 0;
-    var_a3 = 0;
     var_a1_2 = B_006B40.unk_002;
     var_a0_2 = B_008370.unk_002;
     temp_t0_2 = header->video_quantize_shift;
-    B_009384 = 0x7F << temp_t0_2;
+    B_009384 = 0x0000007F << temp_t0_2;
     B_009386 = 0xFFFFFF80 << temp_t0_2;
 
-    while (var_a3 < 0x100) {
+    while (i < 0x100) {
         *var_a0_2 = var_a2 << 3;
         *var_a1_2 = var_a2 << temp_t0_2;
         var_a1_2 += 1;
         var_a0_2 += 1;
         var_a2 += 1;
-        var_a3 += 1;
+        i += 1;
     }
 
     return header->total_frames;
 }
-#else
-INCLUDE_ASM("asm/functions/hvqm2dec2", hvqm2Setup2);
-#endif
 
 void hvqm2Init2(u8 alpha) {
     s32 i;
