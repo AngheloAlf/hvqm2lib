@@ -63,3 +63,5 @@ asdf.c
 asdf.txt
 context/
 expected/
+
+__pycache__/

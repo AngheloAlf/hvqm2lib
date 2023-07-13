@@ -156,47 +156,7 @@ extern struct_009240 B_0093A0;
 
 extern struct_009240 B_0093C0;
 // STATIC struct_009240 B_0093C0;
-/* .space 0x04 */
-
-// extern u8 B_0093C4[];
-// STATIC u8 B_0093C4[];
-/* .space 0x04 */
-
-// extern u8 B_0093C8[];
-// STATIC u8 B_0093C8[];
-/* .space 0x04 */
-
-// extern u8 B_0093CC[];
-// STATIC u8 B_0093CC[];
-/* .space 0x04 */
-
-// extern u8 B_0093D0[];
-// STATIC u8 B_0093D0[];
-/* .space 0x04 */
-
-// extern u8 B_0093D4[];
-// STATIC u8 B_0093D4[];
-/* .space 0x04 */
-
-// extern u8 B_0093D8[];
-// STATIC u8 B_0093D8[];
-/* .space 0x01 */
-
-// extern u8 B_0093D9[];
-// STATIC u8 B_0093D9[];
-/* .space 0x01 */
-
-// extern u8 B_0093DA[];
-// STATIC u8 B_0093DA[];
-/* .space 0x01 */
-
-// extern u8 B_0093DB[];
-// STATIC u8 B_0093DB[];
-/* .space 0x01 */
-
-// extern u8 B_0093DC[];
-// STATIC u8 B_0093DC[];
-/* .space 0x04 */
+/* .space 0x1D */
 
 extern struct_009240 B_0093E0;
 // STATIC struct_009240 B_0093E0;
@@ -214,12 +174,12 @@ extern u8 B_009C20[0x300];
 // STATIC u8 B_009C20[0x300];
 /* .space 0x300 */
 
-// extern u8 B_009F20[];
-// STATIC u8 B_009F20[];
+extern void (*B_009F20)(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]);
+// STATIC void (*B_009F20)(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]);
 /* .space 0x04 */
 
-// extern u8 B_009F24[];
-// STATIC u8 B_009F24[];
+extern s32 B_009F24;
+// STATIC s32 B_009F24;
 /* .space 0x04 */
 
 // extern u8 B_009F28[];
@@ -296,18 +256,18 @@ extern u8 B_009C20[0x300];
 
 extern u8 B_009F6D;
 // STATIC u8 B_009F6D;
-/* .space 0x03 */
+/* .space 0x01 */
 
-// extern u8 B_009F70[];
-// STATIC u8 B_009F70[];
+extern u16 B_009F70[4][0x10];
+// STATIC u16 B_009F70[4][0x10];
 /* .space 0x80 */
 
-// extern u8 B_009FF0[];
-// STATIC u8 B_009FF0[];
+extern u16 B_009FF0[0x10];
+// STATIC u16 B_009FF0[0x10];
 /* .space 0x20 */
 
-// extern u8 B_00A010[];
-// STATIC u8 B_00A010[];
+extern u16 B_00A010[0x10];
+// STATIC u16 B_00A010[0x10];
 /* .space 0x20 */
 
 
@@ -1029,12 +989,109 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2);
 INCLUDE_ASM("asm/functions/hvqm2dec2", func_0000061C);
 #endif
 
-INCLUDE_ASM("asm/functions/hvqm2dec2", func_000012E4);
+#ifdef NON_MATCHING
+void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]) {
+    s16 temp_a0;
+    s16 temp_a1;
+    s16 temp_a2;
+    s16 temp_a3;
+    s16 temp_t0;
+    s16 temp_v0;
+    s16 temp_v1;
+    s32 var_t7;
+    u16 *var_t2;
+    u16 *var_t3;
 
+    int new_var;
+
+    var_t2 = arg1[0];
+    var_t3 = arg1[1];
+
+    for (var_t7 = 4; var_t7 > 0; var_t7--, outbuf += B_009F24) {
+        temp_t0 = *var_t2++ << 6;
+        temp_v1 = *arg3++ - 0x80;
+
+        temp_a2 = 0x4020 + (temp_v1 * 0x5A);
+        temp_a1 = *arg2++ - 0x80;
+
+        new_var = temp_a1 * 0x16;
+        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+
+        temp_a3 = 0x4020 + (temp_a1 * 0x71);
+
+        outbuf[0] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t2++ << 6;
+        outbuf[1] = (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+
+        temp_t0 = *var_t2++ << 6;
+        temp_v1 = *arg3++ - 0x80;
+        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+
+        temp_a1 = *arg2++ - 0x80;
+
+
+        new_var = temp_a1 * 0x16;
+        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+
+        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+
+        outbuf[2] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t2++ << 6;
+
+        outbuf[3] = (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+
+        temp_t0 = *var_t3++ << 6;
+        temp_v1 = *arg3++ - 0x80;
+        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+
+        temp_a1 = *arg2++ - 0x80;
+
+
+        new_var = temp_a1 * 0x16;
+        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+
+        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+
+        outbuf[4] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+
+        temp_v0 = *var_t3++ << 6;
+
+        outbuf[5] = (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+
+        temp_t0 = *var_t3++ << 6;
+        temp_v1 = *arg3++ - 0x80;
+        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+
+        temp_a1 = *arg2++ - 0x80;
+
+
+        new_var = temp_a1 * 0x16;
+        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+
+        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+
+        outbuf[6] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t3++ << 6;
+
+        outbuf[7] = (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 8) | B_009F6D;
+    }
+}
+#else
+void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]);
+INCLUDE_ASM("asm/functions/hvqm2dec2", func_000012E4);
+#endif
+
+void func_000018CC(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]);
 INCLUDE_ASM("asm/functions/hvqm2dec2", func_000018CC);
 
 #if 0
-extern ? (*B_009F20)(u32 *, u16 *, u16 *, u16 *);
 extern s32 B_009F30;
 extern s32 B_009F38;
 extern s32 B_009F54;
