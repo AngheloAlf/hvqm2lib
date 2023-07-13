@@ -3024,13 +3024,9 @@ loop_333:
 INCLUDE_ASM("asm/functions/hvqm2dec2", hvqm2Decode2);
 #endif
 
-#if 0
-extern s16 B_006B42;
-extern s16 B_008372;
-extern s16 B_009384;
-extern s16 B_009386;
-extern UNK_TYPE *B_009F20;
-extern u32 B_009F24;
+#ifdef NON_MATCHING
+//#if 1
+// maybe equivalent
 extern s32 B_009F28;
 extern s32 B_009F2C;
 extern s32 B_009F30;
@@ -3048,84 +3044,71 @@ extern s32 B_009F5C;
 extern s32 B_009F64;
 extern s32 B_009F68;
 extern u8 B_009F6C;
-extern UNK_TYPE func_000012E4;
-extern UNK_TYPE func_000018CC;
 
 u32 hvqm2Setup2(HVQM2Header *header, u32 outbufWidth) {
-    UNK_TYPE *var_a1;
-    s16 *var_a0_2;
-    s16 *var_a1_2;
-    s32 temp_a1;
-    s32 temp_a2;
-    s32 temp_v1;
-    s32 var_a0;
     s32 var_a3;
-    s32 var_v0;
     s8 var_a2;
-    u16 temp_a3;
-    u16 temp_t0;
+    u16 *var_a0_2;
+    u16 *var_a1_2;
     u8 temp_t0_2;
-    u8 temp_v0;
+    s32 temp;
 
-    temp_a3 = header->width;
-    temp_t0 = header->height;
     B_009F24 = outbufWidth;
-    B_009F40 = (s32) temp_a3;
-    B_009F44 = (s32) temp_t0;
+    B_009F40 = header->width;
+    B_009F44 = header->height;
+
     if (outbufWidth == 0) {
-        B_009F24 = (u32) temp_a3;
+        B_009F24 = B_009F40;
     }
-    B_009F28 = (s32) header->h_sampling_rate;
-    B_009F2C = (s32) header->v_sampling_rate;
+
+    B_009F28 = header->h_sampling_rate;
+    B_009F2C = header->v_sampling_rate;
     B_009F30 = header->h_sampling_rate * 4;
-    temp_a1 = (s32) temp_a3 >> 2;
-    var_a0 = (s32) temp_t0 >> 2;
-    B_009F34 = header->v_sampling_rate * (B_009F24 * 4);
-    temp_v1 = (s32) temp_a3 >> 3;
-    B_009F48 = temp_a1;
-    B_009F4C = var_a0;
-    B_009F50 = temp_a1 * var_a0;
-    B_009F54 = temp_v1;
-    temp_a2 = header->v_sampling_rate == 2;
-    B_009F38 = temp_a2;
-    if (temp_a2 != 0) {
-        var_a0 = (s32) temp_t0 >> 3;
-    }
-    var_a1 = &func_000012E4;
-    B_009F58 = var_a0;
+
+    temp = B_009F24 * 4;
+    B_009F34 = header->v_sampling_rate * temp;
+
+    B_009F38 = header->v_sampling_rate == 2;
+
+    B_009F48 = B_009F40 >> 2;
+    B_009F4C = B_009F44 >> 2;
+    B_009F50 = B_009F48 * B_009F4C;
+    B_009F54 = B_009F40 >> 3;
+
+    B_009F58 = B_009F44 >> (B_009F38 ? 3 : 2);
+
     B_009F3C = B_009F24 * 8;
-    B_009F5C = temp_v1 * var_a0;
-    if (temp_a2 != 0) {
-        var_a1 = &func_000018CC;
-    }
-    B_009F20 = var_a1;
+    B_009F5C = B_009F54 * B_009F58;
+
+    B_009F20 = B_009F38 ? func_000018CC : func_000012E4;
+
     B_009F6C = header->y_shiftnum;
-    temp_v0 = header->y_shiftnum;
-    B_009F6C = temp_v0;
-    if ((temp_v0 & 0xFF) == 8) {
-        B_009F6C = 0x46;
-        var_v0 = 0x26;
+    B_009F6C = header->y_shiftnum;
+    if (B_009F6C == 8) {
+        B_009F64 = 0x46;
+        B_009F68 = 0x26;
     } else {
         B_009F64 = 0x26;
-        var_v0 = 0x46;
+        B_009F68 = 0x46;
     }
-    B_009F68 = var_v0;
-    var_a3 = 0;
+
     var_a2 = 0;
-    var_a1_2 = &B_006B42;
+    var_a3 = 0;
+    var_a1_2 = B_006B40.unk_002;
+    var_a0_2 = B_008370.unk_002;
     temp_t0_2 = header->video_quantize_shift;
-    var_a0_2 = &B_008372;
     B_009384 = 0x7F << temp_t0_2;
-    B_009386 = -0x80 << temp_t0_2;
+    B_009386 = 0xFFFFFF80 << temp_t0_2;
 
     while (var_a3 < 0x100) {
-        *var_a0_2 = (s16) (var_a2 << 3);
+        *var_a0_2 = var_a2 << 3;
         *var_a1_2 = var_a2 << temp_t0_2;
-        var_a1_2 += 2;
-        var_a0_2 += 2;
+        var_a1_2 += 1;
+        var_a0_2 += 1;
         var_a2 += 1;
         var_a3 += 1;
     }
+
     return header->total_frames;
 }
 #else
