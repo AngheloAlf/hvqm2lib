@@ -448,7 +448,7 @@ STATIC_INLINE s16 inlined_func_01(void) {
     return B_009222++;
 }
 
-STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
     s16 var_a1 = arg1->unk_000;
 
     while (var_a1 >= 0x100) {
@@ -462,8 +462,8 @@ STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_ar
     return var_a1;
 }
 
-STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
-    return arg1->unk_002[inlined_func_03(arg0, arg1)];
+STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    return arg1->unk_002[inlined_func_02(arg0, arg1)];
 }
 
 STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
@@ -504,12 +504,12 @@ STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1)
 }
 
 STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
-    s16 temp_v1 = inlined_func_02(arg0, &B_0069E0);
+    s16 temp_v1 = inlined_func_03(arg0, &B_0069E0);
     s16 var_t0 = temp_v1;
 
     if ((temp_v1 == B_009226) || (temp_v1 == B_009224)) {
         do {
-            temp_v1 = inlined_func_02(arg0, &B_0069E0);
+            temp_v1 = inlined_func_03(arg0, &B_0069E0);
             var_t0 += temp_v1;
         } while ((B_009226 >= temp_v1) || (temp_v1 >= B_009224));
     }
@@ -521,12 +521,12 @@ s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *ar
     u8 var_v0;
 
     if (*arg0 == 0) {
-        var_v0 = inlined_func_03(arg1, &B_0071F0);
+        var_v0 = inlined_func_02(arg1, &B_0071F0);
 
         if (var_v0 != 0) {
             return var_v0;
         }
-        *arg0 = inlined_func_03(arg2, &B_007A00);
+        *arg0 = inlined_func_02(arg2, &B_007A00);
     } else {
         *arg0 -= 1;
     }
@@ -824,7 +824,7 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
                 s32 i;
                 s32 j;
 
-                sp20 = inlined_func_02(&B_006960[arg2], &B_008210);
+                sp20 = inlined_func_03(&B_006960[arg2], &B_008210);
 
                 temp_v0_21 = B_0069D4[arg2];
                 temp_t6 = *temp_v0_21;
@@ -1937,14 +1937,14 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 var_t0_2 = B_00A0F0;
                 var_a2_2 = B_009228;
                 while (var_t0_2 > 0) {
-                    var_v1_3 = inlined_func_03(&B_006930, &B_0071F0);
+                    var_v1_3 = inlined_func_02(&B_006930, &B_0071F0);
 
                     if (var_v1_3) {
                         *var_a2_2 = (s8) var_v1_3;
                         var_a2_2 += 1;
                         var_t0_2 -= 1;
                     } else {
-                        var_v0_2 = inlined_func_03(&B_006948, &B_007A00) & 0xFF;
+                        var_v0_2 = inlined_func_02(&B_006948, &B_007A00) & 0xFF;
                         var_t0_2 -= var_v0_2 + 1;
                         var_v1_4 = var_v0_2;
                         if (var_v1_4 != -1) {
@@ -1961,9 +1961,9 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                 var_a3_2 = B_009230;
                 if (var_t0_3 > 0) {
                     do {
-                        var_v0_4 = inlined_func_03(&B_00693C, &B_0071F0) & 0xFF;
+                        var_v0_4 = inlined_func_02(&B_00693C, &B_0071F0) & 0xFF;
                         if (var_v0_4 == 0) {
-                            var_v0_6 = inlined_func_03(&B_006954, &B_007A00) & 0xFF;
+                            var_v0_6 = inlined_func_02(&B_006954, &B_007A00) & 0xFF;
                             var_t0_3 -= var_v0_6 + 1;
                             var_v1_5 = var_v0_6;
                             if (var_v1_5 != -1) {
@@ -2003,7 +2003,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp10 == 0) {
                             var_v0_8 = func_000002F8(&B_006988);
                             if (var_v0_8 == 0) {
-                                *sp54 = inlined_func_03(&B_0069B0, &B_007A00);
+                                *sp54 = inlined_func_02(&B_0069B0, &B_007A00);
                                 var_v0_8 = 0;
                             }
                         } else {
@@ -2015,7 +2015,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp10 == 0) {
                             var_v0_10 = func_000002F8(&B_006988);
                             if (var_v0_10 == 0) {
-                                sp10 = inlined_func_03(&B_0069B0, &B_007A00);
+                                sp10 = inlined_func_02(&B_0069B0, &B_007A00);
                                 var_v0_10 = 0;
                             }
                         } else {
@@ -2031,7 +2031,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp11 == 0) {
                             var_v0_12 = func_000002F8(&B_006994);
                             if (var_v0_12 == 0) {
-                                sp11 = inlined_func_03(&B_0069B0[1], &B_007A00);
+                                sp11 = inlined_func_02(&B_0069B0[1], &B_007A00);
                                 var_v0_12 = 0;
                             }
                         } else {
@@ -2044,7 +2044,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                         if (sp12 == 0) {
                             var_v0_14 = func_000002F8(&B_0069A0);
                             if (var_v0_14 == 0) {
-                                sp12 = inlined_func_03(&B_0069B0[2], &B_007A00);
+                                sp12 = inlined_func_02(&B_0069B0[2], &B_007A00);
                                 var_v0_14 = 0;
                             }
                         } else {
@@ -2065,7 +2065,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                             if (sp10 == 0) {
                                 var_v0_16 = func_000002F8(&B_006988);
                                 if (var_v0_16 == 0) {
-                                    sp10 = inlined_func_03(&B_0069B0[0], &B_007A00);
+                                    sp10 = inlined_func_02(&B_0069B0[0], &B_007A00);
                                     var_v0_16 = 0;
                                 }
                             } else {
@@ -2078,7 +2078,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                             if (sp10 == 0) {
                                 var_v0_18 = func_000002F8(&B_006988);
                                 if (var_v0_18 == 0) {
-                                    sp10 = inlined_func_03(&B_0069B0[0], &B_007A00);
+                                    sp10 = inlined_func_02(&B_0069B0[0], &B_007A00);
                                     var_v0_18 = 0;
                                 }
                             } else {
@@ -2111,7 +2111,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 if (sp10 == 0) {
                                     var_v0_20 = func_000002F8(&B_006988);
                                     if (var_v0_20 == 0) {
-                                        *sp64 = inlined_func_03(&B_0069B0[0], &B_007A00);
+                                        *sp64 = inlined_func_02(&B_0069B0[0], &B_007A00);
                                         var_v0_20 = 0;
                                     }
                                 } else {
@@ -2124,7 +2124,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 if (sp10 == 0) {
                                     var_v0_22 = func_000002F8(&B_006988);
                                     if (var_v0_22 == 0) {
-                                        sp10 = inlined_func_03(&B_0069B0[0], &B_007A00);
+                                        sp10 = inlined_func_02(&B_0069B0[0], &B_007A00);
                                         var_v0_22 = 0;
                                     }
                                 } else {
@@ -2143,7 +2143,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 if (sp11 == 0) {
                                     var_v0_24 = func_000002F8(&B_006994);
                                     if (var_v0_24 == 0) {
-                                        sp11 = inlined_func_03(&B_0069B0[1], &B_007A00);
+                                        sp11 = inlined_func_02(&B_0069B0[1], &B_007A00);
                                         var_v0_24 = 0;
                                     }
                                 } else {
@@ -2158,7 +2158,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                 if (sp12 == 0) {
                                     var_v0_26 = func_000002F8(&B_0069A0);
                                     if (var_v0_26 == 0) {
-                                        sp12 = inlined_func_03(&B_0069B0[2], &B_007A00);
+                                        sp12 = inlined_func_02(&B_0069B0[2], &B_007A00);
                                         var_v0_26 = 0;
                                     }
                                 } else {
@@ -2181,7 +2181,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     if (sp10 == 0) {
                                         var_v0_28 = func_000002F8(&B_006988);
                                         if (var_v0_28 == 0) {
-                                            sp10 = inlined_func_03(&B_0069B0, &B_007A00);
+                                            sp10 = inlined_func_02(&B_0069B0, &B_007A00);
                                             var_v0_28 = 0;
                                         }
                                     } else {
@@ -2194,7 +2194,7 @@ void hvqm2Decode1(void *code, u32 format, u16 *outbuf, u16 *previm, u16 *workbuf
                                     if (sp10 == 0) {
                                         var_v0_30 = func_000002F8(&B_006988);
                                         if (var_v0_30 == 0) {
-                                            sp10 = inlined_func_03(&B_0069B0[0], &B_007A00);
+                                            sp10 = inlined_func_02(&B_0069B0[0], &B_007A00);
                                             var_v0_30 = 0;
                                         }
                                     } else {
@@ -2377,9 +2377,9 @@ loop_298:
                                 temp_a0_2 = (u32) B_006914 >> 1;
                                 B_006914 = temp_a0_2;
                                 if (!(B_006918 & B_006914)) {
-                                    sp77 += inlined_func_03(&B_006920, &B_008A20) & 0xFF;
+                                    sp77 += inlined_func_02(&B_006920, &B_008A20) & 0xFF;
 
-                                    temp_v0_54 = sp7F + (inlined_func_03(&B_006920, &B_008A20) & 0xFF);
+                                    temp_v0_54 = sp7F + (inlined_func_02(&B_006920, &B_008A20) & 0xFF);
                                     var_t0_5 = var_fp_3;
                                     var_a3_6 = 8;
                                     sp7F = temp_v0_54;

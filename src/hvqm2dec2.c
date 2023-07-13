@@ -238,8 +238,8 @@ extern s32 B_009F5C;
 // STATIC s32 B_009F5C;
 /* .space 0x04 */
 
-// extern u8 B_009F60[];
-// STATIC u8 B_009F60[];
+extern u8 *B_009F60;
+// STATIC u8 *B_009F60;
 /* .space 0x04 */
 
 extern s32 B_009F64;
@@ -289,7 +289,7 @@ STATIC_INLINE s16 inlined_func_01(void) {
     return B_009382++;
 }
 
-STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
     s16 var_a1 = arg1->unk_000;
 
     while (var_a1 >= 0x100) {
@@ -303,8 +303,8 @@ STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_ar
     return var_a1;
 }
 
-STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
-    return arg1->unk_002[inlined_func_03(arg0, arg1)];
+STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    return arg1->unk_002[inlined_func_02(arg0, arg1)];
 }
 
 STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
@@ -345,12 +345,12 @@ STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1)
 }
 
 STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
-    s16 temp_v1 = inlined_func_02(arg0, &B_006B40);
+    s16 temp_v1 = inlined_func_03(arg0, &B_006B40);
     s16 var_t0 = temp_v1;
 
     if ((temp_v1 == B_009386) || (temp_v1 == B_009384)) {
         do {
-            temp_v1 = inlined_func_02(arg0, &B_006B40);
+            temp_v1 = inlined_func_03(arg0, &B_006B40);
             var_t0 += temp_v1;
         } while ((B_009386 >= temp_v1) || (temp_v1 >= B_009384));
     }
@@ -362,12 +362,12 @@ s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *ar
     u8 var_v0;
 
     if (*arg0 == 0) {
-        var_v0 = inlined_func_03(arg1, &B_007350);
+        var_v0 = inlined_func_02(arg1, &B_007350);
 
         if (var_v0 != 0) {
             return var_v0;
         }
-        *arg0 = inlined_func_03(arg2, &B_007B60);
+        *arg0 = inlined_func_02(arg2, &B_007B60);
     } else {
         *arg0 -= 1;
     }
@@ -375,11 +375,8 @@ s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *ar
 }
 
 #if 0
-extern s32 B_009F60;
-extern s32 B_009F64;
-extern u8 B_009F6C;
-
 void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
+    s16 sp0[0x10];
     s32 sp20;
     s16 temp_v0_40;
     s16 var_a1_2;
@@ -402,16 +399,11 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     s32 *temp_v0_20;
     s32 temp_a0;
     s32 temp_a0_2;
-    s32 temp_a0_3;
-    s32 temp_a1;
     s32 temp_a1_2;
-    s32 temp_a2;
     s32 temp_a3_2;
     s32 temp_lo;
-    s32 temp_lo_2;
     s32 temp_s2;
     s32 temp_s3;
-    s32 temp_t0;
     s32 temp_t1;
     s32 temp_t2;
     s32 temp_t3;
@@ -419,98 +411,16 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     s32 temp_t4;
     s32 temp_t4_2;
     s32 temp_t5;
-    s32 temp_t7;
     s32 temp_v0_2;
     s32 temp_v0_3;
-    s32 temp_v1;
-    s32 temp_v1_2;
     s32 temp_v1_3;
-    s32 temp_v1_4;
-    s32 var_t2;
+    u8 var_t2;
     s32 var_t7_2;
-    s32 var_v0;
     s32 var_v0_2;
     s32 var_v1;
-    struct_00000040_arg0 *temp_a1_17;
     u16 **temp_v1_6;
-    u16 *temp_a1_10;
-    u16 *temp_a1_11;
-    u16 *temp_a1_12;
-    u16 *temp_a1_13;
-    u16 *temp_a1_14;
-    u16 *temp_a1_15;
-    u16 *temp_a1_16;
-    u16 *temp_a1_22;
-    u16 *temp_a1_23;
-    u16 *temp_a1_24;
-    u16 *temp_a1_25;
-    u16 *temp_a1_26;
-    u16 *temp_a1_27;
-    u16 *temp_a1_28;
-    u16 *temp_a1_29;
-    u16 *temp_a1_30;
-    u16 *temp_a1_31;
-    u16 *temp_a1_32;
-    u16 *temp_a1_33;
-    u16 *temp_a1_34;
-    u16 *temp_a1_35;
-    u16 *temp_a1_36;
-    u16 *temp_a1_3;
-    u16 *temp_a1_4;
-    u16 *temp_a1_5;
-    u16 *temp_a1_6;
-    u16 *temp_a1_7;
-    u16 *temp_a1_8;
-    u16 *temp_a1_9;
-    u16 *temp_t1_10;
-    u16 *temp_t1_11;
-    u16 *temp_t1_12;
-    u16 *temp_t1_13;
-    u16 *temp_t1_14;
-    u16 *temp_t1_15;
-    u16 *temp_t1_16;
-    u16 *temp_t1_2;
-    u16 *temp_t1_3;
-    u16 *temp_t1_4;
-    u16 *temp_t1_5;
-    u16 *temp_t1_6;
-    u16 *temp_t1_7;
-    u16 *temp_t1_8;
-    u16 *temp_t1_9;
-    u16 *temp_t5_10;
-    u16 *temp_t5_11;
-    u16 *temp_t5_12;
-    u16 *temp_t5_13;
-    u16 *temp_t5_14;
-    u16 *temp_t5_15;
-    u16 *temp_t5_2;
-    u16 *temp_t5_3;
-    u16 *temp_t5_4;
-    u16 *temp_t5_5;
-    u16 *temp_t5_6;
-    u16 *temp_t5_7;
-    u16 *temp_t5_8;
-    u16 *temp_t5_9;
     u16 *temp_v0_21;
     u16 temp_t6;
-    u16 temp_v0_19;
-    u16 temp_v0_26;
-    u16 temp_v0_27;
-    u16 temp_v0_28;
-    u16 temp_v0_29;
-    u16 temp_v0_30;
-    u16 temp_v0_31;
-    u16 temp_v0_32;
-    u16 temp_v0_33;
-    u16 temp_v0_34;
-    u16 temp_v0_35;
-    u16 temp_v0_36;
-    u16 temp_v0_37;
-    u16 temp_v0_38;
-    u16 temp_v0_39;
-    u16 temp_v1_10;
-    u16 var_a2;
-    u32 temp_a0_4;
     u32 temp_a0_5;
     u8 **temp_v1_5;
     u8 *temp_t0_2;
@@ -525,20 +435,7 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     u8 *temp_t2_3;
     u8 *temp_t2_4;
     u8 *temp_t2_5;
-    u8 *temp_v0_10;
-    u8 *temp_v0_11;
-    u8 *temp_v0_12;
-    u8 *temp_v0_13;
-    u8 *temp_v0_14;
-    u8 *temp_v0_15;
-    u8 *temp_v0_16;
-    u8 *temp_v0_17;
     u8 *temp_v0_4;
-    u8 *temp_v0_5;
-    u8 *temp_v0_6;
-    u8 *temp_v0_7;
-    u8 *temp_v0_8;
-    u8 *temp_v0_9;
     u8 temp_a0_6;
     u8 temp_a0_7;
     u8 temp_a0_8;
@@ -560,12 +457,11 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     u8 temp_v1_9;
     u8 var_a1;
     u8 var_t7;
-    void *temp_v0_18;
+    u8 *temp_v0_18;
 
     temp_v0 = arg1->unk_1A;
     temp_t9 = arg1->unk_1B;
-    temp_v1 = temp_v0 & 0xFF;
-    if (temp_v1 == 0) {
+    if (temp_v0 == 0) {
         var_t7 = temp_t9;
         if (arg1->unk_18 == 0) {
             var_t7 = arg1->unk_19;
@@ -575,410 +471,342 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
             var_a1 = *arg1->unk_04;
         }
         if (*arg1->unk_10 == 0) {
-            var_t2 = *arg1->unk_14 & 0xFF;
+            var_t2 = *arg1->unk_14;
         } else {
-            var_t2 = temp_t9 & 0xFF;
+            var_t2 = temp_t9;
         }
-        temp_t7 = var_t7 & 0xFF;
-        temp_v1_2 = temp_t9 & 0xFF;
-        temp_t5 = temp_v1_2 * 2;
-        temp_v1_3 = (temp_v1_2 * 8) + 4;
-        temp_s2 = (var_t2 + temp_t7) - temp_t5;
-        temp_a1 = var_a1 & 0xFF;
+
+        temp_v1_3 = (temp_t9 * 8) + 4;
+
+        temp_t5 = temp_t9 * 2;
         temp_a3 = arg1->unk_1C;
-        temp_t3 = (temp_a1 + temp_t7) - temp_t5;
-        arg0->unk_A = (s16) ((u32) (temp_v1_3 - temp_s2) >> 3);
-        temp_a0 = temp_a1 - var_t2;
-        arg0->unk_12 = (s16) ((u32) (temp_v1_3 - temp_t3) >> 3);
-        temp_v0_2 = temp_a3 - temp_t7;
+        temp_a0 = var_a1 - var_t2;
+        temp_v0_2 = temp_a3 - var_t7;
+
+        temp_s2 = (var_t2 + var_t7) - temp_t5;
+        temp_t3 = (var_a1 + var_t7) - temp_t5;
         temp_s3 = temp_a0 + temp_v0_2;
-        temp_t1 = (temp_a1 + temp_a3) - temp_t5;
-        temp_t0 = temp_v1_3 + temp_s3;
-        temp_t4 = temp_a1 - temp_a3;
+        temp_t1 = (var_a1 + temp_a3) - temp_t5;
+        temp_t4 = var_a1 - temp_a3;
         temp_a0_2 = temp_a0 - temp_v0_2;
-        temp_a1_2 = temp_a1 - temp_t7;
-        temp_a2 = temp_v1_3 + temp_a0_2;
+        temp_a1_2 = var_a1 - var_t7;
         temp_v0_3 = (temp_a3 + var_t2) - temp_t5;
         temp_a3_2 = var_t2 - temp_a3;
-        temp_a0_3 = temp_v1_3 - temp_a0_2;
-        temp_t2 = var_t2 - temp_t7;
-        temp_v1_4 = temp_v1_3 - temp_s3;
-        arg0->unk_0 = (u16) ((u32) (temp_t0 + temp_t1) >> 3);
-        arg0->unk_2 = (s16) ((u32) (temp_t0 + temp_t4) >> 3);
-        arg0->unk_4 = (s16) ((u32) (temp_a2 + temp_a1_2) >> 3);
-        arg0->unk_6 = (s16) ((u32) (temp_a2 + temp_t3) >> 3);
-        arg0->unk_8 = (s16) ((u32) (temp_t0 - temp_t4) >> 3);
-        arg0->unk_C = (s16) ((u32) (temp_v1_3 - temp_v0_3) >> 3);
-        arg0->unk_E = (s16) ((u32) (temp_a2 - temp_a1_2) >> 3);
-        arg0->unk_10 = (s16) ((u32) (temp_a0_3 - temp_a3_2) >> 3);
-        arg0->unk_14 = (s16) ((u32) (temp_v1_3 - temp_t1) >> 3);
-        arg0->unk_16 = (s16) ((u32) (temp_v1_4 - temp_t2) >> 3);
-        arg0->unk_18 = (s16) ((u32) (temp_a0_3 + temp_v0_3) >> 3);
-        arg0->unk_1A = (s16) ((u32) (temp_a0_3 + temp_a3_2) >> 3);
-        arg0->unk_1C = (s16) ((u32) (temp_v1_4 + temp_t2) >> 3);
-        arg0->unk_1E = (s16) ((s32) (temp_v1_4 + temp_s2) >> 3);
+        temp_t2 = var_t2 - var_t7;
+
+        arg0[0] = (u32) (temp_v1_3 + temp_s3 + temp_t1) >> 3;
+        arg0[1] = (u32) (temp_v1_3 + temp_s3 + temp_t4) >> 3;
+        arg0[2] = (u32) (temp_v1_3 + temp_a0_2 + temp_a1_2) >> 3;
+        arg0[3] = (u32) (temp_v1_3 + temp_a0_2 + temp_t3) >> 3;
+        arg0[4] = (u32) (temp_v1_3 + temp_s3 - temp_t4) >> 3;
+        arg0[5] = (u32) (temp_v1_3 - temp_s2) >> 3;
+        arg0[6] = (u32) (temp_v1_3 - temp_v0_3) >> 3;
+        arg0[7] = (u32) (temp_v1_3 + temp_a0_2 - temp_a1_2) >> 3;
+        arg0[8] = (u32) (temp_v1_3 - temp_a0_2 - temp_a3_2) >> 3;
+        arg0[9] = (u32) (temp_v1_3 - temp_t3) >> 3;
+        arg0[10] = (u32) (temp_v1_3 - temp_t1) >> 3;
+        arg0[11] = (u32) (temp_v1_3 - temp_s3 - temp_t2) >> 3;
+        arg0[12] = (u32) (temp_v1_3 - temp_a0_2 + temp_v0_3) >> 3;
+        arg0[13] = (u32) (temp_v1_3 - temp_a0_2 + temp_a3_2) >> 3;
+        arg0[14] = (u32) (temp_v1_3 - temp_s3 + temp_t2) >> 3;
+        arg0[15] = (s32) (temp_v1_3 - temp_s3 + temp_s2) >> 3;
+
         arg1->unk_1C = temp_t9;
     } else {
-        if (temp_v1 == 8) {
-            temp_v1_5 = (arg2 * 4) + &B_006B34;
+        if (temp_v0 == 8) {
+            temp_v1_5 = &B_006B34[arg2];
+
             temp_v0_4 = *temp_v1_5;
             *temp_v1_5 = temp_v0_4 + 0x10;
-            temp_v0_5 = temp_v0_4 + 1;
-            arg0->unk_0 = (u16) *temp_v0_4;
-            temp_t5_2 = arg0 + 2;
-            temp_v0_6 = temp_v0_5 + 1;
-            *temp_t5_2 = (u16) *temp_v0_5;
-            temp_t5_3 = temp_t5_2 + 2;
-            temp_v0_7 = temp_v0_6 + 1;
-            *temp_t5_3 = (u16) *temp_v0_6;
-            temp_t5_4 = temp_t5_3 + 2;
-            temp_v0_8 = temp_v0_7 + 1;
-            *temp_t5_4 = (u16) *temp_v0_7;
-            temp_t5_5 = temp_t5_4 + 2;
-            temp_v0_9 = temp_v0_8 + 1;
-            *temp_t5_5 = (u16) *temp_v0_8;
-            temp_t5_6 = temp_t5_5 + 2;
-            temp_v0_10 = temp_v0_9 + 1;
-            *temp_t5_6 = (u16) *temp_v0_9;
-            temp_t5_7 = temp_t5_6 + 2;
-            temp_v0_11 = temp_v0_10 + 1;
-            *temp_t5_7 = (u16) *temp_v0_10;
-            temp_t5_8 = temp_t5_7 + 2;
-            temp_v0_12 = temp_v0_11 + 1;
-            *temp_t5_8 = (u16) *temp_v0_11;
-            temp_t5_9 = temp_t5_8 + 2;
-            temp_v0_13 = temp_v0_12 + 1;
-            *temp_t5_9 = (u16) *temp_v0_12;
-            temp_t5_10 = temp_t5_9 + 2;
-            temp_v0_14 = temp_v0_13 + 1;
-            *temp_t5_10 = (u16) *temp_v0_13;
-            temp_t5_11 = temp_t5_10 + 2;
-            temp_v0_15 = temp_v0_14 + 1;
-            *temp_t5_11 = (u16) *temp_v0_14;
-            temp_t5_12 = temp_t5_11 + 2;
-            temp_v0_16 = temp_v0_15 + 1;
-            *temp_t5_12 = (u16) *temp_v0_15;
-            temp_t5_13 = temp_t5_12 + 2;
-            temp_v0_17 = temp_v0_16 + 1;
-            *temp_t5_13 = (u16) *temp_v0_16;
-            temp_t5_14 = temp_t5_13 + 2;
-            temp_v0_18 = temp_v0_17 + 1;
-            *temp_t5_14 = (u16) *temp_v0_17;
-            temp_t5_15 = temp_t5_14 + 2;
-            temp_t5_15->unk_0 = (u16) temp_v0_18->unk_0;
-            temp_t5_15->unk_2 = (s16) temp_v0_18->unk_1;
+
+            arg0[0] = temp_v0_4[0];
+            arg0[1] = temp_v0_4[1];
+            arg0[2] = temp_v0_4[2];
+            arg0[3] = temp_v0_4[3];
+            arg0[4] = temp_v0_4[4];
+            arg0[5] = temp_v0_4[5];
+            arg0[6] = temp_v0_4[6];
+            arg0[7] = temp_v0_4[7];
+            arg0[8] = temp_v0_4[8];
+            arg0[9] = temp_v0_4[9];
+            arg0[10] = temp_v0_4[10];
+            arg0[11] = temp_v0_4[11];
+            arg0[12] = temp_v0_4[12];
+            arg0[13] = temp_v0_4[13];
+            arg0[14] = temp_v0_4[14];
+            arg0[15] = temp_v0_4[15];
         } else {
-            temp_v0_19 = temp_t9 & 0xFF;
-            arg0->unk_0 = temp_v0_19;
-            temp_a1_3 = arg0 + 2;
-            *temp_a1_3 = temp_v0_19;
-            temp_a1_4 = temp_a1_3 + 2;
-            *temp_a1_4 = temp_v0_19;
-            temp_a1_5 = temp_a1_4 + 2;
-            *temp_a1_5 = temp_v0_19;
-            temp_a1_6 = temp_a1_5 + 2;
-            *temp_a1_6 = temp_v0_19;
-            temp_a1_7 = temp_a1_6 + 2;
-            *temp_a1_7 = temp_v0_19;
-            temp_a1_8 = temp_a1_7 + 2;
-            *temp_a1_8 = temp_v0_19;
-            temp_a1_9 = temp_a1_8 + 2;
-            *temp_a1_9 = temp_v0_19;
-            temp_a1_10 = temp_a1_9 + 2;
-            *temp_a1_10 = temp_v0_19;
-            temp_a1_11 = temp_a1_10 + 2;
-            *temp_a1_11 = temp_v0_19;
-            temp_a1_12 = temp_a1_11 + 2;
-            *temp_a1_12 = temp_v0_19;
-            temp_a1_13 = temp_a1_12 + 2;
-            *temp_a1_13 = temp_v0_19;
-            temp_a1_14 = temp_a1_13 + 2;
-            *temp_a1_14 = temp_v0_19;
-            temp_a1_15 = temp_a1_14 + 2;
-            *temp_a1_15 = temp_v0_19;
-            temp_a1_16 = temp_a1_15 + 2;
-            var_t7_2 = 0;
-            temp_a1_16->unk_0 = temp_v0_19;
-            temp_a1_16->unk_2 = temp_v0_19;
-            if (temp_v1 != 0) {
-                do {
-                    var_a2 = B_008370.unk_000;
-                    temp_a1_17 = &(&B_006AC0)[arg2];
-                    if ((s16) B_008370.unk_000 >= 0x100) {
-                        do {
-                            if (temp_a1_17->unk_0 == 0) {
-                                temp_v0_20 = temp_a1_17->unk_8;
-                                temp_a1_17->unk_8 = temp_v0_20 + 4;
-                                temp_a1_17->unk_0 = 0x80000000;
-                                temp_a1_17->unk_4 = *temp_v0_20;
-                            }
-                            temp_a0_4 = temp_a1_17->unk_0;
-                            temp_a1_17->unk_0 = temp_a0_4 >> 1;
-                            if (temp_a1_17->unk_4 & temp_a0_4) {
-                                var_a2 = (((s32) (var_a2 << 0x10) >> 0xF) + &B_008370)->unk_402;
-                                var_v0 = var_a2 << 0x10;
-                            } else {
-                                var_a2 = (((s32) (var_a2 << 0x10) >> 0xF) + &B_008370)->unk_2;
-                                var_v0 = var_a2 << 0x10;
-                            }
-                        } while ((var_v0 >> 0x10) >= 0x100);
-                    }
-                    temp_v1_6 = (arg2 * 4) + &B_006B34;
-                    temp_v0_21 = *temp_v1_6;
-                    sp20 = (s32) (((s32) (var_a2 << 0x10) >> 0xF) + &B_008370)->unk_2;
-                    temp_t6 = *temp_v0_21;
-                    *temp_v1_6 = temp_v0_21 + 2;
-                    temp_t4_2 = (temp_t6 & 1) + 1;
-                    temp_a0_5 = temp_t6 & 0xFFFF;
-                    if (B_009F6C == 8) {
-                        var_v1 = ((temp_a0_5 >> 8) & 0x1F) * B_009F64;
-                        var_v0_2 = (temp_a0_5 >> 2) & 0x3F;
-                    } else {
-                        var_v1 = ((temp_a0_5 >> 7) & 0x3F) * B_009F64;
-                        var_v0_2 = (temp_a0_5 >> 2) & 0x1F;
-                    }
-                    temp_t2_2 = B_009F60 + (var_v0_2 + var_v1);
-                    temp_a1_18 = *temp_t2_2;
-                    temp_t0_2 = temp_t2_2 + temp_t4_2;
-                    sp->unk_0 = (u16) temp_a1_18;
-                    temp_v0_22 = *temp_t0_2;
-                    temp_t0_3 = temp_t0_2 + temp_t4_2;
-                    temp_lo = (((temp_a0_5 >> 1) & 1) + 1) * B_009F64;
-                    sp->unk_2 = (s16) temp_v0_22;
-                    temp_v1_7 = *temp_t0_3;
-                    sp->unk_4 = (s16) temp_v1_7;
-                    temp_a0_6 = *(temp_t0_3 + temp_t4_2);
-                    sp->unk_6 = (s16) temp_a0_6;
-                    temp_t2_3 = temp_t2_2 + temp_lo;
-                    temp_a2_2 = *temp_t2_3;
-                    temp_t0_4 = temp_t2_3 + temp_t4_2;
-                    sp->unk_8 = (s16) temp_a2_2;
-                    temp_a1_19 = *temp_t0_4;
-                    temp_t2_4 = temp_t2_3 + temp_lo;
-                    temp_t0_5 = temp_t0_4 + temp_t4_2;
-                    sp->unk_A = (s16) temp_a1_19;
-                    temp_v0_23 = *temp_t0_5;
-                    sp->unk_C = (s16) temp_v0_23;
-                    temp_v1_8 = *(temp_t0_5 + temp_t4_2);
-                    sp->unk_E = (s16) temp_v1_8;
-                    temp_a1_20 = *temp_t2_4;
-                    temp_t0_6 = temp_t2_4 + temp_t4_2;
-                    sp->unk_10 = (s16) temp_a1_20;
-                    temp_a0_7 = *temp_t0_6;
-                    temp_t2_5 = temp_t2_4 + temp_lo;
-                    temp_t0_7 = temp_t0_6 + temp_t4_2;
-                    sp->unk_12 = (s16) temp_a0_7;
-                    temp_v0_24 = *temp_t0_7;
-                    sp->unk_14 = (s16) temp_v0_24;
-                    temp_v1_9 = *(temp_t0_7 + temp_t4_2);
-                    sp->unk_16 = (s16) temp_v1_9;
-                    temp_a0_8 = *temp_t2_5;
-                    temp_t0_8 = temp_t2_5 + temp_t4_2;
-                    sp->unk_18 = (s16) temp_a0_8;
-                    temp_a1_21 = *temp_t0_8;
-                    temp_t0_9 = temp_t0_8 + temp_t4_2;
-                    sp->unk_1A = (s16) temp_a1_21;
-                    temp_v0_25 = *temp_t0_9;
-                    sp->unk_1C = (s16) temp_v0_25;
-                    temp_a0_9 = *(temp_t0_9 + temp_t4_2);
-                    temp_t3_2 = (s32) (temp_a0_9 + (temp_v0_25 + (temp_a1_21 + (temp_a0_8 + (temp_v1_9 + (temp_v0_24 + (temp_a0_7 + (temp_a1_20 + (temp_v1_8 + (temp_v0_23 + (temp_a1_19 + (temp_a2_2 + (temp_a0_6 + (temp_v1_7 + (temp_v0_22 + temp_a1_18)))))))))))))) + 8) >> 4;
-                    temp_v1_10 = sp->unk_0 - temp_t3_2;
-                    sp->unk_1E = (s16) temp_a0_9;
-                    sp->unk_0 = temp_v1_10;
-                    temp_t1_2 = sp + 2;
-                    var_v1_2 = (s16) temp_v1_10;
-                    if (var_v1_2 < 0) {
-                        var_v1_2 = -var_v1_2;
-                    }
-                    var_a1_2 = var_v1_2;
-                    temp_v0_26 = *temp_t1_2 - temp_t3_2;
-                    *temp_t1_2 = temp_v0_26;
-                    var_v0_3 = (s16) temp_v0_26;
-                    if (var_v0_3 < 0) {
-                        var_v0_3 = -var_v0_3;
-                    }
-                    temp_t1_3 = temp_t1_2 + 2;
-                    if (var_v1_2 < var_v0_3) {
-                        var_a1_2 = var_v0_3;
-                    }
-                    temp_v0_27 = *temp_t1_3 - temp_t3_2;
-                    *temp_t1_3 = temp_v0_27;
-                    var_v0_4 = (s16) temp_v0_27;
-                    if (var_v0_4 < 0) {
-                        var_v0_4 = -var_v0_4;
-                    }
-                    temp_t1_4 = temp_t1_3 + 2;
-                    if (var_a1_2 < var_v0_4) {
-                        var_a1_2 = var_v0_4;
-                    }
-                    temp_v0_28 = *temp_t1_4 - temp_t3_2;
-                    *temp_t1_4 = temp_v0_28;
-                    var_v0_5 = (s16) temp_v0_28;
-                    if (var_v0_5 < 0) {
-                        var_v0_5 = -var_v0_5;
-                    }
-                    temp_t1_5 = temp_t1_4 + 2;
-                    if (var_a1_2 < var_v0_5) {
-                        var_a1_2 = var_v0_5;
-                    }
-                    temp_v0_29 = *temp_t1_5 - temp_t3_2;
-                    *temp_t1_5 = temp_v0_29;
-                    var_v0_6 = (s16) temp_v0_29;
-                    if (var_v0_6 < 0) {
-                        var_v0_6 = -var_v0_6;
-                    }
-                    temp_t1_6 = temp_t1_5 + 2;
-                    if (var_a1_2 < var_v0_6) {
-                        var_a1_2 = var_v0_6;
-                    }
-                    temp_v0_30 = *temp_t1_6 - temp_t3_2;
-                    *temp_t1_6 = temp_v0_30;
-                    var_v0_7 = (s16) temp_v0_30;
-                    if (var_v0_7 < 0) {
-                        var_v0_7 = -var_v0_7;
-                    }
-                    temp_t1_7 = temp_t1_6 + 2;
-                    if (var_a1_2 < var_v0_7) {
-                        var_a1_2 = var_v0_7;
-                    }
-                    temp_v0_31 = *temp_t1_7 - temp_t3_2;
-                    *temp_t1_7 = temp_v0_31;
-                    var_v0_8 = (s16) temp_v0_31;
-                    if (var_v0_8 < 0) {
-                        var_v0_8 = -var_v0_8;
-                    }
-                    temp_t1_8 = temp_t1_7 + 2;
-                    if (var_a1_2 < var_v0_8) {
-                        var_a1_2 = var_v0_8;
-                    }
-                    temp_v0_32 = *temp_t1_8 - temp_t3_2;
-                    *temp_t1_8 = temp_v0_32;
-                    var_v0_9 = (s16) temp_v0_32;
-                    if (var_v0_9 < 0) {
-                        var_v0_9 = -var_v0_9;
-                    }
-                    temp_t1_9 = temp_t1_8 + 2;
-                    if (var_a1_2 < var_v0_9) {
-                        var_a1_2 = var_v0_9;
-                    }
-                    temp_v0_33 = *temp_t1_9 - temp_t3_2;
-                    *temp_t1_9 = temp_v0_33;
-                    var_v0_10 = (s16) temp_v0_33;
-                    if (var_v0_10 < 0) {
-                        var_v0_10 = -var_v0_10;
-                    }
-                    temp_t1_10 = temp_t1_9 + 2;
-                    if (var_a1_2 < var_v0_10) {
-                        var_a1_2 = var_v0_10;
-                    }
-                    temp_v0_34 = *temp_t1_10 - temp_t3_2;
-                    *temp_t1_10 = temp_v0_34;
-                    var_v0_11 = (s16) temp_v0_34;
-                    if (var_v0_11 < 0) {
-                        var_v0_11 = -var_v0_11;
-                    }
-                    temp_t1_11 = temp_t1_10 + 2;
-                    if (var_a1_2 < var_v0_11) {
-                        var_a1_2 = var_v0_11;
-                    }
-                    temp_v0_35 = *temp_t1_11 - temp_t3_2;
-                    *temp_t1_11 = temp_v0_35;
-                    var_v0_12 = (s16) temp_v0_35;
-                    if (var_v0_12 < 0) {
-                        var_v0_12 = -var_v0_12;
-                    }
-                    temp_t1_12 = temp_t1_11 + 2;
-                    if (var_a1_2 < var_v0_12) {
-                        var_a1_2 = var_v0_12;
-                    }
-                    temp_v0_36 = *temp_t1_12 - temp_t3_2;
-                    *temp_t1_12 = temp_v0_36;
-                    var_v0_13 = (s16) temp_v0_36;
-                    if (var_v0_13 < 0) {
-                        var_v0_13 = -var_v0_13;
-                    }
-                    temp_t1_13 = temp_t1_12 + 2;
-                    if (var_a1_2 < var_v0_13) {
-                        var_a1_2 = var_v0_13;
-                    }
-                    temp_v0_37 = *temp_t1_13 - temp_t3_2;
-                    *temp_t1_13 = temp_v0_37;
-                    var_v0_14 = (s16) temp_v0_37;
-                    if (var_v0_14 < 0) {
-                        var_v0_14 = -var_v0_14;
-                    }
-                    temp_t1_14 = temp_t1_13 + 2;
-                    if (var_a1_2 < var_v0_14) {
-                        var_a1_2 = var_v0_14;
-                    }
-                    temp_v0_38 = *temp_t1_14 - temp_t3_2;
-                    *temp_t1_14 = temp_v0_38;
-                    var_v0_15 = (s16) temp_v0_38;
-                    if (var_v0_15 < 0) {
-                        var_v0_15 = -var_v0_15;
-                    }
-                    temp_t1_15 = temp_t1_14 + 2;
-                    if (var_a1_2 < var_v0_15) {
-                        var_a1_2 = var_v0_15;
-                    }
-                    temp_v0_39 = *temp_t1_15 - temp_t3_2;
-                    *temp_t1_15 = temp_v0_39;
-                    var_v0_16 = (s16) temp_v0_39;
-                    if (var_v0_16 < 0) {
-                        var_v0_16 = -var_v0_16;
-                    }
-                    temp_t1_16 = temp_t1_15 + 2;
-                    if (var_a1_2 < var_v0_16) {
-                        var_a1_2 = var_v0_16;
-                    }
-                    temp_v0_40 = *temp_t1_16 - temp_t3_2;
-                    var_v1_3 = temp_v0_40;
-                    if (var_v1_3 < 0) {
-                        var_v1_3 = -var_v1_3;
-                    }
-                    *temp_t1_16 = (u16) temp_v0_40;
-                    if (var_a1_2 < var_v1_3) {
-                        var_a1_2 = var_v1_3;
-                    }
-                    temp_lo_2 = *(B_009420 + ((s32) (var_a1_2 << 0x10) >> 0xE)) * (sp20 + (temp_t6 >> 0xD));
-                    sp20 = temp_lo_2;
-                    arg0->unk_0 += (s32) ((temp_lo_2 * sp0) + 0x200) >> 0xA;
-                    temp_a1_22 = arg0 + 2;
-                    *temp_a1_22 += (s32) ((sp20 * sp2) + 0x200) >> 0xA;
-                    temp_a1_23 = temp_a1_22 + 2;
-                    *temp_a1_23 += (s32) ((sp20 * sp4) + 0x200) >> 0xA;
-                    temp_a1_24 = temp_a1_23 + 2;
-                    *temp_a1_24 += (s32) ((sp20 * sp6) + 0x200) >> 0xA;
-                    temp_a1_25 = temp_a1_24 + 2;
-                    *temp_a1_25 += (s32) ((sp20 * sp8) + 0x200) >> 0xA;
-                    temp_a1_26 = temp_a1_25 + 2;
-                    *temp_a1_26 += (s32) ((sp20 * spA) + 0x200) >> 0xA;
-                    temp_a1_27 = temp_a1_26 + 2;
-                    *temp_a1_27 += (s32) ((sp20 * spC) + 0x200) >> 0xA;
-                    temp_a1_28 = temp_a1_27 + 2;
-                    *temp_a1_28 += (s32) ((sp20 * spE) + 0x200) >> 0xA;
-                    temp_a1_29 = temp_a1_28 + 2;
-                    *temp_a1_29 += (s32) ((sp20 * sp10) + 0x200) >> 0xA;
-                    temp_a1_30 = temp_a1_29 + 2;
-                    *temp_a1_30 += (s32) ((sp20 * sp12) + 0x200) >> 0xA;
-                    temp_a1_31 = temp_a1_30 + 2;
-                    *temp_a1_31 += (s32) ((sp20 * sp14) + 0x200) >> 0xA;
-                    temp_a1_32 = temp_a1_31 + 2;
-                    *temp_a1_32 += (s32) ((sp20 * sp16) + 0x200) >> 0xA;
-                    temp_a1_33 = temp_a1_32 + 2;
-                    *temp_a1_33 += (s32) ((sp20 * sp18) + 0x200) >> 0xA;
-                    temp_a1_34 = temp_a1_33 + 2;
-                    *temp_a1_34 += (s32) ((sp20 * sp1A) + 0x200) >> 0xA;
-                    temp_a1_35 = temp_a1_34 + 2;
-                    *temp_a1_35 += (s32) ((sp20 * sp1C) + 0x200) >> 0xA;
-                    var_t7_2 += 1;
-                    temp_a1_36 = temp_a1_35 + 2;
-                    *temp_a1_36 += (s32) ((sp20 * sp1E) + 0x200) >> 0xA;
-                } while (var_t7_2 < (s32) temp_v0);
+            arg0[0] = temp_t9;
+            arg0[1] = temp_t9;
+            arg0[2] = temp_t9;
+            arg0[3] = temp_t9;
+            arg0[4] = temp_t9;
+            arg0[5] = temp_t9;
+            arg0[6] = temp_t9;
+            arg0[7] = temp_t9;
+            arg0[8] = temp_t9;
+            arg0[9] = temp_t9;
+            arg0[10] = temp_t9;
+            arg0[11] = temp_t9;
+            arg0[12] = temp_t9;
+            arg0[13] = temp_t9;
+            arg0[14] = temp_t9;
+            arg0[15] = temp_t9;
+
+            for (var_t7_2 = 0; var_t7_2 < temp_v0; var_t7_2++) {
+                s32 temp;
+
+                sp20 = inlined_func_03(&B_006AC0[arg2], &B_008370);
+
+                temp_v1_6 = &B_006B34[arg2];
+                temp_v0_21 = *temp_v1_6;
+                temp_t6 = *temp_v0_21;
+                *temp_v1_6 = temp_v0_21 + 2;
+                temp_t4_2 = (temp_t6 & 1) + 1;
+                temp_a0_5 = temp_t6 & 0xFFFF;
+
+                if (B_009F6C == 8) {
+                    var_v1 = ((temp_a0_5 >> 8) & 0x1F) * B_009F64;
+                    var_v0_2 = (temp_a0_5 >> 2) & 0x3F;
+                } else {
+                    var_v1 = ((temp_a0_5 >> 7) & 0x3F) * B_009F64;
+                    var_v0_2 = (temp_a0_5 >> 2) & 0x1F;
+                }
+
+                temp_t2_2 = B_009F60 + (var_v0_2 + var_v1);
+                temp_a1_18 = *temp_t2_2;
+                temp_t0_2 = temp_t2_2 + temp_t4_2;
+                temp_lo = (((temp_a0_5 >> 1) & 1) + 1) * B_009F64;
+
+                sp0[0] = (u16) temp_a1_18;
+                temp_v0_22 = *temp_t0_2;
+                temp_t0_3 = temp_t0_2 + temp_t4_2;
+                sp0[1] = (s16) temp_v0_22;
+                temp_v1_7 = *temp_t0_3;
+                sp0[2] = (s16) temp_v1_7;
+                temp_a0_6 = *(temp_t0_3 + temp_t4_2);
+                sp0[3] = (s16) temp_a0_6;
+                temp_t2_3 = temp_t2_2 + temp_lo;
+                temp_a2_2 = *temp_t2_3;
+                temp_t0_4 = temp_t2_3 + temp_t4_2;
+                sp0[4] = (s16) temp_a2_2;
+                temp_a1_19 = *temp_t0_4;
+                temp_t2_4 = temp_t2_3 + temp_lo;
+                temp_t0_5 = temp_t0_4 + temp_t4_2;
+                sp0[5] = (s16) temp_a1_19;
+                temp_v0_23 = *temp_t0_5;
+                sp0[6] = (s16) temp_v0_23;
+                temp_v1_8 = *(temp_t0_5 + temp_t4_2);
+                sp0[7] = (s16) temp_v1_8;
+                temp_a1_20 = *temp_t2_4;
+                temp_t0_6 = temp_t2_4 + temp_t4_2;
+                sp0[8] = (s16) temp_a1_20;
+                temp_a0_7 = *temp_t0_6;
+                temp_t2_5 = temp_t2_4 + temp_lo;
+                temp_t0_7 = temp_t0_6 + temp_t4_2;
+                sp0[9] = (s16) temp_a0_7;
+                temp_v0_24 = *temp_t0_7;
+                sp0[10] = (s16) temp_v0_24;
+                temp_v1_9 = *(temp_t0_7 + temp_t4_2);
+                sp0[11] = (s16) temp_v1_9;
+                temp_a0_8 = *temp_t2_5;
+                temp_t0_8 = temp_t2_5 + temp_t4_2;
+                sp0[12] = (s16) temp_a0_8;
+                temp_a1_21 = *temp_t0_8;
+                temp_t0_9 = temp_t0_8 + temp_t4_2;
+                sp0[13] = (s16) temp_a1_21;
+                temp_v0_25 = *temp_t0_9;
+                sp0[14] = (s16) temp_v0_25;
+                temp_a0_9 = *(temp_t0_9 + temp_t4_2);
+                sp0[15] = (s16) temp_a0_9;
+
+
+                temp_t3_2 = temp_a0_9 + (temp_v0_25 + (temp_a1_21 + (temp_a0_8 + (temp_v1_9 + (temp_v0_24 + (temp_a0_7 + (temp_a1_20 + (temp_v1_8 + (temp_v0_23 + (temp_a1_19 + (temp_a2_2 + (temp_a0_6 + (temp_v1_7 + (temp_v0_22 + temp_a1_18))))))))))))));
+
+                temp = (temp_t3_2 + 8) >> 4;
+
+
+                sp0[0] = sp0[0] - temp;
+
+                var_v1_2 = (s16) sp0[0];
+                if (var_v1_2 < 0) {
+                    var_v1_2 = -var_v1_2;
+                }
+                var_a1_2 = var_v1_2;
+                sp0[1] = sp0[1] - temp;
+
+                var_v0_3 = (s16) sp0[1];
+                if (var_v0_3 < 0) {
+                    var_v0_3 = -var_v0_3;
+                }
+
+                if (var_v1_2 < var_v0_3) {
+                    var_a1_2 = var_v0_3;
+                }
+                sp0[2] = sp0[2] - temp;
+
+                var_v0_4 = sp0[2];
+                if (var_v0_4 < 0) {
+                    var_v0_4 = -var_v0_4;
+                }
+
+                if (var_a1_2 < var_v0_4) {
+                    var_a1_2 = var_v0_4;
+                }
+                sp0[3] = sp0[3] - temp;
+
+                var_v0_5 = (s16) sp0[3];
+                if (var_v0_5 < 0) {
+                    var_v0_5 = -var_v0_5;
+                }
+
+                if (var_a1_2 < var_v0_5) {
+                    var_a1_2 = var_v0_5;
+                }
+                sp0[4] = sp0[4] - temp;
+
+                var_v0_6 = sp0[4];
+                if (var_v0_6 < 0) {
+                    var_v0_6 = -var_v0_6;
+                }
+
+                if (var_a1_2 < var_v0_6) {
+                    var_a1_2 = var_v0_6;
+                }
+                sp0[5] = sp0[5] - temp;
+
+                var_v0_7 = sp0[5];
+                if (var_v0_7 < 0) {
+                    var_v0_7 = -var_v0_7;
+                }
+
+                if (var_a1_2 < var_v0_7) {
+                    var_a1_2 = var_v0_7;
+                }
+                sp0[6] = sp0[6] - temp;
+
+                var_v0_8 = (s16) sp0[6];
+                if (var_v0_8 < 0) {
+                    var_v0_8 = -var_v0_8;
+                }
+
+                if (var_a1_2 < var_v0_8) {
+                    var_a1_2 = var_v0_8;
+                }
+                sp0[7] = sp0[7] - temp;
+
+                var_v0_9 = sp0[7];
+                if (var_v0_9 < 0) {
+                    var_v0_9 = -var_v0_9;
+                }
+
+                if (var_a1_2 < var_v0_9) {
+                    var_a1_2 = var_v0_9;
+                }
+                sp0[8] = sp0[8] - temp;
+
+                var_v0_10 = (s16) sp0[8];
+                if (var_v0_10 < 0) {
+                    var_v0_10 = -var_v0_10;
+                }
+
+                if (var_a1_2 < var_v0_10) {
+                    var_a1_2 = var_v0_10;
+                }
+                sp0[9] = sp0[9] - temp;
+
+                var_v0_11 = (s16) sp0[9];
+                if (var_v0_11 < 0) {
+                    var_v0_11 = -var_v0_11;
+                }
+
+                if (var_a1_2 < var_v0_11) {
+                    var_a1_2 = var_v0_11;
+                }
+                sp0[10] = sp0[10] - temp;
+
+                var_v0_12 = (s16) sp0[10];
+                if (var_v0_12 < 0) {
+                    var_v0_12 = -var_v0_12;
+                }
+
+                if (var_a1_2 < var_v0_12) {
+                    var_a1_2 = var_v0_12;
+                }
+                sp0[11] = sp0[11] - temp;
+
+                var_v0_13 = (s16) sp0[11];
+                if (var_v0_13 < 0) {
+                    var_v0_13 = -var_v0_13;
+                }
+
+                if (var_a1_2 < var_v0_13) {
+                    var_a1_2 = var_v0_13;
+                }
+                sp0[12] = sp0[12] - temp;
+
+                var_v0_14 = (s16) sp0[12];
+                if (var_v0_14 < 0) {
+                    var_v0_14 = -var_v0_14;
+                }
+
+                if (var_a1_2 < var_v0_14) {
+                    var_a1_2 = var_v0_14;
+                }
+                sp0[13] = sp0[13] - temp;
+
+                var_v0_15 = (s16) sp0[13];
+                if (var_v0_15 < 0) {
+                    var_v0_15 = -var_v0_15;
+                }
+
+                if (var_a1_2 < var_v0_15) {
+                    var_a1_2 = var_v0_15;
+                }
+                sp0[14] = sp0[14] - temp;
+
+                var_v0_16 = (s16) sp0[14];
+                if (var_v0_16 < 0) {
+                    var_v0_16 = -var_v0_16;
+                }
+
+                if (var_a1_2 < var_v0_16) {
+                    var_a1_2 = var_v0_16;
+                }
+                sp0[15] = sp0[15] - temp;
+
+                var_v1_3 = sp0[15];
+                if (var_v1_3 < 0) {
+                    var_v1_3 = -var_v1_3;
+                }
+                if (var_a1_2 < var_v1_3) {
+                    var_a1_2 = var_v1_3;
+                }
+
+                sp20 = B_009420[var_a1_2] * (sp20 + (temp_t6 >> 0xD));
+
+                arg0[0] += (s32) ((sp20 * sp0[0]) + 0x200) >> 0xA;
+                arg0[1] += (s32) ((sp20 * sp0[1]) + 0x200) >> 0xA;
+                arg0[2] += (s32) ((sp20 * sp0[2]) + 0x200) >> 0xA;
+                arg0[3] += (s32) ((sp20 * sp0[3]) + 0x200) >> 0xA;
+                arg0[4] += (s32) ((sp20 * sp0[4]) + 0x200) >> 0xA;
+                arg0[5] += (s32) ((sp20 * sp0[5]) + 0x200) >> 0xA;
+                arg0[6] += (s32) ((sp20 * sp0[6]) + 0x200) >> 0xA;
+                arg0[7] += (s32) ((sp20 * sp0[7]) + 0x200) >> 0xA;
+                arg0[8] += (s32) ((sp20 * sp0[8]) + 0x200) >> 0xA;
+                arg0[9] += (s32) ((sp20 * sp0[9]) + 0x200) >> 0xA;
+                arg0[10] += (s32) ((sp20 * sp0[10]) + 0x200) >> 0xA;
+                arg0[11] += (s32) ((sp20 * sp0[11]) + 0x200) >> 0xA;
+                arg0[12] += (s32) ((sp20 * sp0[12]) + 0x200) >> 0xA;
+                arg0[13] += (s32) ((sp20 * sp0[13]) + 0x200) >> 0xA;
+                arg0[14] += (s32) ((sp20 * sp0[14]) + 0x200) >> 0xA;
+                arg0[15] += (s32) ((sp20 * sp0[15]) + 0x200) >> 0xA;
             }
         }
+
         arg1->unk_1C = arg1->unk_19;
     }
+
     arg1->unk_00 += 1;
     arg1->unk_04 += 1;
     arg1->unk_10 += 1;
