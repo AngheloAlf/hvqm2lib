@@ -41,8 +41,8 @@ typedef struct struct_009240 {
     /* 0x1C */ u8 unk_1C;
 } struct_009240; // size = 0x1D
 
-// extern u8 B_006010[];
-// STATIC u8 B_006010[];
+extern u8 B_006010[0xA64];
+// STATIC u8 B_006010[0xA64];
 /* .space 0xA64 */
 
 extern struct_00000040_arg0 B_006A74;
@@ -1561,49 +1561,6 @@ void func_00003560(u32 *outbuf) {
 }
 
 #if 0
-? func_00003560(u32 *, u8 *, u8 *, u8 *);           /* extern */
-extern u8 B_006010;
-extern s32 B_006ACC;
-extern void *B_006AD4;
-extern s32 B_006AD8;
-extern s32 B_006AE0;
-extern void *B_006AF0;
-extern void *B_006AFC;
-extern s32 B_006B08;
-extern void *B_006B34;
-extern u16 *B_009388;
-extern u8 *B_00938C;
-extern u8 *B_009390;
-extern u8 *B_009394;
-extern u8 *B_009398;
-extern u8 *B_00939C;
-extern u16 *B_0093A8;
-extern u8 *B_0093AC;
-extern u8 *B_0093B0;
-extern u8 *B_0093B4;
-extern u8 *B_0093E8;
-extern u8 *B_0093EC;
-extern u8 *B_0093F0;
-extern u8 *B_0093F4;
-extern u8 *B_009408;
-extern u8 *B_00940C;
-extern u8 *B_009410;
-extern u8 *B_009414;
-extern s32 B_009F24;
-extern u8 *B_009F38;
-extern s32 B_009F3C;
-extern s32 B_009F40;
-extern s32 B_009F44;
-extern s32 B_009F48;
-extern s32 B_009F4C;
-extern s32 B_009F50;
-extern s32 B_009F54;
-extern s32 B_009F58;
-extern s32 B_009F5C;
-extern u8 *B_009F60;
-extern s32 B_009F64;
-extern s32 B_009F68;
-
 void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf) {
     u8 sp10;
     u8 sp11;
@@ -1716,6 +1673,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     s32 var_a2;
     s32 var_a3_3;
     s32 var_a3_4;
+    s32 var_a3_5;
     s32 var_a3_6;
     s32 var_s3;
     s32 var_s3_2;
@@ -1729,6 +1687,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     s32 var_t1_2;
     s32 var_t2;
     s32 var_t3;
+    s32 var_t4;
     s32 var_v0;
     s32 var_v0_11;
     s32 var_v0_13;
@@ -1759,13 +1718,6 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     s32 var_v1_9;
     s8 temp_v0_54;
     struct_00000040_arg0 *var_a0_3;
-    u16 *temp_a0_11;
-    u16 *temp_a0_13;
-    u16 *temp_a1;
-    u16 *temp_a1_2;
-    u16 *temp_v1_27;
-    u16 *temp_v1_28;
-    u16 *var_a2_2;
     u16 var_a1_10;
     u16 var_a1_11;
     u16 var_a1_12;
@@ -1806,7 +1758,9 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u32 temp_v0_55;
     u32 var_v0_4;
     u8 *temp_a0_10;
+    u8 *temp_a0_11;
     u8 *temp_a0_12;
+    u8 *temp_a0_13;
     u8 *temp_a0_14;
     u8 *temp_a0_15;
     u8 *temp_a0_16;
@@ -1818,6 +1772,8 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 *temp_a0_7;
     u8 *temp_a0_8;
     u8 *temp_a0_9;
+    u8 *temp_a1;
+    u8 *temp_a1_2;
     u8 *temp_a1_3;
     u8 *temp_a1_4;
     u8 *temp_a3;
@@ -1827,6 +1783,8 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 *temp_v0_3;
     u8 *temp_v0_4;
     u8 *temp_v0_5;
+    u8 *temp_v1_27;
+    u8 *temp_v1_28;
     u8 *temp_v1_29;
     u8 *temp_v1_30;
     u8 *temp_v1_31;
@@ -1847,13 +1805,12 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 *var_a0_5;
     u8 *var_a1_20;
     u8 *var_a1_21;
+    u8 *var_a2_2;
     u8 *var_a2_3;
     u8 *var_a2_4;
     u8 *var_a3_2;
-    u8 *var_a3_5;
     u8 *var_s0;
     u8 *var_s1;
-    u8 *var_t4;
     u8 temp_s0;
     u8 temp_s0_2;
     u8 temp_s0_3;
@@ -1913,7 +1870,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             } while (var_t1 > 0);
         }
     } else {
-        B_009388 = workbuf;
+        B_009388 = (u8 *) workbuf;
         temp_v0_2 = workbuf + B_009F50;
         B_009394 = temp_v0_2;
         temp_v0_3 = &temp_v0_2[B_009F50];
@@ -1963,54 +1920,54 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
         B_006AB4.unk_0 = 0;
         temp_v1_5 = code + code->unk_10;
         if (*temp_v1_5 != 0) {
-            B_006AC0.unk_8 = temp_v1_5 + 4;
-            B_006AC0.unk_0 = 0;
+            B_006AC0->unk_8 = temp_v1_5 + 4;
+            B_006AC0->unk_0 = 0;
             if (&B_008370 != NULL) {
                 B_009382 = 0x100;
-                B_008370.unk_000 = func_00000040(&B_006AC0, &B_008370);
+                B_008370.unk_000 = func_00000040(B_006AC0, &B_008370);
             }
         } else {
-            B_006AC0.unk_8 = NULL;
-            B_006AC0.unk_0 = 0;
+            B_006AC0->unk_8 = NULL;
+            B_006AC0->unk_0 = 0;
         }
         temp_v1_6 = code + code->unk_14;
         if (*temp_v1_6 != 0) {
             B_008370 = temp_v1_6 + 4;
         } else {
-            B_006AD4 = NULL;
+            *(B_006AC0 + 0x14) = 0;
         }
-        B_006ACC = 0;
+        (B_006AC0 + 0xC)->unk_0 = 0;
         temp_v1_7 = code + code->unk_18;
         if (*temp_v1_7 != 0) {
-            B_006AD4 = temp_v1_7 + 4;
+            *(B_006AC0 + 0x14) = temp_v1_7 + 4;
         } else {
-            B_006AE0 = 0;
+            *(B_006AC0 + 0x20) = 0;
         }
-        B_006AD8 = 0;
+        (B_006AC0 + 0x18)->unk_0 = 0;
         temp_v1_8 = code + code->unk_28;
         if (*temp_v1_8 != 0) {
-            B_006AF0 = temp_v1_8 + 4;
+            B_006AE8.unk_8 = temp_v1_8 + 4;
             B_006AE8.unk_0 = 0;
             if (&B_006B40 != NULL) {
                 B_009382 = 0x100;
                 B_006B40.unk_000 = func_00000040(&B_006AE8, &B_006B40);
             }
         } else {
-            B_006AF0 = NULL;
+            B_006AE8.unk_8 = NULL;
             B_006AE8.unk_0 = 0;
         }
         temp_v1_9 = code + code->unk_2C;
         if (*temp_v1_9 != 0) {
             B_006B40 = temp_v1_9 + 4;
         } else {
-            B_006AFC = NULL;
+            B_006AF4.unk_8 = NULL;
         }
         B_006AF4.unk_0 = 0;
         temp_v1_10 = code + code->unk_30;
         if (*temp_v1_10 != 0) {
-            B_006AFC = temp_v1_10 + 4;
+            B_006AF4.unk_8 = temp_v1_10 + 4;
         } else {
-            B_006B08 = 0;
+            B_006B00.unk_8 = NULL;
         }
         B_006B00.unk_0 = 0;
         var_a1_2 = 0;
@@ -2023,7 +1980,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             *var_a0_2 = code + temp_v0_6 + 4;
             var_a0_2 += 4;
         } while (var_a1_2 < 3);
-        B_009F60 = &B_006010;
+        B_009F60 = B_006010;
         switch (format) {                           /* irregular */
             case 0x0:
                 var_a2 = 0;
@@ -2070,7 +2027,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                             } while ((var_v0 >> 0x10) >= 0x100);
                         }
                         if (var_v1_3 & 0xFF) {
-                            *var_a2_2 = (s8) var_v1_3;
+                            *var_a2_2 = (u8) var_v1_3;
                             var_a2_2 += 1;
                             var_t0_2 -= 1;
                         } else {
@@ -2344,7 +2301,7 @@ block_150:
                         sp4C += 1;
                     } while (var_s3 > 0);
                 }
-                if (B_009F38 != NULL) {
+                if (B_009F38 != 0) {
                     var_s3_2 = B_009F54;
                     var_s2_2 = *var_s1;
                     if (var_s3_2 > 0) {
@@ -2593,7 +2550,7 @@ block_240:
                                 sp4C += 1;
                             } while (var_s3_3 > 0);
                         }
-                        if (B_009F38 != NULL) {
+                        if (B_009F38 != 0) {
                             var_s3_4 = B_009F54;
                             var_s2_4 = *var_s1;
                             if (var_s3_4 > 0) {
@@ -2706,7 +2663,7 @@ block_272:
                 } else {
                     var_v1_6 = B_009F68;
                     var_t1_2 = 0;
-                    var_t4 = NULL;
+                    var_t4 = 0;
                 }
                 var_a3_3 = var_v1_6;
                 if (var_a3_3 > 0) {
@@ -2763,7 +2720,7 @@ block_272:
                     } while (var_a3_4 > 0);
                 }
                 var_a3_5 = var_t4;
-                if ((s32) var_a3_5 > 0) {
+                if (var_a3_5 > 0) {
 loop_298:
                     var_v1_11 = B_009F64;
                     if (var_v1_11 > 0) {
@@ -2774,12 +2731,12 @@ loop_298:
                         } while (var_v1_11 > 0);
                     }
                     var_a3_5 -= 1;
-                    if ((s32) var_a3_5 > 0) {
+                    if (var_a3_5 > 0) {
                         goto loop_298;
                     }
                 }
 block_348:
-                func_00003560(sp1C, var_a1_21, var_a2_4, var_a3_5);
+                func_00003560(sp1C);
                 return;
             case 0x1:
                 temp_v1_24 = code + code->unk_34;
@@ -2802,29 +2759,26 @@ block_348:
                 }
                 B_006A74.unk_0 = 0;
                 var_s3_5 = 0;
-                var_a2_4 = B_00938C;
-                var_a3_5 = B_009398;
-                var_a1_21 = B_009F38;
                 var_s4 = 0;
                 sp77 = 0;
                 sp7F = 0;
                 sp10 = 0;
                 sp11 = 0;
-                B_0093A8 = B_009388;
-                B_0093AC = B_009394;
+                B_0093A0.unk_08 = B_009388;
+                B_0093A0.unk_0C = B_009394;
                 sp6C = sp1C;
-                B_0093B0 = B_009388 + B_009F48;
-                B_0093B4 = &B_009394[B_009F48];
-                B_0093E8 = var_a2_4;
-                B_0093EC = var_a3_5;
-                B_009408 = B_009390;
-                B_00940C = B_00939C;
+                B_0093A0.unk_10 = &B_009388[B_009F48];
+                B_0093A0.unk_14 = &B_009394[B_009F48];
+                B_0093E0.unk_08 = B_00938C;
+                B_0093E0.unk_0C = B_009398;
+                B_009400.unk_08 = B_009390;
+                B_009400.unk_0C = B_00939C;
                 var_s5 = 0;
-                if (var_a1_21 == NULL) {
-                    B_0093F0 = &var_a2_4[B_009F54];
-                    B_0093F4 = &var_a3_5[B_009F54];
-                    B_009410 = &B_009390[B_009F54];
-                    B_009414 = &B_00939C[B_009F54];
+                if (B_009F38 == 0) {
+                    B_0093E0.unk_10 = &B_00938C[B_009F54];
+                    B_0093E0.unk_14 = &B_009398[B_009F54];
+                    B_009400.unk_10 = &B_009390[B_009F54];
+                    B_009400.unk_14 = &B_00939C[B_009F54];
                 }
                 sp84 = 0;
                 if (B_009F44 > 0) {
@@ -2907,37 +2861,37 @@ loop_333:
                                         var_t0_5 = &var_t0_5[B_009F24];
                                         var_v1_12 = &var_v1_12[B_009F24];
                                     } while (var_a3_6 != 0);
-                                    temp_v1_27 = B_0093A8;
-                                    B_0093A8 = temp_v1_27 + 1;
-                                    *temp_v1_27 = 0x80U;
-                                    temp_v1_28 = B_0093A8;
-                                    B_0093A8 = temp_v1_28 + 1;
-                                    *temp_v1_28 = 0x80U;
-                                    temp_v1_29 = B_0093B0;
-                                    B_0093AC += 2;
-                                    B_0093B0 = temp_v1_29 + 1;
+                                    temp_v1_27 = B_0093A0.unk_08;
+                                    B_0093A0.unk_08 = temp_v1_27 + 1;
+                                    *temp_v1_27 = 0x80;
+                                    temp_v1_28 = B_0093A0.unk_08;
+                                    B_0093A0.unk_08 = temp_v1_28 + 1;
+                                    *temp_v1_28 = 0x80;
+                                    temp_v1_29 = B_0093A0.unk_10;
+                                    B_0093A0.unk_0C = B_0093A0.unk_0C + 2;
+                                    B_0093A0.unk_10 = temp_v1_29 + 1;
                                     *temp_v1_29 = 0x80;
-                                    temp_v1_30 = B_0093B0;
-                                    B_0093B0 = temp_v1_30 + 1;
+                                    temp_v1_30 = B_0093A0.unk_10;
+                                    B_0093A0.unk_10 = temp_v1_30 + 1;
                                     *temp_v1_30 = 0x80;
-                                    temp_v1_31 = B_0093E8;
-                                    B_0093B4 += 2;
-                                    B_0093E8 = temp_v1_31 + 1;
+                                    temp_v1_31 = B_0093E0.unk_08;
+                                    B_0093A0.unk_14 = B_0093A0.unk_14 + 2;
+                                    B_0093E0.unk_08 = temp_v1_31 + 1;
                                     *temp_v1_31 = 0x80;
-                                    temp_v1_32 = B_009408;
-                                    B_0093EC += 1;
-                                    B_009408 = temp_v1_32 + 1;
+                                    temp_v1_32 = B_009400.unk_08;
+                                    B_0093E0.unk_0C = B_0093E0.unk_0C + 1;
+                                    B_009400.unk_08 = temp_v1_32 + 1;
                                     *temp_v1_32 = 0x80;
-                                    B_00940C += 1;
-                                    if (B_009F38 == NULL) {
-                                        temp_v1_33 = B_0093F0;
-                                        B_0093F0 = temp_v1_33 + 1;
+                                    B_009400.unk_0C = B_009400.unk_0C + 1;
+                                    if (B_009F38 == 0) {
+                                        temp_v1_33 = B_0093E0.unk_10;
+                                        B_0093E0.unk_10 = temp_v1_33 + 1;
                                         *temp_v1_33 = 0x80;
-                                        temp_v1_34 = B_009410;
-                                        B_0093F4 += 1;
-                                        B_009410 = temp_v1_34 + 1;
+                                        temp_v1_34 = B_009400.unk_10;
+                                        B_0093E0.unk_14 = B_0093E0.unk_14 + 1;
+                                        B_009400.unk_10 = temp_v1_34 + 1;
                                         *temp_v1_34 = 0x80;
-                                        B_009414 += 1;
+                                        B_009400.unk_14 = B_009400.unk_14 + 1;
                                     }
                                 } else {
                                     if (temp_a0_6 == 0) {
@@ -2949,127 +2903,127 @@ loop_333:
                                     B_006A74.unk_0 = (u32) B_006A74.unk_0 >> 1;
                                     if (!(B_006A74.unk_4 & B_006A74.unk_0)) {
                                         temp_v0_57 = func_000004A8(&sp10, &B_006A90, &B_006AA8);
-                                        temp_a1 = B_0093A8;
-                                        B_0093A8 = temp_a1 + 1;
-                                        *temp_a1 = (s8) temp_v0_57;
-                                        temp_a3 = B_0093AC;
+                                        temp_a1 = B_0093A0.unk_08;
+                                        B_0093A0.unk_08 = temp_a1 + 1;
+                                        *temp_a1 = (u8) temp_v0_57;
+                                        temp_a3 = B_0093A0.unk_0C;
                                         temp_s0 = var_s3_5 + func_000002F8(&B_006AE8);
-                                        B_0093AC = temp_a3 + 1;
+                                        B_0093A0.unk_0C = temp_a3 + 1;
                                         *temp_a3 = temp_s0;
                                         temp_v0_58 = func_000004A8(&sp10, &B_006A90, &B_006AA8);
-                                        temp_a1_2 = B_0093A8;
-                                        B_0093A8 = temp_a1_2 + 1;
-                                        *temp_a1_2 = (s8) temp_v0_58;
-                                        temp_a3_2 = B_0093AC;
+                                        temp_a1_2 = B_0093A0.unk_08;
+                                        B_0093A0.unk_08 = temp_a1_2 + 1;
+                                        *temp_a1_2 = (u8) temp_v0_58;
+                                        temp_a3_2 = B_0093A0.unk_0C;
                                         temp_s0_2 = temp_s0 + func_000002F8(&B_006AE8);
-                                        B_0093AC = temp_a3_2 + 1;
+                                        B_0093A0.unk_0C = temp_a3_2 + 1;
                                         *temp_a3_2 = temp_s0_2;
                                         temp_v0_59 = func_000004A8(&sp10, &B_006A90, &B_006AA8);
-                                        temp_a1_3 = B_0093B0;
-                                        B_0093B0 = temp_a1_3 + 1;
+                                        temp_a1_3 = B_0093A0.unk_10;
+                                        B_0093A0.unk_10 = temp_a1_3 + 1;
                                         *temp_a1_3 = (u8) temp_v0_59;
-                                        temp_a3_3 = B_0093B4;
+                                        temp_a3_3 = B_0093A0.unk_14;
                                         temp_s0_3 = temp_s0_2 + func_000002F8(&B_006AE8);
-                                        B_0093B4 = temp_a3_3 + 1;
+                                        B_0093A0.unk_14 = temp_a3_3 + 1;
                                         *temp_a3_3 = temp_s0_3;
                                         temp_v0_60 = func_000004A8(&sp10, &B_006A90, &B_006AA8);
-                                        temp_a1_4 = B_0093B0;
-                                        B_0093B0 = temp_a1_4 + 1;
+                                        temp_a1_4 = B_0093A0.unk_10;
+                                        B_0093A0.unk_10 = temp_a1_4 + 1;
                                         *temp_a1_4 = (u8) temp_v0_60;
                                         temp_s0_4 = temp_s0_3 + func_000002F8(&B_006AE8);
                                         var_s3_5 = temp_s0_4;
-                                        temp_v1_35 = B_0093B4;
-                                        B_0093B4 = temp_v1_35 + 1;
+                                        temp_v1_35 = B_0093A0.unk_14;
+                                        B_0093A0.unk_14 = temp_v1_35 + 1;
                                         *temp_v1_35 = temp_s0_4;
-                                        temp_v1_36 = B_0093E8;
+                                        temp_v1_36 = B_0093E0.unk_08;
                                         temp_s0_5 = func_000004A8(&sp11, &B_006A9C, &B_006AB4);
-                                        B_0093E8 = temp_v1_36 + 1;
+                                        B_0093E0.unk_08 = temp_v1_36 + 1;
                                         *temp_v1_36 = temp_s0_5 & 0xF;
-                                        temp_a0_7 = B_0093EC;
+                                        temp_a0_7 = B_0093E0.unk_0C;
                                         temp_s2_5 = var_s4 + func_000002F8(&B_006AF4);
-                                        B_0093EC = temp_a0_7 + 1;
+                                        B_0093E0.unk_0C = temp_a0_7 + 1;
                                         *temp_a0_7 = temp_s2_5;
-                                        temp_v1_37 = B_009408;
-                                        B_009408 = temp_v1_37 + 1;
+                                        temp_v1_37 = B_009400.unk_08;
+                                        B_009400.unk_08 = temp_v1_37 + 1;
                                         *temp_v1_37 = (u8) ((u32) (temp_s0_5 & 0xFF) >> 4);
-                                        temp_a0_8 = B_00940C;
+                                        temp_a0_8 = B_009400.unk_0C;
                                         temp_s1 = var_s5 + func_000002F8(&B_006B00);
-                                        B_00940C = temp_a0_8 + 1;
+                                        B_009400.unk_0C = temp_a0_8 + 1;
                                         *temp_a0_8 = temp_s1;
                                         var_s4 = temp_s2_5;
                                         var_s5 = temp_s1;
-                                        if (B_009F38 == NULL) {
-                                            temp_v1_38 = B_0093F0;
+                                        if (B_009F38 == 0) {
+                                            temp_v1_38 = B_0093E0.unk_10;
                                             temp_s0_6 = func_000004A8(&sp11, &B_006A9C, &B_006AB4);
-                                            B_0093F0 = temp_v1_38 + 1;
+                                            B_0093E0.unk_10 = temp_v1_38 + 1;
                                             *temp_v1_38 = temp_s0_6 & 0xF;
-                                            temp_a0_9 = B_0093F4;
+                                            temp_a0_9 = B_0093E0.unk_14;
                                             temp_v0_61 = temp_s2_5 + func_000002F8(&B_006AF4);
-                                            B_0093F4 = temp_a0_9 + 1;
+                                            B_0093E0.unk_14 = temp_a0_9 + 1;
                                             *temp_a0_9 = temp_v0_61;
-                                            temp_v1_39 = B_009410;
+                                            temp_v1_39 = B_009400.unk_10;
                                             var_s4 = temp_v0_61;
-                                            B_009410 = temp_v1_39 + 1;
+                                            B_009400.unk_10 = temp_v1_39 + 1;
                                             *temp_v1_39 = (u8) ((u32) (temp_s0_6 & 0xFF) >> 4);
-                                            temp_a0_10 = B_009414;
+                                            temp_a0_10 = B_009400.unk_14;
                                             temp_v0_62 = temp_s1 + func_000002F8(&B_006B00);
                                             var_s5 = temp_v0_62;
-                                            B_009414 = temp_a0_10 + 1;
+                                            B_009400.unk_14 = temp_a0_10 + 1;
                                             *temp_a0_10 = temp_v0_62;
                                         }
                                     } else {
                                         var_s3_5 += func_000002F8(&B_006AE8);
                                         var_s4 += func_000002F8(&B_006AF4);
                                         temp_v0_63 = func_000002F8(&B_006B00);
-                                        temp_a0_11 = B_0093A8;
-                                        B_0093A8 = temp_a0_11 + 1;
+                                        temp_a0_11 = B_0093A0.unk_08;
+                                        B_0093A0.unk_08 = temp_a0_11 + 1;
                                         *temp_a0_11 = 0;
-                                        temp_a0_12 = B_0093AC;
-                                        B_0093AC = temp_a0_12 + 1;
+                                        temp_a0_12 = B_0093A0.unk_0C;
+                                        B_0093A0.unk_0C = temp_a0_12 + 1;
                                         *temp_a0_12 = var_s3_5;
-                                        temp_a0_13 = B_0093A8;
-                                        B_0093A8 = temp_a0_13 + 1;
+                                        temp_a0_13 = B_0093A0.unk_08;
+                                        B_0093A0.unk_08 = temp_a0_13 + 1;
                                         *temp_a0_13 = 0;
-                                        temp_a0_14 = B_0093AC;
-                                        B_0093AC = temp_a0_14 + 1;
+                                        temp_a0_14 = B_0093A0.unk_0C;
+                                        B_0093A0.unk_0C = temp_a0_14 + 1;
                                         *temp_a0_14 = var_s3_5;
-                                        temp_a0_15 = B_0093B0;
-                                        B_0093B0 = temp_a0_15 + 1;
+                                        temp_a0_15 = B_0093A0.unk_10;
+                                        B_0093A0.unk_10 = temp_a0_15 + 1;
                                         *temp_a0_15 = 0;
-                                        temp_a0_16 = B_0093B4;
-                                        B_0093B4 = temp_a0_16 + 1;
+                                        temp_a0_16 = B_0093A0.unk_14;
+                                        B_0093A0.unk_14 = temp_a0_16 + 1;
                                         *temp_a0_16 = var_s3_5;
-                                        temp_a0_17 = B_0093B0;
-                                        B_0093B0 = temp_a0_17 + 1;
+                                        temp_a0_17 = B_0093A0.unk_10;
+                                        B_0093A0.unk_10 = temp_a0_17 + 1;
                                         *temp_a0_17 = 0;
-                                        temp_a0_18 = B_0093B4;
-                                        B_0093B4 = temp_a0_18 + 1;
+                                        temp_a0_18 = B_0093A0.unk_14;
+                                        B_0093A0.unk_14 = temp_a0_18 + 1;
                                         *temp_a0_18 = var_s3_5;
-                                        temp_a0_19 = B_0093E8;
-                                        B_0093E8 = temp_a0_19 + 1;
+                                        temp_a0_19 = B_0093E0.unk_08;
+                                        B_0093E0.unk_08 = temp_a0_19 + 1;
                                         *temp_a0_19 = 0;
-                                        temp_a0_20 = B_0093EC;
-                                        B_0093EC = temp_a0_20 + 1;
+                                        temp_a0_20 = B_0093E0.unk_0C;
+                                        B_0093E0.unk_0C = temp_a0_20 + 1;
                                         *temp_a0_20 = var_s4;
-                                        temp_a0_21 = B_009408;
-                                        B_009408 = temp_a0_21 + 1;
+                                        temp_a0_21 = B_009400.unk_08;
+                                        B_009400.unk_08 = temp_a0_21 + 1;
                                         *temp_a0_21 = 0;
-                                        temp_v1_40 = B_00940C;
+                                        temp_v1_40 = B_009400.unk_0C;
                                         var_s5 += temp_v0_63;
-                                        B_00940C = temp_v1_40 + 1;
+                                        B_009400.unk_0C = temp_v1_40 + 1;
                                         *temp_v1_40 = var_s5;
-                                        if (B_009F38 == NULL) {
-                                            temp_v1_41 = B_0093F0;
-                                            B_0093F0 = temp_v1_41 + 1;
+                                        if (B_009F38 == 0) {
+                                            temp_v1_41 = B_0093E0.unk_10;
+                                            B_0093E0.unk_10 = temp_v1_41 + 1;
                                             *temp_v1_41 = 0;
-                                            temp_v1_42 = B_0093F4;
-                                            B_0093F4 = temp_v1_42 + 1;
+                                            temp_v1_42 = B_0093E0.unk_14;
+                                            B_0093E0.unk_14 = temp_v1_42 + 1;
                                             *temp_v1_42 = var_s4;
-                                            temp_v1_43 = B_009410;
-                                            B_009410 = temp_v1_43 + 1;
+                                            temp_v1_43 = B_009400.unk_10;
+                                            B_009400.unk_10 = temp_v1_43 + 1;
                                             *temp_v1_43 = 0;
-                                            temp_v1_44 = B_009414;
-                                            B_009414 = temp_v1_44 + 1;
+                                            temp_v1_44 = B_009400.unk_14;
+                                            B_009400.unk_14 = temp_v1_44 + 1;
                                             *temp_v1_44 = var_s5;
                                         }
                                     }
@@ -3078,25 +3032,19 @@ loop_333:
                                 var_fp_3 += 0x20;
                             } while (var_s6 < B_009F40);
                         }
-                        var_a1_21 = (u8 *) B_009F48;
-                        var_a3_5 = B_009F38;
-                        var_a2_4 = &B_0093B4[var_a1_21];
-                        B_0093A8 += var_a1_21;
-                        B_0093AC = &B_0093AC[var_a1_21];
-                        B_0093B0 = &B_0093B0[var_a1_21];
-                        B_0093B4 = var_a2_4;
-                        if (var_a3_5 == NULL) {
-                            var_a1_21 = &B_009408[B_009F54];
-                            var_a2_4 = &B_00940C[B_009F54];
-                            var_a3_5 = &B_0093F0[B_009F54];
-                            B_0093E8 = &B_0093E8[B_009F54];
-                            B_0093EC = &B_0093EC[B_009F54];
-                            B_009408 = var_a1_21;
-                            B_00940C = var_a2_4;
-                            B_0093F0 = var_a3_5;
-                            B_0093F4 = &B_0093F4[B_009F54];
-                            B_009410 = &B_009410[B_009F54];
-                            B_009414 = &B_009414[B_009F54];
+                        B_0093A0.unk_08 = &B_0093A0.unk_08[B_009F48];
+                        B_0093A0.unk_0C = &B_0093A0.unk_0C[B_009F48];
+                        B_0093A0.unk_10 = &B_0093A0.unk_10[B_009F48];
+                        B_0093A0.unk_14 = &B_0093A0.unk_14[B_009F48];
+                        if (B_009F38 == 0) {
+                            B_0093E0.unk_08 = &B_0093E0.unk_08[B_009F54];
+                            B_0093E0.unk_0C = &B_0093E0.unk_0C[B_009F54];
+                            B_009400.unk_08 = &B_009400.unk_08[B_009F54];
+                            B_009400.unk_0C = &B_009400.unk_0C[B_009F54];
+                            B_0093E0.unk_10 = &B_0093E0.unk_10[B_009F54];
+                            B_0093E0.unk_14 = &B_0093E0.unk_14[B_009F54];
+                            B_009400.unk_10 = &B_009400.unk_10[B_009F54];
+                            B_009400.unk_14 = &B_009400.unk_14[B_009F54];
                         }
                         temp_t6_2 = sp84 + 8;
                         sp84 = temp_t6_2;
