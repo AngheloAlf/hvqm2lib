@@ -191,21 +191,17 @@ typedef struct struct_00000040_arg1 {
 // STATIC u8 B_003E24[];
 /* .space 0x0C */
 
-// extern u8 B_003E30[];
-// STATIC u8 B_003E30[];
-/* .space 0x02 */
+extern struct_00000040_arg1 B_003E30;
+// STATIC struct_00000040_arg1 B_003E30;
+/* .space 0x802 */
 
-// extern u8 B_003E32[];
-// STATIC u8 B_003E32[];
-/* .space 0x80E */
+extern struct_00000040_arg1 B_004640;
+// STATIC struct_00000040_arg1 B_004640;
+/* .space 0x802 */
 
-// extern u8 B_004640[];
-// STATIC u8 B_004640[];
-/* .space 0x810 */
-
-// extern u8 B_004E50[];
-// STATIC u8 B_004E50[];
-/* .space 0x810 */
+extern struct_00000040_arg1 B_004E50;
+// STATIC struct_00000040_arg1 B_004E50;
+/* .space 0x802 */
 
 // extern u8 B_005660[];
 // STATIC u8 B_005660[];
@@ -223,12 +219,12 @@ extern u16 B_006672;
 // STATIC u16 B_006672;
 /* .space 0x02 */
 
-// extern u8 B_006674[];
-// STATIC u8 B_006674[];
+extern s16 B_006674;
+// STATIC u8 B_006674;
 /* .space 0x02 */
 
-// extern u8 B_006676[];
-// STATIC u8 B_006676[];
+extern s16 B_006676;
+// STATIC s16 B_006676;
 /* .space 0x02 */
 
 // extern u8 B_006678[];
@@ -522,6 +518,24 @@ STATIC_INLINE s16 inlined_func_01(void) {
     return B_006672++;
 }
 
+STATIC_INLINE s16 inlined_func_02(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    s16 var_a1 = arg1->unk_000;
+
+    while (var_a1 >= 0x100) {
+        if (inlined_func_00(arg0)) {
+            var_a1 = arg1->unk_402[var_a1];
+        } else {
+            var_a1 = arg1->unk_002[var_a1];
+        }
+    }
+
+    return var_a1;
+}
+
+STATIC_INLINE s16 inlined_func_03(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
+    return arg1->unk_002[inlined_func_02(arg0, arg1)];
+}
+
 STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1) {
     u32 temp7;
     u32 temp6;
@@ -559,9 +573,35 @@ STATIC u32 func_00000040(struct_00000040_arg0 *arg0, struct_00000040_arg1 *arg1)
     return (temp7 << 7) | (temp6 << 6) | (temp5 << 5) | (temp4 << 4) | (temp3 << 3) | (temp2 << 2) | (temp1 << 1) | (temp0 << 0);
 }
 
-INCLUDE_ASM("asm/functions/hvqm2decSP1", func_000002F8);
+STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
+    s16 temp_v1 = inlined_func_03(arg0, &B_003E30);
+    s16 var_t0 = temp_v1;
 
-INCLUDE_ASM("asm/functions/hvqm2decSP1", func_000004A8);
+    if ((temp_v1 == B_006676) || (temp_v1 == B_006674)) {
+        do {
+            temp_v1 = inlined_func_03(arg0, &B_003E30);
+            var_t0 += temp_v1;
+        } while ((B_006676 >= temp_v1) || (temp_v1 >= B_006674));
+    }
+
+    return var_t0;
+}
+
+s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2) {
+    u8 var_v0;
+
+    if (*arg0 == 0) {
+        var_v0 = inlined_func_02(arg1, &B_004640);
+
+        if (var_v0 != 0) {
+            return var_v0;
+        }
+        *arg0 = inlined_func_02(arg2, &B_004E50);
+    } else {
+        *arg0 -= 1;
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/functions/hvqm2decSP1", func_0000061C);
 
