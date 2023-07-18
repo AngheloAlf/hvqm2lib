@@ -358,7 +358,7 @@ STATIC s32 func_000002F8(struct_00000040_arg0 *arg0) {
     return var_t0;
 }
 
-s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2) {
+STATIC s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_arg0 *arg2) {
     u8 var_v0;
 
     if (*arg0 == 0) {
@@ -1471,7 +1471,6 @@ void func_00002B80(u32 *outbuf);
 INCLUDE_ASM("asm/functions/hvqm2dec2", func_00002B80);
 #endif
 
-#if 1
 void func_00003560(u32 *outbuf) {
     s32 var_s2;
 
@@ -1560,10 +1559,6 @@ void func_00003560(u32 *outbuf) {
 
     func_00002B80(outbuf);
 }
-#else
-void func_00003560(u32 *outbuf);
-INCLUDE_ASM("asm/functions/hvqm2dec2", func_00003560);
-#endif
 
 #if 0
 ? func_00003560(u32 *, u8 *, u8 *, u8 *);           /* extern */
