@@ -358,6 +358,14 @@ STATIC s32 func_000004A8(u8 *arg0, struct_00000040_arg0 *arg1, struct_00000040_a
 }
 
 #if 0
+STATIC_INLINE s32 inline_fn(s32 arg0) {
+    return -arg0;
+}
+
+STATIC_INLINE s32 inlined_func_04(s32 *arg0, s16 *arg1) {
+    return ((*arg0 * *arg1) + 0x200) >> 0xA;
+}
+
 void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     s16 sp0[0x10];
     s32 sp20;
@@ -400,12 +408,13 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     u8 var_t2;
     s32 var_t7_2;
     s32 var_v0_2;
+    int new_var;
     s32 var_v1;
-    u16 **temp_v1_6;
+    void **temp_v1_6;
     u16 *temp_v0_21;
     u16 temp_t6;
-    u32 temp_a0_5;
-    u8 **temp_v1_5;
+    u16 temp_a0_5;
+    void **temp_v1_5;
     u8 *temp_t0_2;
     u8 *temp_t0_3;
     u8 *temp_t0_4;
@@ -419,10 +428,10 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     u8 *temp_t2_4;
     u8 *temp_t2_5;
     u8 *temp_v0_4;
-    u8 temp_a0_6;
+    u8 *temp_a0_6;
     u8 temp_a0_7;
     u8 temp_a0_8;
-    u8 temp_a0_9;
+    u8 *temp_a0_9;
     u8 temp_a1_18;
     u8 temp_a1_19;
     u8 temp_a1_20;
@@ -436,8 +445,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
     u8 temp_v0_24;
     u8 temp_v0_25;
     u8 temp_v1_7;
-    u8 temp_v1_8;
-    u8 temp_v1_9;
+    u8 *temp_v1_8;
+    u8 *temp_v1_9;
     u8 var_a1;
     u8 var_t7;
     u8 *temp_v0_18;
@@ -502,39 +511,39 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
             temp_v0_4 = *temp_v1_5;
             *temp_v1_5 = temp_v0_4 + 0x10;
 
-            arg0[0] = temp_v0_4[0];
-            arg0[1] = temp_v0_4[1];
-            arg0[2] = temp_v0_4[2];
-            arg0[3] = temp_v0_4[3];
-            arg0[4] = temp_v0_4[4];
-            arg0[5] = temp_v0_4[5];
-            arg0[6] = temp_v0_4[6];
-            arg0[7] = temp_v0_4[7];
-            arg0[8] = temp_v0_4[8];
-            arg0[9] = temp_v0_4[9];
-            arg0[10] = temp_v0_4[10];
-            arg0[11] = temp_v0_4[11];
-            arg0[12] = temp_v0_4[12];
-            arg0[13] = temp_v0_4[13];
-            arg0[14] = temp_v0_4[14];
-            arg0[15] = temp_v0_4[15];
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
+            *arg0++ = *temp_v0_4++;
         } else {
-            arg0[0] = temp_t9;
-            arg0[1] = temp_t9;
-            arg0[2] = temp_t9;
-            arg0[3] = temp_t9;
-            arg0[4] = temp_t9;
-            arg0[5] = temp_t9;
-            arg0[6] = temp_t9;
-            arg0[7] = temp_t9;
-            arg0[8] = temp_t9;
-            arg0[9] = temp_t9;
-            arg0[10] = temp_t9;
-            arg0[11] = temp_t9;
-            arg0[12] = temp_t9;
-            arg0[13] = temp_t9;
-            arg0[14] = temp_t9;
-            arg0[15] = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
+            *arg0++ = temp_t9;
 
             for (var_t7_2 = 0; var_t7_2 < temp_v0; var_t7_2++) {
                 s32 temp;
@@ -546,65 +555,81 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
                 temp_t6 = *temp_v0_21;
                 *temp_v1_6 = temp_v0_21 + 2;
                 temp_t4_2 = (temp_t6 & 1) + 1;
-                temp_a0_5 = temp_t6 & 0xFFFF;
 
                 if (B_009F6C == 8) {
-                    var_v1 = ((temp_a0_5 >> 8) & 0x1F) * B_009F64;
-                    var_v0_2 = (temp_a0_5 >> 2) & 0x3F;
+                    var_v1 = ((temp_t6 >> 8) & 0x1F) * B_009F64;
+                    var_v0_2 = (temp_t6 >> 2) & 0x3F;
                 } else {
-                    var_v1 = ((temp_a0_5 >> 7) & 0x3F) * B_009F64;
-                    var_v0_2 = (temp_a0_5 >> 2) & 0x1F;
+                    var_v1 = ((temp_t6 >> 7) & 0x3F) * B_009F64;
+                    var_v0_2 = (temp_t6 >> 2) & 0x1F;
                 }
 
+                temp_lo = (((temp_t6 >> 1) & 1) + 1) * B_009F64;
+
                 temp_t2_2 = B_009F60 + (var_v0_2 + var_v1);
-                temp_a1_18 = *temp_t2_2;
+                sp0[0] = *temp_t2_2;
+                temp_t3_2 = sp0[0];
+
                 temp_t0_2 = temp_t2_2 + temp_t4_2;
-                temp_lo = (((temp_a0_5 >> 1) & 1) + 1) * B_009F64;
+                sp0[1] = *temp_t0_2;
+                temp_t3_2 += sp0[1];
 
-                sp0[0] = (u16) temp_a1_18;
-                temp_v0_22 = *temp_t0_2;
                 temp_t0_3 = temp_t0_2 + temp_t4_2;
-                sp0[1] = (s16) temp_v0_22;
-                temp_v1_7 = *temp_t0_3;
-                sp0[2] = (s16) temp_v1_7;
-                temp_a0_6 = *(temp_t0_3 + temp_t4_2);
-                sp0[3] = (s16) temp_a0_6;
+                sp0[2] = *temp_t0_3;
+                temp_t3_2 += sp0[2];
+
+                temp_a0_6 = temp_t0_3 + temp_t4_2;
+                sp0[3] = *temp_a0_6;
+                temp_t3_2 += sp0[3];
+
                 temp_t2_3 = temp_t2_2 + temp_lo;
-                temp_a2_2 = *temp_t2_3;
+                sp0[4] = *temp_t2_3;
+                temp_t3_2 += sp0[4];
+
                 temp_t0_4 = temp_t2_3 + temp_t4_2;
-                sp0[4] = (s16) temp_a2_2;
-                temp_a1_19 = *temp_t0_4;
-                temp_t2_4 = temp_t2_3 + temp_lo;
+                sp0[5] = *temp_t0_4;
+                temp_t3_2 += sp0[5];
+
                 temp_t0_5 = temp_t0_4 + temp_t4_2;
-                sp0[5] = (s16) temp_a1_19;
-                temp_v0_23 = *temp_t0_5;
-                sp0[6] = (s16) temp_v0_23;
-                temp_v1_8 = *(temp_t0_5 + temp_t4_2);
-                sp0[7] = (s16) temp_v1_8;
-                temp_a1_20 = *temp_t2_4;
+                sp0[6] = *temp_t0_5;
+                temp_t3_2 += sp0[6];
+
+                temp_v1_8 = temp_t0_5 + temp_t4_2;
+                sp0[7] = *temp_v1_8;
+                temp_t3_2 += sp0[7];
+
+                temp_t2_4 = temp_t2_3 + temp_lo;
+                sp0[8] = *temp_t2_4;
+                temp_t3_2 += sp0[8];
+
                 temp_t0_6 = temp_t2_4 + temp_t4_2;
-                sp0[8] = (s16) temp_a1_20;
-                temp_a0_7 = *temp_t0_6;
-                temp_t2_5 = temp_t2_4 + temp_lo;
+                sp0[9] = *temp_t0_6;
+                temp_t3_2 += sp0[9];
+
                 temp_t0_7 = temp_t0_6 + temp_t4_2;
-                sp0[9] = (s16) temp_a0_7;
-                temp_v0_24 = *temp_t0_7;
-                sp0[10] = (s16) temp_v0_24;
-                temp_v1_9 = *(temp_t0_7 + temp_t4_2);
-                sp0[11] = (s16) temp_v1_9;
-                temp_a0_8 = *temp_t2_5;
+                sp0[10] = *temp_t0_7;
+                temp_t3_2 += sp0[10];
+
+                temp_v1_9 = temp_t0_7 + temp_t4_2;
+                sp0[11] = *temp_v1_9;
+                temp_t3_2 += sp0[11];
+
+                temp_t2_5 = temp_t2_4 + temp_lo;
+                sp0[12] = *temp_t2_5;
+                temp_t3_2 += sp0[12];
+
                 temp_t0_8 = temp_t2_5 + temp_t4_2;
-                sp0[12] = (s16) temp_a0_8;
-                temp_a1_21 = *temp_t0_8;
+                sp0[13] = *temp_t0_8;
+                temp_t3_2 += sp0[13];
+
                 temp_t0_9 = temp_t0_8 + temp_t4_2;
-                sp0[13] = (s16) temp_a1_21;
-                temp_v0_25 = *temp_t0_9;
-                sp0[14] = (s16) temp_v0_25;
-                temp_a0_9 = *(temp_t0_9 + temp_t4_2);
-                sp0[15] = (s16) temp_a0_9;
+                sp0[14] = *temp_t0_9;
+                temp_t3_2 += sp0[14];
 
+                temp_a0_9 = temp_t0_9 + temp_t4_2;
+                sp0[15] = *temp_a0_9;
+                temp_t3_2 += sp0[15];
 
-                temp_t3_2 = temp_a0_9 + (temp_v0_25 + (temp_a1_21 + (temp_a0_8 + (temp_v1_9 + (temp_v0_24 + (temp_a0_7 + (temp_a1_20 + (temp_v1_8 + (temp_v0_23 + (temp_a1_19 + (temp_a2_2 + (temp_a0_6 + (temp_v1_7 + (temp_v0_22 + temp_a1_18))))))))))))));
 
                 temp = (temp_t3_2 + 8) >> 4;
 
@@ -613,14 +638,16 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v1_2 = (s16) sp0[0];
                 if (var_v1_2 < 0) {
-                    var_v1_2 = -var_v1_2;
+                    //var_v1_2 = -var_v1_2;
+                    var_v1_2 = inline_fn(var_v1_2);
                 }
                 var_a1_2 = var_v1_2;
                 sp0[1] = sp0[1] - temp;
 
                 var_v0_3 = (s16) sp0[1];
                 if (var_v0_3 < 0) {
-                    var_v0_3 = -var_v0_3;
+                    //var_v0_3 = -var_v0_3;
+                    var_v0_3 = inline_fn(var_v0_3);
                 }
 
                 if (var_v1_2 < var_v0_3) {
@@ -630,7 +657,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_4 = sp0[2];
                 if (var_v0_4 < 0) {
-                    var_v0_4 = -var_v0_4;
+                    //var_v0_4 = -var_v0_4;
+                    var_v0_4 = inline_fn(var_v0_4);
                 }
 
                 if (var_a1_2 < var_v0_4) {
@@ -640,7 +668,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_5 = (s16) sp0[3];
                 if (var_v0_5 < 0) {
-                    var_v0_5 = -var_v0_5;
+                    //var_v0_5 = -var_v0_5;
+                    var_v0_5 = inline_fn(var_v0_5);
                 }
 
                 if (var_a1_2 < var_v0_5) {
@@ -650,7 +679,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_6 = sp0[4];
                 if (var_v0_6 < 0) {
-                    var_v0_6 = -var_v0_6;
+                    //var_v0_6 = -var_v0_6;
+                    var_v0_6 = inline_fn(var_v0_6);
                 }
 
                 if (var_a1_2 < var_v0_6) {
@@ -660,7 +690,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_7 = sp0[5];
                 if (var_v0_7 < 0) {
-                    var_v0_7 = -var_v0_7;
+                    //var_v0_7 = -var_v0_7;
+                    var_v0_7 = inline_fn(var_v0_7);
                 }
 
                 if (var_a1_2 < var_v0_7) {
@@ -670,7 +701,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_8 = (s16) sp0[6];
                 if (var_v0_8 < 0) {
-                    var_v0_8 = -var_v0_8;
+                    //var_v0_8 = -var_v0_8;
+                    var_v0_8 = inline_fn(var_v0_8);
                 }
 
                 if (var_a1_2 < var_v0_8) {
@@ -680,7 +712,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_9 = sp0[7];
                 if (var_v0_9 < 0) {
-                    var_v0_9 = -var_v0_9;
+                    //var_v0_9 = -var_v0_9;
+                    var_v0_9 = inline_fn(var_v0_9);
                 }
 
                 if (var_a1_2 < var_v0_9) {
@@ -690,7 +723,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_10 = (s16) sp0[8];
                 if (var_v0_10 < 0) {
-                    var_v0_10 = -var_v0_10;
+                    //var_v0_10 = -var_v0_10;
+                    var_v0_10 = inline_fn(var_v0_10);
                 }
 
                 if (var_a1_2 < var_v0_10) {
@@ -700,7 +734,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_11 = (s16) sp0[9];
                 if (var_v0_11 < 0) {
-                    var_v0_11 = -var_v0_11;
+                    //var_v0_11 = -var_v0_11;
+                    var_v0_11 = inline_fn(var_v0_11);
                 }
 
                 if (var_a1_2 < var_v0_11) {
@@ -710,7 +745,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_12 = (s16) sp0[10];
                 if (var_v0_12 < 0) {
-                    var_v0_12 = -var_v0_12;
+                    //var_v0_12 = -var_v0_12;
+                    var_v0_12 = inline_fn(var_v0_12);
                 }
 
                 if (var_a1_2 < var_v0_12) {
@@ -720,7 +756,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_13 = (s16) sp0[11];
                 if (var_v0_13 < 0) {
-                    var_v0_13 = -var_v0_13;
+                    //var_v0_13 = -var_v0_13;
+                    var_v0_13 = inline_fn(var_v0_13);
                 }
 
                 if (var_a1_2 < var_v0_13) {
@@ -730,7 +767,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_14 = (s16) sp0[12];
                 if (var_v0_14 < 0) {
-                    var_v0_14 = -var_v0_14;
+                    //var_v0_14 = -var_v0_14;
+                    var_v0_14 = inline_fn(var_v0_14);
                 }
 
                 if (var_a1_2 < var_v0_14) {
@@ -740,7 +778,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_15 = (s16) sp0[13];
                 if (var_v0_15 < 0) {
-                    var_v0_15 = -var_v0_15;
+                    //var_v0_15 = -var_v0_15;
+                    var_v0_15 = inline_fn(var_v0_15);
                 }
 
                 if (var_a1_2 < var_v0_15) {
@@ -750,7 +789,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v0_16 = (s16) sp0[14];
                 if (var_v0_16 < 0) {
-                    var_v0_16 = -var_v0_16;
+                    //var_v0_16 = -var_v0_16;
+                    var_v0_16 = inline_fn(var_v0_16);
                 }
 
                 if (var_a1_2 < var_v0_16) {
@@ -760,7 +800,8 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 var_v1_3 = sp0[15];
                 if (var_v1_3 < 0) {
-                    var_v1_3 = -var_v1_3;
+                    //var_v1_3 = -var_v1_3;
+                    var_v1_3 = inline_fn(var_v1_3);
                 }
                 if (var_a1_2 < var_v1_3) {
                     var_a1_2 = var_v1_3;
@@ -768,22 +809,22 @@ void func_0000061C(u16 *arg0, struct_009240 *arg1, s32 arg2) {
 
                 sp20 = B_009420[var_a1_2] * (sp20 + (temp_t6 >> 0xD));
 
-                arg0[0] += (s32) ((sp20 * sp0[0]) + 0x200) >> 0xA;
-                arg0[1] += (s32) ((sp20 * sp0[1]) + 0x200) >> 0xA;
-                arg0[2] += (s32) ((sp20 * sp0[2]) + 0x200) >> 0xA;
-                arg0[3] += (s32) ((sp20 * sp0[3]) + 0x200) >> 0xA;
-                arg0[4] += (s32) ((sp20 * sp0[4]) + 0x200) >> 0xA;
-                arg0[5] += (s32) ((sp20 * sp0[5]) + 0x200) >> 0xA;
-                arg0[6] += (s32) ((sp20 * sp0[6]) + 0x200) >> 0xA;
-                arg0[7] += (s32) ((sp20 * sp0[7]) + 0x200) >> 0xA;
-                arg0[8] += (s32) ((sp20 * sp0[8]) + 0x200) >> 0xA;
-                arg0[9] += (s32) ((sp20 * sp0[9]) + 0x200) >> 0xA;
-                arg0[10] += (s32) ((sp20 * sp0[10]) + 0x200) >> 0xA;
-                arg0[11] += (s32) ((sp20 * sp0[11]) + 0x200) >> 0xA;
-                arg0[12] += (s32) ((sp20 * sp0[12]) + 0x200) >> 0xA;
-                arg0[13] += (s32) ((sp20 * sp0[13]) + 0x200) >> 0xA;
-                arg0[14] += (s32) ((sp20 * sp0[14]) + 0x200) >> 0xA;
-                arg0[15] += (s32) ((sp20 * sp0[15]) + 0x200) >> 0xA;
+                *arg0++ += inlined_func_04(&sp20, &sp0[0]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[1]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[2]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[3]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[4]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[5]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[6]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[7]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[8]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[9]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[10]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[11]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[12]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[13]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[14]);
+                *arg0++ += inlined_func_04(&sp20, &sp0[15]);
             }
         }
 
