@@ -1567,7 +1567,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 sp12;
     u32 *sp1C;
     u32 *sp24;
-    s32 *sp2C;
+    HVQM2KeyFrame *sp2C;
     u8 *sp34;
     u8 *sp3C;
     u8 *sp44;
@@ -1880,7 +1880,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
         temp_v0_5 = &temp_v0_4[B_009F5C];
         B_009390 = temp_v0_5;
         B_00939C = &temp_v0_5[B_009F5C];
-        temp_v1 = code + code->unk_0;
+        temp_v1 = code + ((HVQM2Frame*)code)->basisnum_offset[0];
         if (*temp_v1 != 0) {
             B_006A90.unk_8 = temp_v1 + 4;
             B_006A90.unk_0 = 0;
@@ -1892,14 +1892,14 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             B_006A90.unk_8 = NULL;
             B_006A90.unk_0 = 0;
         }
-        temp_v1_2 = code + code->unk_4;
+        temp_v1_2 = code + ((HVQM2Frame*)code)->basisnum_offset[1];
         if (*temp_v1_2 != 0) {
-            B_007350 = temp_v1_2 + 4;
+            B_007350.unk_000 = temp_v1_2 + 4;
         } else {
             B_006A9C.unk_8 = NULL;
         }
         B_006A9C.unk_0 = 0;
-        temp_v1_3 = code + code->unk_8;
+        temp_v1_3 = code + ((HVQM2Frame*)code)->basnumrn_offset[0];
         if (*temp_v1_3 != 0) {
             B_006AA8.unk_8 = temp_v1_3 + 4;
             B_006AA8.unk_0 = 0;
@@ -1911,14 +1911,14 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             B_006AA8.unk_8 = NULL;
             B_006AA8.unk_0 = 0;
         }
-        temp_v1_4 = code + code->unk_C;
+        temp_v1_4 = code + ((HVQM2Frame*)code)->basnumrn_offset[1];
         if (*temp_v1_4 != 0) {
-            B_007B60 = temp_v1_4 + 4;
+            B_007B60.unk_000 = temp_v1_4 + 4;
         } else {
             B_006AB4.unk_8 = NULL;
         }
         B_006AB4.unk_0 = 0;
-        temp_v1_5 = code + code->unk_10;
+        temp_v1_5 = code + ((HVQM2Frame*)code)->scale_offset[0];
         if (*temp_v1_5 != 0) {
             B_006AC0->unk_8 = temp_v1_5 + 4;
             B_006AC0->unk_0 = 0;
@@ -1930,21 +1930,21 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             B_006AC0->unk_8 = NULL;
             B_006AC0->unk_0 = 0;
         }
-        temp_v1_6 = code + code->unk_14;
+        temp_v1_6 = code + ((HVQM2Frame*)code)->scale_offset[1];
         if (*temp_v1_6 != 0) {
-            B_008370 = temp_v1_6 + 4;
+            B_008370.unk_000 = temp_v1_6 + 4;
         } else {
-            *(B_006AC0 + 0x14) = 0;
+            B_006AC0[1].unk_8 = 0;
         }
-        (B_006AC0 + 0xC)->unk_0 = 0;
-        temp_v1_7 = code + code->unk_18;
+        B_006AC0[1].unk_0 = 0;
+        temp_v1_7 = code + ((HVQM2Frame*)code)->scale_offset[2];
         if (*temp_v1_7 != 0) {
-            *(B_006AC0 + 0x14) = temp_v1_7 + 4;
+            B_006AC0[1].unk_8 = temp_v1_7 + 4;
         } else {
-            *(B_006AC0 + 0x20) = 0;
+            B_006AC0[2].unk_8 = 0;
         }
-        (B_006AC0 + 0x18)->unk_0 = 0;
-        temp_v1_8 = code + code->unk_28;
+        B_006AC0[0].unk_0 = 0;
+        temp_v1_8 = code + ((HVQM2Frame*)code)->dcval_offset[0];
         if (*temp_v1_8 != 0) {
             B_006AE8.unk_8 = temp_v1_8 + 4;
             B_006AE8.unk_0 = 0;
@@ -1956,14 +1956,14 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             B_006AE8.unk_8 = NULL;
             B_006AE8.unk_0 = 0;
         }
-        temp_v1_9 = code + code->unk_2C;
+        temp_v1_9 = code + ((HVQM2Frame*)code)->dcval_offset[1];
         if (*temp_v1_9 != 0) {
-            B_006B40 = temp_v1_9 + 4;
+            B_006B40.unk_000 = temp_v1_9 + 4;
         } else {
             B_006AF4.unk_8 = NULL;
         }
         B_006AF4.unk_0 = 0;
-        temp_v1_10 = code + code->unk_30;
+        temp_v1_10 = code + ((HVQM2Frame*)code)->dcval_offset[2];
         if (*temp_v1_10 != 0) {
             B_006AF4.unk_8 = temp_v1_10 + 4;
         } else {
@@ -1974,18 +1974,21 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
         var_a0_2 = &B_006B34;
         var_v1_2 = code;
         do {
+            #if 0
             temp_v0_6 = var_v1_2->unk_1C;
+            #endif
             var_v1_2 += 4;
             var_a1_2 += 1;
             *var_a0_2 = code + temp_v0_6 + 4;
             var_a0_2 += 4;
         } while (var_a1_2 < 3);
+
         B_009F60 = B_006010;
         switch (format) {                           /* irregular */
             case 0x0:
                 var_a2 = 0;
                 var_a0_3 = B_006B10;
-                sp2C = code + 0x34;
+                sp2C = (u8*)code + 0x34;
                 var_a1_3 = sp2C;
                 do {
                     temp_v1_11 = code + *var_a1_3;
@@ -2020,7 +2023,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                     var_a1_4 = ((temp_v0_8 >> 0xF) + &B_007350)->unk_402;
                                     var_v0 = var_a1_4 << 0x10;
                                 } else {
-                                    var_a1_4 = ((temp_v0_8 >> 0xF) + &B_007350)->unk_2;
+                                    var_a1_4 = ((temp_v0_8 >> 0xF) + &B_007350)->unk_002;
                                     var_v0 = var_a1_4 << 0x10;
                                 }
                                 var_v1_3 = var_a1_4;
@@ -2048,7 +2051,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                         var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007B60)->unk_402;
                                         var_v0_3 = var_a1_5 << 0x10;
                                     } else {
-                                        var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007B60)->unk_2;
+                                        var_a1_5 = ((temp_v0_10 >> 0xF) + &B_007B60)->unk_002;
                                         var_v0_3 = var_a1_5 << 0x10;
                                     }
                                     var_v0_2 = var_a1_5 & 0xFF;
@@ -2088,7 +2091,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                     var_a1_6 = ((temp_v0_12 >> 0xF) + &B_007350)->unk_402;
                                     var_v0_5 = var_a1_6 << 0x10;
                                 } else {
-                                    var_a1_6 = ((temp_v0_12 >> 0xF) + &B_007350)->unk_2;
+                                    var_a1_6 = ((temp_v0_12 >> 0xF) + &B_007350)->unk_002;
                                     var_v0_5 = var_a1_6 << 0x10;
                                 }
                                 var_v0_4 = var_a1_6 & 0xFF;
@@ -2112,7 +2115,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                         var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007B60)->unk_402;
                                         var_v0_7 = var_a1_7 << 0x10;
                                     } else {
-                                        var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007B60)->unk_2;
+                                        var_a1_7 = ((temp_v0_14 >> 0xF) + &B_007B60)->unk_002;
                                         var_v0_7 = var_a1_7 << 0x10;
                                     }
                                     var_v0_6 = var_a1_7 & 0xFF;
@@ -2173,7 +2176,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                             var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007B60)->unk_402;
                                             var_v0_9 = var_a1_8 << 0x10;
                                         } else {
-                                            var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007B60)->unk_2;
+                                            var_a1_8 = ((temp_v0_16 >> 0xF) + &B_007B60)->unk_002;
                                             var_v0_9 = var_a1_8 << 0x10;
                                         }
                                     } while ((var_v0_9 >> 0x10) >= 0x100);
@@ -2208,7 +2211,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                                             var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007B60)->unk_402;
                                             var_v0_11 = var_a1_9 << 0x10;
                                         } else {
-                                            var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007B60)->unk_2;
+                                            var_a1_9 = ((temp_v0_18 >> 0xF) + &B_007B60)->unk_002;
                                             var_v0_11 = var_a1_9 << 0x10;
                                         }
                                     } while ((var_v0_11 >> 0x10) >= 0x100);
@@ -2223,7 +2226,9 @@ block_122:
                         }
                         var_s2 = var_v0_10 + temp_s2;
                         var_s0[1] = var_s2;
+                        #if 0
                         var_s0 = &var_s0[1].unk_1;
+                        #endif
                         if (sp11 == 0) {
                             var_v0_12 = func_000002F8(&B_006AF4);
                             if (var_v0_12 == 0) {
@@ -2232,20 +2237,20 @@ block_122:
                                     sp11 = (u8) var_a1_10;
                                 } else {
                                     do {
-                                        if ((B_006B10 + 0xC)->unk_0 == 0) {
-                                            temp_v0_19 = *(B_006B10 + 0x14);
-                                            *(B_006B10 + 0x14) = temp_v0_19 + 4;
-                                            (B_006B10 + 0xC)->unk_0 = 0x80000000;
-                                            *(B_006B10 + 0x10) = *temp_v0_19;
+                                        if (B_006B10[1].unk_0 == 0) {
+                                            temp_v0_19 = B_006B10[1].unk_8;
+                                            B_006B10[1].unk_8 = temp_v0_19 + 4;
+                                            B_006B10[1].unk_0 = 0x80000000;
+                                            B_006B10[1].unk_4 = *temp_v0_19;
                                         }
-                                        temp_a0 = (B_006B10 + 0xC)->unk_0;
-                                        (B_006B10 + 0xC)->unk_0 = temp_a0 >> 1;
+                                        temp_a0 = B_006B10[1].unk_0;
+                                        B_006B10[1].unk_0 = temp_a0 >> 1;
                                         temp_v0_20 = var_a1_10 << 0x10;
-                                        if (*(B_006B10 + 0x10) & temp_a0) {
+                                        if (B_006B10[1].unk_4 & temp_a0) {
                                             var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007B60)->unk_402;
                                             var_v0_13 = var_a1_10 << 0x10;
                                         } else {
-                                            var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007B60)->unk_2;
+                                            var_a1_10 = ((temp_v0_20 >> 0xF) + &B_007B60)->unk_002;
                                             var_v0_13 = var_a1_10 << 0x10;
                                         }
                                     } while ((var_v0_13 >> 0x10) >= 0x100);
@@ -2269,20 +2274,20 @@ block_136:
                                     sp12 = (u8) var_a1_11;
                                 } else {
                                     do {
-                                        if ((B_006B10 + 0x18)->unk_0 == 0) {
-                                            temp_v0_21 = *(B_006B10 + 0x20);
-                                            *(B_006B10 + 0x20) = temp_v0_21 + 4;
-                                            (B_006B10 + 0x18)->unk_0 = 0x80000000;
-                                            *(B_006B10 + 0x1C) = *temp_v0_21;
+                                        if (B_006B10[2].unk_0 == 0) {
+                                            temp_v0_21 = B_006B10[2].unk_8;
+                                            B_006B10[2].unk_8 = temp_v0_21 + 4;
+                                            B_006B10[2].unk_0 = 0x80000000;
+                                            B_006B10[2].unk_4 = *temp_v0_21;
                                         }
-                                        temp_a0_2 = (B_006B10 + 0x18)->unk_0;
-                                        (B_006B10 + 0x18)->unk_0 = temp_a0_2 >> 1;
+                                        temp_a0_2 = B_006B10[2].unk_0;
+                                        B_006B10[2].unk_0 = temp_a0_2 >> 1;
                                         temp_v0_22 = var_a1_11 << 0x10;
-                                        if (*(B_006B10 + 0x1C) & temp_a0_2) {
+                                        if (B_006B10[2].unk_4 & temp_a0_2) {
                                             var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007B60)->unk_402;
                                             var_v0_15 = var_a1_11 << 0x10;
                                         } else {
-                                            var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007B60)->unk_2;
+                                            var_a1_11 = ((temp_v0_22 >> 0xF) + &B_007B60)->unk_002;
                                             var_v0_15 = var_a1_11 << 0x10;
                                         }
                                     } while ((var_v0_15 >> 0x10) >= 0x100);
@@ -2327,7 +2332,7 @@ block_150:
                                                 var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007B60)->unk_402;
                                                 var_v0_17 = var_a1_12 << 0x10;
                                             } else {
-                                                var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007B60)->unk_2;
+                                                var_a1_12 = ((temp_v0_24 >> 0xF) + &B_007B60)->unk_002;
                                                 var_v0_17 = var_a1_12 << 0x10;
                                             }
                                         } while ((var_v0_17 >> 0x10) >= 0x100);
@@ -2364,7 +2369,7 @@ block_168:
                                                 var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007B60)->unk_402;
                                                 var_v0_19 = var_a1_13 << 0x10;
                                             } else {
-                                                var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007B60)->unk_2;
+                                                var_a1_13 = ((temp_v0_27 >> 0xF) + &B_007B60)->unk_002;
                                                 var_v0_19 = var_a1_13 << 0x10;
                                             }
                                         } while ((var_v0_19 >> 0x10) >= 0x100);
@@ -2377,10 +2382,14 @@ block_168:
 block_182:
                                 var_v0_18 = 0;
                             }
+                            #if 0
                             var_s1 = &var_s1[1].unk_1;
+                            #endif
                             temp_v0_28 = var_v0_18 + temp_s2_2;
                             var_s0[1] = temp_v0_28;
+                            #if 0
                             var_s0 = &var_s0[1].unk_1;
+                            #endif
                             var_s3_2 -= 1;
                             var_s2_2 = (u8) ((u32) (*var_s1 + (temp_v0_28 & 0xFF)) >> 1);
                         } while (var_s3_2 > 0);
@@ -2415,7 +2424,7 @@ block_182:
                                                     var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007B60)->unk_402;
                                                     var_v0_21 = var_a1_14 << 0x10;
                                                 } else {
-                                                    var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007B60)->unk_2;
+                                                    var_a1_14 = ((temp_v0_30 >> 0xF) + &B_007B60)->unk_002;
                                                     var_v0_21 = var_a1_14 << 0x10;
                                                 }
                                             } while ((var_v0_21 >> 0x10) >= 0x100);
@@ -2451,7 +2460,7 @@ block_182:
                                                     var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007B60)->unk_402;
                                                     var_v0_23 = var_a1_15 << 0x10;
                                                 } else {
-                                                    var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007B60)->unk_2;
+                                                    var_a1_15 = ((temp_v0_33 >> 0xF) + &B_007B60)->unk_002;
                                                     var_v0_23 = var_a1_15 << 0x10;
                                                 }
                                             } while ((var_v0_23 >> 0x10) >= 0x100);
@@ -2464,10 +2473,14 @@ block_182:
 block_212:
                                     var_v0_22 = 0;
                                 }
+                                #if 0
                                 var_s1 = &var_s1[1].unk_1;
+                                #endif
                                 temp_v0_34 = var_v0_22 + temp_s2_3;
                                 var_s0[1] = temp_v0_34;
+                                #if 0
                                 var_s0 = &var_s0[1].unk_1;
+                                #endif
                                 var_s2_3 = (u8) ((u32) (*var_s1 + (temp_v0_34 & 0xFF)) >> 1);
                                 if (sp11 == 0) {
                                     var_v0_24 = func_000002F8(&B_006AF4);
@@ -2477,20 +2490,20 @@ block_212:
                                             sp11 = (u8) var_a1_16;
                                         } else {
                                             do {
-                                                if ((B_006B10 + 0xC)->unk_0 == 0) {
-                                                    temp_v0_35 = *(B_006B10 + 0x14);
-                                                    *(B_006B10 + 0x14) = temp_v0_35 + 4;
-                                                    (B_006B10 + 0xC)->unk_0 = 0x80000000;
-                                                    *(B_006B10 + 0x10) = *temp_v0_35;
+                                                if (B_006B10[1].unk_0 == 0) {
+                                                    temp_v0_35 = B_006B10[1].unk_8;
+                                                    B_006B10[1].unk_8 = temp_v0_35 + 4;
+                                                    B_006B10[1].unk_0 = 0x80000000;
+                                                    B_006B10[1].unk_4 = *temp_v0_35;
                                                 }
-                                                temp_a0_3 = (B_006B10 + 0xC)->unk_0;
-                                                (B_006B10 + 0xC)->unk_0 = temp_a0_3 >> 1;
+                                                temp_a0_3 = B_006B10[1].unk_0;
+                                                B_006B10[1].unk_0 = temp_a0_3 >> 1;
                                                 temp_v0_36 = var_a1_16 << 0x10;
-                                                if (*(B_006B10 + 0x10) & temp_a0_3) {
+                                                if (B_006B10[1].unk_4 & temp_a0_3) {
                                                     var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007B60)->unk_402;
                                                     var_v0_25 = var_a1_16 << 0x10;
                                                 } else {
-                                                    var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007B60)->unk_2;
+                                                    var_a1_16 = ((temp_v0_36 >> 0xF) + &B_007B60)->unk_002;
                                                     var_v0_25 = var_a1_16 << 0x10;
                                                 }
                                             } while ((var_v0_25 >> 0x10) >= 0x100);
@@ -2516,20 +2529,20 @@ block_226:
                                             sp12 = (u8) var_a1_17;
                                         } else {
                                             do {
-                                                if ((B_006B10 + 0x18)->unk_0 == 0) {
-                                                    temp_v0_38 = *(B_006B10 + 0x20);
-                                                    *(B_006B10 + 0x20) = temp_v0_38 + 4;
-                                                    (B_006B10 + 0x18)->unk_0 = 0x80000000;
-                                                    *(B_006B10 + 0x1C) = *temp_v0_38;
+                                                if (B_006B10[2].unk_0 == 0) {
+                                                    temp_v0_38 = B_006B10[2].unk_8;
+                                                    B_006B10[2].unk_8 = temp_v0_38 + 4;
+                                                    B_006B10[2].unk_0 = 0x80000000;
+                                                    B_006B10[2].unk_4 = *temp_v0_38;
                                                 }
-                                                temp_a0_4 = (B_006B10 + 0x18)->unk_0;
-                                                (B_006B10 + 0x18)->unk_0 = temp_a0_4 >> 1;
+                                                temp_a0_4 = B_006B10[2].unk_0;
+                                                B_006B10[2].unk_0 = temp_a0_4 >> 1;
                                                 temp_v0_39 = var_a1_17 << 0x10;
-                                                if (*(B_006B10 + 0x1C) & temp_a0_4) {
+                                                if (B_006B10[2].unk_4 & temp_a0_4) {
                                                     var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007B60)->unk_402;
                                                     var_v0_27 = var_a1_17 << 0x10;
                                                 } else {
-                                                    var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007B60)->unk_2;
+                                                    var_a1_17 = ((temp_v0_39 >> 0xF) + &B_007B60)->unk_002;
                                                     var_v0_27 = var_a1_17 << 0x10;
                                                 }
                                             } while ((var_v0_27 >> 0x10) >= 0x100);
@@ -2576,7 +2589,7 @@ block_240:
                                                         var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007B60)->unk_402;
                                                         var_v0_29 = var_a1_18 << 0x10;
                                                     } else {
-                                                        var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007B60)->unk_2;
+                                                        var_a1_18 = ((temp_v0_42 >> 0xF) + &B_007B60)->unk_002;
                                                         var_v0_29 = var_a1_18 << 0x10;
                                                     }
                                                 } while ((var_v0_29 >> 0x10) >= 0x100);
@@ -2613,7 +2626,7 @@ block_258:
                                                         var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007B60)->unk_402;
                                                         var_v0_31 = var_a1_19 << 0x10;
                                                     } else {
-                                                        var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007B60)->unk_2;
+                                                        var_a1_19 = ((temp_v0_45 >> 0xF) + &B_007B60)->unk_002;
                                                         var_v0_31 = var_a1_19 << 0x10;
                                                     }
                                                 } while ((var_v0_31 >> 0x10) >= 0x100);
@@ -2626,10 +2639,14 @@ block_258:
 block_272:
                                         var_v0_30 = 0;
                                     }
+                                    #if 0
                                     var_s1 = &var_s1[1].unk_1;
+                                    #endif
                                     temp_v0_46 = var_v0_30 + temp_s2_4;
                                     var_s0[1] = temp_v0_46;
+                                    #if 0
                                     var_s0 = &var_s0[1].unk_1;
+                                    #endif
                                     var_s3_4 -= 1;
                                     var_s2_4 = (u8) ((u32) (*var_s1 + (temp_v0_46 & 0xFF)) >> 1);
                                 } while (var_s3_4 > 0);
@@ -2640,7 +2657,7 @@ block_272:
                     } while (temp_t6 >= 2);
                 }
                 var_a2_4 = B_009F60;
-                var_a0_4 = &B_009394[sp2C->unk_C + (sp2C->unk_E * B_009F48)];
+                var_a0_4 = &B_009394[sp2C->nest_start_x + (sp2C->nest_start_y * B_009F48)];
                 var_t0_4 = B_009F48;
                 if (B_009F48 < B_009F64) {
                     var_t2 = B_009F64 - var_t0_4;
@@ -2738,8 +2755,9 @@ loop_298:
 block_348:
                 func_00003560(sp1C);
                 return;
+
             case 0x1:
-                temp_v1_24 = code + code->unk_34;
+                temp_v1_24 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->movevector_offset;
                 if (*temp_v1_24 != 0) {
                     B_006A80.unk_8 = temp_v1_24 + 4;
                     B_006A80.unk_0 = 0;
@@ -2751,9 +2769,9 @@ block_348:
                     B_006A80.unk_8 = NULL;
                     B_006A80.unk_0 = 0;
                 }
-                temp_a0_5 = code + (code + 0x34)->unk_4;
+                temp_a0_5 = code + ((HVQM2PredictFrame*)((u8*)code + sizeof(HVQM2Frame)))->macroblock_offset;
                 if (*temp_a0_5 != 0) {
-                    B_008B80 = temp_a0_5 + 4;
+                    B_008B80.unk_000 = temp_a0_5 + 4;
                 } else {
                     B_006A74.unk_8 = NULL;
                 }
@@ -2812,7 +2830,7 @@ block_348:
                                                 var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008B80)->unk_402;
                                                 var_v0_32 = var_a1_22 << 0x10;
                                             } else {
-                                                var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008B80)->unk_2;
+                                                var_a1_22 = ((temp_v0_51 >> 0xF) + &B_008B80)->unk_002;
                                                 var_v0_32 = var_a1_22 << 0x10;
                                             }
                                         } while ((var_v0_32 >> 0x10) >= 0x100);
@@ -2834,7 +2852,7 @@ block_348:
                                                 var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008B80)->unk_402;
                                                 var_v0_33 = var_a1_23 << 0x10;
                                             } else {
-                                                var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008B80)->unk_2;
+                                                var_a1_23 = ((temp_v0_53 >> 0xF) + &B_008B80)->unk_002;
                                                 var_v0_33 = var_a1_23 << 0x10;
                                             }
                                         } while ((var_v0_33 >> 0x10) >= 0x100);
