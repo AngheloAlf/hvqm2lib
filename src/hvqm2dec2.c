@@ -1596,12 +1596,16 @@ STATIC_INLINE u32 inlined_func_14(u32 arg0, u32 arg1) {
     return (arg0 + arg1) / 2;
 }
 
+STATIC_INLINE void inlined_func_15(u8 **arg0, s32 arg1) {
+    u8 *temp = *arg0;
+
+    *temp++ = arg1;
+
+    *arg0 = temp;
+}
+
 void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf) {
-    u8 sp10;
-    u8 sp11;
-    u8 sp12;
-    u32 *sp1C;
-    u32 *sp24;
+    u8 sp10[3];
     HVQM2KeyFrame *sp2C;
     u8 *sp34;
     u8 *sp3C;
@@ -1612,92 +1616,14 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 sp77;
     u8 sp7F;                                        /* compiler-managed */
     s32 sp84;
-    s16 var_v0_10;
-    s16 var_v0_12;
-    s16 var_v0_14;
-    s16 var_v0_16;
-    s16 var_v0_18;
-    s16 var_v0_20;
-    s16 var_v0_22;
-    s16 var_v0_24;
-    s16 var_v0_26;
-    s16 var_v0_28;
-    s16 var_v0_30;
-    s16 var_v0_8;
-    s32 *temp_a0_5;
-    s32 *temp_v0_11;
-    s32 *temp_v0_13;
-    s32 *temp_v0_15;
-    s32 *temp_v0_17;
-    s32 *temp_v0_19;
-    s32 *temp_v0_21;
-    s32 *temp_v0_23;
-    s32 *temp_v0_26;
-    s32 *temp_v0_29;
-    s32 *temp_v0_32;
-    s32 *temp_v0_35;
-    s32 *temp_v0_38;
-    s32 *temp_v0_41;
-    s32 *temp_v0_44;
-    s32 *temp_v0_49;
-    s32 *temp_v0_50;
-    s32 *temp_v0_52;
-    s32 *temp_v0_56;
-    s32 *temp_v0_7;
-    s32 *temp_v0_9;
-    s32 *temp_v1;
-    s32 *temp_v1_10;
-    s32 *temp_v1_11;
-    s32 *temp_v1_24;
-    s32 *temp_v1_2;
-    s32 *temp_v1_3;
-    s32 *temp_v1_4;
-    s32 *temp_v1_5;
-    s32 *temp_v1_6;
-    s32 *temp_v1_7;
-    s32 *temp_v1_8;
-    s32 *temp_v1_9;
-    s32 *var_a1_3;
     s32 temp_s0_5;
     s32 temp_s0_6;
     s32 temp_t6;
-    s32 temp_v0_10;
-    s32 temp_v0_12;
-    s32 temp_v0_14;
-    s32 temp_v0_16;
-    s32 temp_v0_18;
-    s32 temp_v0_20;
-    s32 temp_v0_22;
-    s32 temp_v0_24;
-    s32 temp_v0_27;
-    s32 temp_v0_30;
-    s32 temp_v0_33;
-    s32 temp_v0_36;
-    s32 temp_v0_39;
-    s32 temp_v0_42;
-    s32 temp_v0_45;
-    s32 temp_v0_51;
-    s32 temp_v0_53;
     s32 temp_v0_57;
     s32 temp_v0_58;
     s32 temp_v0_59;
     s32 temp_v0_60;
-    s32 temp_v0_63;
     s32 temp_v0_8;
-    s32 temp_v1_12;
-    s32 temp_v1_13;
-    s32 temp_v1_14;
-    s32 temp_v1_15;
-    s32 temp_v1_16;
-    s32 temp_v1_17;
-    s32 temp_v1_18;
-    s32 temp_v1_19;
-    s32 temp_v1_20;
-    s32 temp_v1_21;
-    s32 temp_v1_22;
-    s32 temp_v1_23;
-    s32 temp_v1_25;
-    s32 temp_v1_26;
     s32 var_a0_6;
     s32 var_a1;
     s32 var_a1_2;
@@ -1720,16 +1646,6 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     s32 var_t3;
     s32 var_t4;
     s32 var_v0;
-    s32 var_v0_11;
-    s32 var_v0_13;
-    s32 var_v0_15;
-    s32 var_v0_17;
-    s32 var_v0_19;
-    s32 var_v0_21;
-    s32 var_v0_23;
-    s32 var_v0_25;
-    s32 var_v0_27;
-    s32 var_v0_29;
     u8 var_v0_2;
     s32 var_v0_31;
     s32 var_v0_32;
@@ -1747,19 +1663,6 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     s32 var_v1_7;
     s32 var_v1_8;
     s32 var_v1_9;
-    s8 temp_v0_54;
-    struct_00000040_arg0 *var_a0_3;
-    u16 var_a1_10;
-    u16 var_a1_11;
-    u16 var_a1_12;
-    u16 var_a1_13;
-    u16 var_a1_14;
-    u16 var_a1_15;
-    u16 var_a1_16;
-    u16 var_a1_17;
-    u16 var_a1_18;
-    u16 var_a1_19;
-    u16 var_a1_22;
     u8 var_a1_23;
     u16 var_a1_4;
     u16 var_a1_5;
@@ -1786,46 +1689,8 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 temp_s2_4;
     u32 temp_v0_55;
     u8 var_v0_4;
-    u8 *temp_a0_10;
-    u8 *temp_a0_11;
-    u8 *temp_a0_12;
-    u8 *temp_a0_13;
-    u8 *temp_a0_14;
-    u8 *temp_a0_15;
-    u8 *temp_a0_16;
-    u8 *temp_a0_17;
-    u8 *temp_a0_18;
-    u8 *temp_a0_19;
-    u8 *temp_a0_20;
-    u8 *temp_a0_21;
-    u8 *temp_a0_7;
-    u8 *temp_a0_8;
-    u8 *temp_a0_9;
-    u8 *temp_a1;
-    u8 *temp_a1_2;
-    u8 *temp_a1_3;
-    u8 *temp_a1_4;
-    u8 *temp_a3;
     u8 *temp_a3_2;
     u8 *temp_a3_3;
-    u8 *temp_v1_27;
-    u8 *temp_v1_28;
-    u8 *temp_v1_29;
-    u8 *temp_v1_30;
-    u8 *temp_v1_31;
-    u8 *temp_v1_32;
-    u8 *temp_v1_33;
-    u8 *temp_v1_34;
-    u8 *temp_v1_35;
-    u8 *temp_v1_36;
-    u8 *temp_v1_37;
-    u8 *temp_v1_38;
-    u8 *temp_v1_39;
-    u8 *temp_v1_40;
-    u8 *temp_v1_41;
-    u8 *temp_v1_42;
-    u8 *temp_v1_43;
-    u8 *temp_v1_44;
     u8 *var_a0_4;
     u8 *var_a0_5;
     u8 *var_a1_20;
@@ -1839,22 +1704,9 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     u8 temp_s0;
     u8 temp_s0_2;
     u8 temp_s0_3;
-    u8 temp_s0_4;
     u8 temp_s1;
     u8 temp_s2;
     u8 temp_s2_5;
-    u8 temp_v0_25;
-    u8 temp_v0_28;
-    u8 temp_v0_31;
-    u8 temp_v0_34;
-    u8 temp_v0_37;
-    u8 temp_v0_40;
-    u8 temp_v0_43;
-    u8 temp_v0_46;
-    u8 temp_v0_47;
-    u8 temp_v0_48;
-    u8 temp_v0_61;
-    u8 temp_v0_62;
     u8 var_fp;
     u8 var_fp_2;
     u8 var_s2;
@@ -1871,8 +1723,6 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
     HVQM2PredictFrame *predictFrameHeader;
 
 
-    sp1C = outbuf;
-    sp24 = previm;
     if (format == 2) {
         inlined_func_10(outbuf, previm);
         return;
@@ -1966,34 +1816,34 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             sp34 = B_009398;
             var_s7 = 0;
             var_s2 = 0;
-            sp12 = 0;
-            sp11 = 0;
-            sp10 = 0;
+            sp10[2] = 0;
+            sp10[1] = 0;
+            sp10[0] = 0;
             var_s1 = B_009394;
             sp44 = B_00939C;
 
             for (var_s3 = B_009F54; var_s3 > 0; var_s3--) {
-                var_s2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                var_s2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                 *var_s0++ = var_s2;
 
-                var_s2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                var_s2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                 *var_s0++ = var_s2;
 
-                var_s7 += inlined_func_13(&B_006AE8[1], &B_006B10[1], &sp11);
+                var_s7 += inlined_func_13(&B_006AE8[1], &B_006B10[1], &sp10[1]);
                 *sp3C++ = var_s7;
 
-                var_fp += inlined_func_13(&B_006AE8[2], &B_006B10[2], &sp12);
+                var_fp += inlined_func_13(&B_006AE8[2], &B_006B10[2], &sp10[2]);
                 *sp4C++ = var_fp;
             }
 
             if (B_009F38 != 0) {
                 var_s2_2 = *var_s1++;
                 for (var_s3_2 = B_009F54; var_s3_2 > 0; var_s3_2--) {
-                    var_s2_2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                    var_s2_2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                     *var_s0++ = var_s2_2;
                     var_s2_2 = inlined_func_14(var_s2_2, *var_s1++);
 
-                    var_s2_2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                    var_s2_2 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                     *var_s0++ = var_s2_2;
                     var_s2_2 = inlined_func_14(var_s2_2, *var_s1++);
                 }
@@ -2005,19 +1855,19 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                 var_fp_2 = *(sp44 - 1);
 
                 for (var_s3_3 = B_009F54; var_s3_3 > 0; var_s3_3--) {
-                    var_s2_3 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                    var_s2_3 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                     *var_s0++ = var_s2_3;
                     var_s2_3 = inlined_func_14(var_s2_3, *var_s1++);
 
-                    var_s2_3 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                    var_s2_3 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                     *var_s0++ = var_s2_3;
                     var_s2_3 = inlined_func_14(var_s2_3, *var_s1++);
 
-                    var_s7_2 += inlined_func_13(&B_006AE8[1], &B_006B10[1], &sp11);
+                    var_s7_2 += inlined_func_13(&B_006AE8[1], &B_006B10[1], &sp10[1]);
                     *sp3C++ = var_s7_2;
                     var_s7_2 = inlined_func_14(var_s7_2, *sp34++);
 
-                    var_fp_2 += inlined_func_13(&B_006AE8[2], &B_006B10[2], &sp12);
+                    var_fp_2 += inlined_func_13(&B_006AE8[2], &B_006B10[2], &sp10[2]);
                     *sp4C++ = var_fp_2;
                     var_fp_2 = inlined_func_14(var_fp_2, *sp44++);
                 }
@@ -2025,11 +1875,11 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                 if (B_009F38 != 0) {
                     var_s2_4 = *(var_s1 - 1);
                     for (var_s3_4 = B_009F54; var_s3_4 > 0; var_s3_4--) {
-                        var_s2_4 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                        var_s2_4 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                         *var_s0++ = var_s2_4;
                         var_s2_4 = inlined_func_14(var_s2_4, *var_s1++);
 
-                        var_s2_4 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10);
+                        var_s2_4 += inlined_func_13(&B_006AE8[0], &B_006B10[0], &sp10[0]);
                         *var_s0++ = var_s2_4;
                         var_s2_4 = inlined_func_14(var_s2_4, *var_s1++);
                     }
@@ -2066,39 +1916,29 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             }
 
             for (var_a3_3 = var_v1_6; var_a3_3 > 0; var_a3_3--) {
-                var_v1_7 = var_t0_4;
                 var_a1_20 = var_a0_4;
-                while (var_v1_7 > 0) {
+                for (var_v1_7 = var_t0_4; var_v1_7 > 0; var_v1_7--) {
                     *var_a2_4++ = *var_a1_20++;
-                    var_v1_7 -= 1;
                 }
 
-                var_v1_8 = var_t2;
-                while (var_v1_8 > 0) {
+                for (var_v1_8 = var_t2; var_v1_8 > 0; var_v1_8--) {
                     var_a1_20 -= 1;
-                    var_v1_8 -= 1;
                     *var_a2_4++ = *var_a1_20;
                 }
 
-                var_v1_9 = var_t3;
-                while (var_v1_9 > 0) {
+                for (var_v1_9 = var_t3; var_v1_9 > 0; var_v1_9--) {
                     *var_a2_4++ = 0;
-                    var_v1_9 -= 1;
                 }
 
                 var_a0_4 = &var_a0_4[B_009F48];
             }
 
-            var_a3_4 = var_t1_2;
             var_a1_21 = var_a2_4 - B_009F64;
-            while (var_a3_4 > 0) {
-                var_v1_10 = B_009F64;
+            for (var_a3_4 = var_t1_2; var_a3_4 > 0; var_a3_4--) {
                 var_a0_5 = var_a1_21;
-                while (var_v1_10 > 0) {
+                for (var_v1_10 = B_009F64; var_v1_10 > 0; var_v1_10--) {
                     *var_a2_4++ = *var_a0_5++;
-                    var_v1_10 -= 1;
                 }
-                var_a3_4 -= 1;
                 var_a1_21 -= B_009F64;
             }
 
@@ -2108,7 +1948,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                 }
             }
 
-            func_00003560(sp1C);
+            func_00003560(outbuf);
             return;
 
         case 0x1:
@@ -2118,22 +1958,24 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
 
             inlined_func_12(&B_006A74, code + predictFrameHeader->macroblock_offset, NULL);
 
+            sp6C = outbuf;
+
             var_s3_5 = 0;
             var_s4 = 0;
             sp77 = 0;
             sp7F = 0;
-            sp10 = 0;
-            sp11 = 0;
+            sp10[0] = 0;
+            sp10[1] = 0;
+            var_s5 = 0;
+
             B_0093A0.unk_08 = B_009388;
             B_0093A0.unk_0C = B_009394;
-            sp6C = sp1C;
             B_0093A0.unk_10 = &B_009388[B_009F48];
             B_0093A0.unk_14 = &B_009394[B_009F48];
             B_0093E0.unk_08 = B_00938C;
             B_0093E0.unk_0C = B_009398;
             B_009400.unk_08 = B_009390;
             B_009400.unk_0C = B_00939C;
-            var_s5 = 0;
             if (B_009F38 == 0) {
                 B_0093E0.unk_10 = &B_00938C[B_009F54];
                 B_0093E0.unk_14 = &B_009398[B_009F54];
@@ -2145,186 +1987,140 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
             while (sp84 < B_009F44) {
                 var_fp_3 = sp6C;
 
-                for (var_s6 = 0; var_s6 < B_009F40; var_s6++, var_fp_3 += 0x20) {
+                for (var_s6 = 0; var_s6 < B_009F40; var_s6 += 8) {
                     if (!inlined_func_00(&B_006A74)) {
                         sp77 += inlined_func_02(&B_006A80, &B_008B80);
 
                         sp7F += inlined_func_02(&B_006A80, &B_008B80);
 
-                        var_t0_5 = var_fp_3;
-                        var_a3_6 = 8;
-                        var_v1_12 = &(&sp24[var_s6 + (s8) sp77])[(sp84 + sp7F) * B_009F24];
-                        while (var_a3_6 != 0) {
+                        var_t0_5 = var_fp_3 + var_s6;
+                        var_v1_12 = &(&previm[var_s6 + (s8) sp77])[(sp84 + sp7F) * B_009F24];
+                        for (var_a3_6 = 8; var_a3_6 != 0; var_a3_6--) {
                             var_a2_5 = var_t0_5;
                             var_a1_24 = var_v1_12;
 
-                            var_a0_6 = 8;
-                            while (var_a0_6 != 0) {
+                            for (var_a0_6 = 8; var_a0_6 != 0; var_a0_6--) {
                                 *var_a2_5++ = *var_a1_24++;
-                                var_a0_6 -= 1;
                             }
 
-                            var_a3_6 -= 1;
                             var_t0_5 = &var_t0_5[B_009F24];
                             var_v1_12 = &var_v1_12[B_009F24];
                         }
 
-                        temp_v1_27 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_v1_27 + 1;
-                        *temp_v1_27 = 0x80;
-                        temp_v1_28 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_v1_28 + 1;
-                        *temp_v1_28 = 0x80;
-                        temp_v1_29 = B_0093A0.unk_10;
+                        inlined_func_15(&B_0093A0.unk_08, 0x80);
+
+                        inlined_func_15(&B_0093A0.unk_08, 0x80);
+
                         B_0093A0.unk_0C = B_0093A0.unk_0C + 2;
-                        B_0093A0.unk_10 = temp_v1_29 + 1;
-                        *temp_v1_29 = 0x80;
-                        temp_v1_30 = B_0093A0.unk_10;
-                        B_0093A0.unk_10 = temp_v1_30 + 1;
-                        *temp_v1_30 = 0x80;
-                        temp_v1_31 = B_0093E0.unk_08;
+
+                        inlined_func_15(&B_0093A0.unk_10, 0x80);
+
+                        inlined_func_15(&B_0093A0.unk_10, 0x80);
+
                         B_0093A0.unk_14 = B_0093A0.unk_14 + 2;
-                        B_0093E0.unk_08 = temp_v1_31 + 1;
-                        *temp_v1_31 = 0x80;
-                        temp_v1_32 = B_009400.unk_08;
+
+                        inlined_func_15(&B_0093E0.unk_08, 0x80);
+
                         B_0093E0.unk_0C = B_0093E0.unk_0C + 1;
-                        B_009400.unk_08 = temp_v1_32 + 1;
-                        *temp_v1_32 = 0x80;
+
+                        inlined_func_15(&B_009400.unk_08, 0x80);
+
                         B_009400.unk_0C = B_009400.unk_0C + 1;
+
                         if (B_009F38 == 0) {
-                            temp_v1_33 = B_0093E0.unk_10;
-                            B_0093E0.unk_10 = temp_v1_33 + 1;
-                            *temp_v1_33 = 0x80;
-                            temp_v1_34 = B_009400.unk_10;
+                            inlined_func_15(&B_0093E0.unk_10, 0x80);
+
                             B_0093E0.unk_14 = B_0093E0.unk_14 + 1;
-                            B_009400.unk_10 = temp_v1_34 + 1;
-                            *temp_v1_34 = 0x80;
+
+                            inlined_func_15(&B_009400.unk_10, 0x80);
+
                             B_009400.unk_14 = B_009400.unk_14 + 1;
                         }
                     } else if (!inlined_func_00(&B_006A74)) {
-                        temp_v0_57 = func_000004A8(&sp10, &B_006A90[0], &B_006AA8[0]);
-                        temp_a1 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_a1 + 1;
-                        *temp_a1 = (u8) temp_v0_57;
-                        temp_a3 = B_0093A0.unk_0C;
-                        temp_s0 = var_s3_5 + func_000002F8(&B_006AE8[0]);
-                        B_0093A0.unk_0C = temp_a3 + 1;
-                        *temp_a3 = temp_s0;
-                        temp_v0_58 = func_000004A8(&sp10, &B_006A90[0], &B_006AA8[0]);
-                        temp_a1_2 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_a1_2 + 1;
-                        *temp_a1_2 = (u8) temp_v0_58;
-                        temp_a3_2 = B_0093A0.unk_0C;
-                        temp_s0_2 = temp_s0 + func_000002F8(&B_006AE8[0]);
-                        B_0093A0.unk_0C = temp_a3_2 + 1;
-                        *temp_a3_2 = temp_s0_2;
-                        temp_v0_59 = func_000004A8(&sp10, &B_006A90[0], &B_006AA8[0]);
-                        temp_a1_3 = B_0093A0.unk_10;
-                        B_0093A0.unk_10 = temp_a1_3 + 1;
-                        *temp_a1_3 = (u8) temp_v0_59;
-                        temp_a3_3 = B_0093A0.unk_14;
-                        temp_s0_3 = temp_s0_2 + func_000002F8(&B_006AE8[0]);
-                        B_0093A0.unk_14 = temp_a3_3 + 1;
-                        *temp_a3_3 = temp_s0_3;
-                        temp_v0_60 = func_000004A8(&sp10, &B_006A90[0], &B_006AA8[0]);
-                        temp_a1_4 = B_0093A0.unk_10;
-                        B_0093A0.unk_10 = temp_a1_4 + 1;
-                        *temp_a1_4 = (u8) temp_v0_60;
-                        temp_s0_4 = temp_s0_3 + func_000002F8(&B_006AE8[0]);
-                        var_s3_5 = temp_s0_4;
-                        temp_v1_35 = B_0093A0.unk_14;
-                        B_0093A0.unk_14 = temp_v1_35 + 1;
-                        *temp_v1_35 = temp_s0_4;
-                        temp_v1_36 = B_0093E0.unk_08;
-                        temp_s0_5 = func_000004A8(&sp11, &B_006A90[1], &B_006AA8[1]);
-                        B_0093E0.unk_08 = temp_v1_36 + 1;
-                        *temp_v1_36 = temp_s0_5 & 0xF;
-                        temp_a0_7 = B_0093E0.unk_0C;
-                        temp_s2_5 = var_s4 + func_000002F8(&B_006AE8[1]);
-                        B_0093E0.unk_0C = temp_a0_7 + 1;
-                        *temp_a0_7 = temp_s2_5;
-                        temp_v1_37 = B_009400.unk_08;
-                        B_009400.unk_08 = temp_v1_37 + 1;
-                        *temp_v1_37 = (u8) ((u32) (temp_s0_5 & 0xFF) >> 4);
-                        temp_a0_8 = B_009400.unk_0C;
-                        temp_s1 = var_s5 + func_000002F8(&B_006AE8[2]);
-                        B_009400.unk_0C = temp_a0_8 + 1;
-                        *temp_a0_8 = temp_s1;
-                        var_s4 = temp_s2_5;
-                        var_s5 = temp_s1;
+                        temp_v0_57 = func_000004A8(&sp10[0], &B_006A90[0], &B_006AA8[0]);
+                        inlined_func_15(&B_0093A0.unk_08, temp_v0_57);
+
+                        var_s3_5 = var_s3_5 + func_000002F8(&B_006AE8[0]);
+                        inlined_func_15(&B_0093A0.unk_0C, var_s3_5);
+
+                        temp_v0_58 = func_000004A8(&sp10[0], &B_006A90[0], &B_006AA8[0]);
+                        inlined_func_15(&B_0093A0.unk_08, temp_v0_58);
+
+                        var_s3_5 = var_s3_5 + func_000002F8(&B_006AE8[0]);
+                        inlined_func_15(&B_0093A0.unk_0C, var_s3_5);
+
+                        temp_v0_59 = func_000004A8(&sp10[0], &B_006A90[0], &B_006AA8[0]);
+                        inlined_func_15(&B_0093A0.unk_10, temp_v0_59);
+
+                        var_s3_5 = var_s3_5 + func_000002F8(&B_006AE8[0]);
+                        inlined_func_15(&B_0093A0.unk_14, var_s3_5);
+
+                        temp_v0_60 = func_000004A8(&sp10[0], &B_006A90[0], &B_006AA8[0]);
+                        inlined_func_15(&B_0093A0.unk_10, temp_v0_60);
+
+                        var_s3_5 = var_s3_5 + func_000002F8(&B_006AE8[0]);
+                        inlined_func_15(&B_0093A0.unk_14, var_s3_5);
+
+                        temp_s0_5 = func_000004A8(&sp10[1], &B_006A90[1], &B_006AA8[1]);
+                        inlined_func_15(&B_0093E0.unk_08, temp_s0_5 & 0xF);
+
+                        var_s4 = var_s4 + func_000002F8(&B_006AE8[1]);
+                        inlined_func_15(&B_0093E0.unk_0C, var_s4);
+
+                        inlined_func_15(&B_009400.unk_08, ((u32) (temp_s0_5 & 0xFF) >> 4));
+
+                        var_s5 = var_s5 + func_000002F8(&B_006AE8[2]);
+                        inlined_func_15(&B_009400.unk_0C, var_s5);
+
                         if (B_009F38 == 0) {
-                            temp_v1_38 = B_0093E0.unk_10;
-                            temp_s0_6 = func_000004A8(&sp11, &B_006A90[1], &B_006AA8[1]);
-                            B_0093E0.unk_10 = temp_v1_38 + 1;
-                            *temp_v1_38 = temp_s0_6 & 0xF;
-                            temp_a0_9 = B_0093E0.unk_14;
-                            temp_v0_61 = temp_s2_5 + func_000002F8(&B_006AE8[1]);
-                            B_0093E0.unk_14 = temp_a0_9 + 1;
-                            *temp_a0_9 = temp_v0_61;
-                            temp_v1_39 = B_009400.unk_10;
-                            var_s4 = temp_v0_61;
-                            B_009400.unk_10 = temp_v1_39 + 1;
-                            *temp_v1_39 = (u8) ((u32) (temp_s0_6 & 0xFF) >> 4);
-                            temp_a0_10 = B_009400.unk_14;
-                            temp_v0_62 = temp_s1 + func_000002F8(&B_006AE8[2]);
-                            var_s5 = temp_v0_62;
-                            B_009400.unk_14 = temp_a0_10 + 1;
-                            *temp_a0_10 = temp_v0_62;
+                            temp_s0_6 = func_000004A8(&sp10[1], &B_006A90[1], &B_006AA8[1]);
+                            inlined_func_15(&B_0093E0.unk_10, temp_s0_6 & 0xF);
+
+                            var_s4 = var_s4 + func_000002F8(&B_006AE8[1]);
+                            inlined_func_15(&B_0093E0.unk_14, var_s4);
+
+                            inlined_func_15(&B_009400.unk_10, ((u32) (temp_s0_6 & 0xFF) >> 4));
+
+                            var_s5 = var_s5 + func_000002F8(&B_006AE8[2]);
+                            inlined_func_15(&B_009400.unk_14, var_s5);
                         }
                     } else {
                         var_s3_5 += func_000002F8(&B_006AE8[0]);
                         var_s4 += func_000002F8(&B_006AE8[1]);
-                        temp_v0_63 = func_000002F8(&B_006AE8[2]);
-                        temp_a0_11 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_a0_11 + 1;
-                        *temp_a0_11 = 0;
-                        temp_a0_12 = B_0093A0.unk_0C;
-                        B_0093A0.unk_0C = temp_a0_12 + 1;
-                        *temp_a0_12 = var_s3_5;
-                        temp_a0_13 = B_0093A0.unk_08;
-                        B_0093A0.unk_08 = temp_a0_13 + 1;
-                        *temp_a0_13 = 0;
-                        temp_a0_14 = B_0093A0.unk_0C;
-                        B_0093A0.unk_0C = temp_a0_14 + 1;
-                        *temp_a0_14 = var_s3_5;
-                        temp_a0_15 = B_0093A0.unk_10;
-                        B_0093A0.unk_10 = temp_a0_15 + 1;
-                        *temp_a0_15 = 0;
-                        temp_a0_16 = B_0093A0.unk_14;
-                        B_0093A0.unk_14 = temp_a0_16 + 1;
-                        *temp_a0_16 = var_s3_5;
-                        temp_a0_17 = B_0093A0.unk_10;
-                        B_0093A0.unk_10 = temp_a0_17 + 1;
-                        *temp_a0_17 = 0;
-                        temp_a0_18 = B_0093A0.unk_14;
-                        B_0093A0.unk_14 = temp_a0_18 + 1;
-                        *temp_a0_18 = var_s3_5;
-                        temp_a0_19 = B_0093E0.unk_08;
-                        B_0093E0.unk_08 = temp_a0_19 + 1;
-                        *temp_a0_19 = 0;
-                        temp_a0_20 = B_0093E0.unk_0C;
-                        B_0093E0.unk_0C = temp_a0_20 + 1;
-                        *temp_a0_20 = var_s4;
-                        temp_a0_21 = B_009400.unk_08;
-                        B_009400.unk_08 = temp_a0_21 + 1;
-                        *temp_a0_21 = 0;
-                        temp_v1_40 = B_009400.unk_0C;
-                        var_s5 += temp_v0_63;
-                        B_009400.unk_0C = temp_v1_40 + 1;
-                        *temp_v1_40 = var_s5;
+                        var_s5 += func_000002F8(&B_006AE8[2]);
+
+                        inlined_func_15(&B_0093A0.unk_08, 0);
+
+                        inlined_func_15(&B_0093A0.unk_0C, var_s3_5);
+
+                        inlined_func_15(&B_0093A0.unk_08, 0);
+
+                        inlined_func_15(&B_0093A0.unk_0C, var_s3_5);
+
+                        inlined_func_15(&B_0093A0.unk_10, 0);
+
+                        inlined_func_15(&B_0093A0.unk_14, var_s3_5);
+
+                        inlined_func_15(&B_0093A0.unk_10, 0);
+
+                        inlined_func_15(&B_0093A0.unk_14, var_s3_5);
+
+                        inlined_func_15(&B_0093E0.unk_08, 0);
+
+                        inlined_func_15(&B_0093E0.unk_0C, var_s3_5);
+
+                        inlined_func_15(&B_009400.unk_08, 0);
+
+                        inlined_func_15(&B_009400.unk_0C, var_s5);
+
                         if (B_009F38 == 0) {
-                            temp_v1_41 = B_0093E0.unk_10;
-                            B_0093E0.unk_10 = temp_v1_41 + 1;
-                            *temp_v1_41 = 0;
-                            temp_v1_42 = B_0093E0.unk_14;
-                            B_0093E0.unk_14 = temp_v1_42 + 1;
-                            *temp_v1_42 = var_s4;
-                            temp_v1_43 = B_009400.unk_10;
-                            B_009400.unk_10 = temp_v1_43 + 1;
-                            *temp_v1_43 = 0;
-                            temp_v1_44 = B_009400.unk_14;
-                            B_009400.unk_14 = temp_v1_44 + 1;
-                            *temp_v1_44 = var_s5;
+                            inlined_func_15(&B_0093E0.unk_10, 0);
+
+                            inlined_func_15(&B_0093E0.unk_14, var_s4);
+
+                            inlined_func_15(&B_009400.unk_10, 0);
+
+                            inlined_func_15(&B_009400.unk_14, var_s5);
                         }
                     }
                 }
@@ -2347,7 +2143,7 @@ void hvqm2Decode2(void *code, u32 format, u32 *outbuf, u32 *previm, u16 *workbuf
                 sp6C = &sp6C[B_009F3C];
             }
 
-            func_00003560(sp1C);
+            func_00003560(outbuf);
             return;
     }
 }
