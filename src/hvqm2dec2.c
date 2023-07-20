@@ -867,7 +867,7 @@ void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10
         temp_a1 = *arg2++ - 0x80;
 
         new_var = temp_a1 * 0x16;
-        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+        temp_a0 = 0x4020 + ((-(temp_v1 * 0x2E)) - new_var);
 
         temp_a3 = 0x4020 + (temp_a1 * 0x71);
 
@@ -879,15 +879,15 @@ void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10
 
         temp_t0 = *var_t2++ << 6;
         temp_v1 = *arg3++ - 0x80;
-        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+        temp_a2 = 0x4020 + (temp_v1 * 0x5A);
 
         temp_a1 = *arg2++ - 0x80;
 
 
         new_var = temp_a1 * 0x16;
-        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+        temp_a0 = 0x4020 + ((-(temp_v1 * 0x2E)) - new_var);
 
-        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+        temp_a3 = 0x4020 + (temp_a1 * 0x71);
 
         outbuf[2] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
 
@@ -898,15 +898,15 @@ void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10
 
         temp_t0 = *var_t3++ << 6;
         temp_v1 = *arg3++ - 0x80;
-        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+        temp_a2 = 0x4020 + (temp_v1 * 0x5A);
 
         temp_a1 = *arg2++ - 0x80;
 
 
         new_var = temp_a1 * 0x16;
-        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+        temp_a0 = 0x4020 + ((-(temp_v1 * 0x2E)) - new_var);
 
-        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+        temp_a3 = 0x4020 + (temp_a1 * 0x71);
 
         outbuf[4] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
 
@@ -918,15 +918,15 @@ void func_000012E4(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10
 
         temp_t0 = *var_t3++ << 6;
         temp_v1 = *arg3++ - 0x80;
-        temp_a2 = (temp_v1 * 0x5A) + 0x4020;
+        temp_a2 = 0x4020 + (temp_v1 * 0x5A);
 
         temp_a1 = *arg2++ - 0x80;
 
 
         new_var = temp_a1 * 0x16;
-        temp_a0 = ((-(temp_v1 * 0x2E)) - new_var) + 0x4020;
+        temp_a0 = 0x4020 + ((-(temp_v1 * 0x2E)) - new_var);
 
-        temp_a3 = (temp_a1 * 0x71) + 0x4020;
+        temp_a3 = 0x4020 + (temp_a1 * 0x71);
 
         outbuf[6] = (B_009C20[(s32) (temp_t0 + temp_a2) >> 6] << 0x18) | (B_009C20[(s32) (temp_t0 + temp_a0) >> 6] << 0x10) | (B_009C20[(s32) (temp_t0 + temp_a3) >> 6] << 8) | B_009F6D;
 
@@ -944,28 +944,12 @@ INCLUDE_ASM("asm/functions/hvqm2dec2", func_000012E4);
 void func_000018CC(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]) {
     s16 temp_a0;
     s16 temp_a0_2;
-    s16 temp_a0_3;
-    s16 temp_a0_4;
     s16 temp_a0_5;
-    s16 temp_a0_6;
-    s16 temp_a0_7;
-    s16 temp_a0_8;
     s16 temp_a1;
-    s16 temp_a1_2;
-    s16 temp_a1_3;
-    s16 temp_a1_4;
-    s16 temp_a1_5;
-    s16 temp_a1_6;
-    s16 temp_a1_7;
-    s16 temp_a1_8;
     s16 temp_a2;
-    s16 temp_a2_2;
     s16 temp_a3;
-    s16 temp_a3_2;
     s16 temp_s0;
-    s16 temp_s0_2;
     s16 temp_s1;
-    s16 temp_s1_2;
     s16 temp_t0;
     s16 temp_t0_2;
     s16 temp_t1;
@@ -983,262 +967,221 @@ void func_000018CC(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10
     s16 temp_t7;
     s16 temp_t7_2;
     s16 temp_v0;
-    s16 temp_v0_2;
-    s16 temp_v0_3;
-    s16 temp_v0_4;
-    s16 temp_v0_5;
-    s16 temp_v0_6;
-    s16 temp_v0_7;
-    s16 temp_v0_8;
-    s16 temp_v1;
-    s16 temp_v1_10;
-    s16 temp_v1_11;
-    s16 temp_v1_12;
-    s16 temp_v1_13;
-    s16 temp_v1_14;
-    s16 temp_v1_15;
-    s16 temp_v1_16;
-    s16 temp_v1_17;
-    s16 temp_v1_18;
-    s16 temp_v1_19;
-    s16 temp_v1_20;
-    s16 temp_v1_21;
-    s16 temp_v1_22;
-    s16 temp_v1_23;
-    s16 temp_v1_24;
-    s16 temp_v1_2;
-    s16 temp_v1_3;
-    s16 temp_v1_4;
-    s16 temp_v1_5;
-    s16 temp_v1_6;
-    s16 temp_v1_7;
-    s16 temp_v1_8;
-    s16 temp_v1_9;
     s32 var_s6;
-    s32 var_s6_2;
-    u16 (*temp_s7)[0x10];
-    u16 (*var_t8)[0x10];
-    u16 (*var_t8_2)[0x10];
-    u16 (*var_t9)[0x10];
-    u16 (*var_t9_2)[0x10];
-    u16 *temp_s4;
-    u16 *temp_s4_2;
-    u16 *temp_s4_3;
-    u16 *temp_s4_4;
-    u16 *temp_s4_5;
-    u16 *temp_s4_6;
-    u16 *temp_s5;
-    u16 *temp_s5_2;
-    u16 *temp_s5_3;
-    u16 *temp_s5_4;
-    u16 *temp_s5_5;
-    u16 *temp_s5_6;
-    u16 *temp_t8;
-    u16 *temp_t8_10;
-    u16 *temp_t8_11;
-    u16 *temp_t8_12;
-    u16 *temp_t8_13;
-    u16 *temp_t8_14;
-    u16 *temp_t8_2;
-    u16 *temp_t8_3;
-    u16 *temp_t8_4;
-    u16 *temp_t8_5;
-    u16 *temp_t8_6;
-    u16 *temp_t8_7;
-    u16 *temp_t8_8;
-    u16 *temp_t8_9;
-    u16 *temp_t9;
-    u16 *temp_t9_10;
-    u16 *temp_t9_11;
-    u16 *temp_t9_12;
-    u16 *temp_t9_13;
-    u16 *temp_t9_14;
-    u16 *temp_t9_2;
-    u16 *temp_t9_3;
-    u16 *temp_t9_4;
-    u16 *temp_t9_5;
-    u16 *temp_t9_6;
-    u16 *temp_t9_7;
-    u16 *temp_t9_8;
-    u16 *temp_t9_9;
-    u16 *var_s4;
-    u16 *var_s5;
-    u32 *temp_s3;
-    u32 *temp_s3_2;
-    u32 *var_s3;
 
-    var_s3 = outbuf;
-    var_s5 = arg2;
-    var_s4 = arg3;
-    var_t8 = arg1;
-    var_t9 = var_t8 + 0x20;
-    temp_s7 = var_t9;
-    var_s6 = 4;
-    do {
-        temp_t8 = &var_t8[0][1];
-        temp_s4 = var_s4 + 2;
-        temp_s5 = var_s5 + 2;
-        temp_a0 = *var_s4 - 0x80;
-        temp_s0 = (temp_a0 * 0x5A) + 0x4020;
-        temp_v1 = *var_s5 - 0x80;
-        temp_t2 = (-(temp_a0 * 0x2E) - (temp_v1 * 0x16)) + 0x4020;
-        temp_a1 = var_t8[0][0] << 6;
-        temp_s1 = (temp_v1 * 0x71) + 0x4020;
-        var_s3->unk_0 = (B_009C20[(s32) (temp_a1 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_s1) >> 6] << 8) | B_009F6D;
-        temp_t8_2 = temp_t8 + 2;
-        temp_v1_2 = *temp_t8 << 6;
-        var_s3->unk_4 = (s32) ((B_009C20[(s32) (temp_v1_2 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_2 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_2 + temp_s1) >> 6] << 8) | B_009F6D);
-        temp_t8_3 = temp_t8_2 + 2;
-        temp_v1_3 = *temp_s4 - 0x80;
-        temp_t6 = (temp_v1_3 * 0x5A) + 0x4020;
-        temp_a0_2 = *temp_s5 - 0x80;
-        temp_t0 = (-(temp_v1_3 * 0x2E) - (temp_a0_2 * 0x16)) + 0x4020;
-        temp_a1_2 = *temp_t8_2 << 6;
-        temp_t7 = (temp_a0_2 * 0x71) + 0x4020;
-        var_s3->unk_8 = (s32) ((B_009C20[(s32) (temp_a1_2 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_2 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_2 + temp_t7) >> 6] << 8) | B_009F6D);
-        temp_s4_2 = temp_s4 + 2;
-        temp_s5_2 = temp_s5 + 2;
-        temp_v1_4 = *temp_t8_3 << 6;
-        var_s3->unk_C = (s32) ((B_009C20[(s32) (temp_v1_4 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_4 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_4 + temp_t7) >> 6] << 8) | B_009F6D);
-        temp_t9 = &var_t9[0][1];
-        temp_s4_3 = temp_s4_2 + 2;
-        temp_v1_5 = *temp_s4_2 - 0x80;
-        temp_t4 = (temp_v1_5 * 0x5A) + 0x4020;
-        temp_a0_3 = *temp_s5_2 - 0x80;
-        temp_a3 = (-(temp_v1_5 * 0x2E) - (temp_a0_3 * 0x16)) + 0x4020;
-        temp_a1_3 = var_t9[0][0] << 6;
-        temp_t5 = (temp_a0_3 * 0x71) + 0x4020;
-        var_s3->unk_10 = (s32) ((B_009C20[(s32) (temp_a1_3 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_3 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_3 + temp_t5) >> 6] << 8) | B_009F6D);
-        temp_s5_3 = temp_s5_2 + 2;
-        temp_t9_2 = temp_t9 + 2;
-        temp_v1_6 = *temp_t9 << 6;
-        var_s3->unk_14 = (s32) ((B_009C20[(s32) (temp_v1_6 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_6 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_6 + temp_t5) >> 6] << 8) | B_009F6D);
-        temp_t9_3 = temp_t9_2 + 2;
-        temp_v1_7 = *temp_s4_3 - 0x80;
-        temp_t1 = (temp_v1_7 * 0x5A) + 0x4020;
-        temp_a0_4 = *temp_s5_3 - 0x80;
-        temp_a2 = (-(temp_v1_7 * 0x2E) - (temp_a0_4 * 0x16)) + 0x4020;
-        temp_a1_4 = *temp_t9_2 << 6;
-        temp_t3 = (temp_a0_4 * 0x71) + 0x4020;
-        var_s3->unk_18 = (s32) ((B_009C20[(s32) (temp_a1_4 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_4 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_4 + temp_t3) >> 6] << 8) | B_009F6D);
-        temp_t8_4 = temp_t8_3 + 2;
-        temp_v1_8 = *temp_t9_3 << 6;
-        var_s3->unk_1C = (s32) ((B_009C20[(s32) (temp_v1_8 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_8 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_8 + temp_t3) >> 6] << 8) | B_009F6D);
-        temp_t8_5 = temp_t8_4 + 2;
-        temp_v1_9 = *temp_t8_4 << 6;
-        temp_s3 = &var_s3[B_009F24];
-        temp_s3->unk_0 = (B_009C20[(s32) (temp_v1_9 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_9 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_9 + temp_s1) >> 6] << 8) | B_009F6D;
-        temp_t8_6 = temp_t8_5 + 2;
-        temp_v0 = *temp_t8_5 << 6;
-        temp_s3->unk_4 = (s32) ((B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D);
-        temp_t8_7 = temp_t8_6 + 2;
-        temp_v1_10 = *temp_t8_6 << 6;
-        temp_s3->unk_8 = (s32) ((B_009C20[(s32) (temp_v1_10 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_10 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_10 + temp_t7) >> 6] << 8) | B_009F6D);
-        temp_t9_4 = temp_t9_3 + 2;
-        temp_v0_2 = *temp_t8_7 << 6;
-        temp_s3->unk_C = (s32) ((B_009C20[(s32) (temp_v0_2 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_2 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_2 + temp_t7) >> 6] << 8) | B_009F6D);
-        temp_t9_5 = temp_t9_4 + 2;
-        temp_v1_11 = *temp_t9_4 << 6;
-        temp_s3->unk_10 = (s32) ((B_009C20[(s32) (temp_v1_11 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_11 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_11 + temp_t5) >> 6] << 8) | B_009F6D);
-        temp_t9_6 = temp_t9_5 + 2;
-        temp_v0_3 = *temp_t9_5 << 6;
-        temp_s3->unk_14 = (s32) ((B_009C20[(s32) (temp_v0_3 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_3 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_3 + temp_t5) >> 6] << 8) | B_009F6D);
-        var_s6 -= 2;
-        temp_t9_7 = temp_t9_6 + 2;
-        temp_v1_12 = *temp_t9_6 << 6;
-        temp_s3->unk_18 = (s32) ((B_009C20[(s32) (temp_v1_12 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_12 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_12 + temp_t3) >> 6] << 8) | B_009F6D);
-        var_s4 = temp_s4_3 + 2;
-        var_s5 = temp_s5_3 + 2;
-        temp_v0_4 = *temp_t9_7 << 6;
-        temp_s3->unk_1C = (s32) ((B_009C20[(s32) (temp_v0_4 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_4 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_4 + temp_t3) >> 6] << 8) | B_009F6D);
-        var_t8 = (u16 (*)[0x10]) (temp_t8_7 + 2);
-        var_t9 = (u16 (*)[0x10]) (temp_t9_7 + 2);
-        var_s3 = &temp_s3[B_009F24];
-    } while (var_s6 > 0);
-    var_t8_2 = temp_s7 + 0x20;
-    var_t9_2 = var_t8_2 + 0x20;
-    var_s6_2 = 4;
-    do {
-        temp_t8_8 = &var_t8_2[0][1];
-        temp_s4_4 = var_s4 + 2;
-        temp_s5_4 = var_s5 + 2;
-        temp_a0_5 = *var_s4 - 0x80;
-        temp_s0_2 = (temp_a0_5 * 0x5A) + 0x4020;
-        temp_v1_13 = *var_s5 - 0x80;
-        temp_t2_2 = (-(temp_a0_5 * 0x2E) - (temp_v1_13 * 0x16)) + 0x4020;
-        temp_a1_5 = var_t8_2[0][0] << 6;
-        temp_s1_2 = (temp_v1_13 * 0x71) + 0x4020;
-        var_s3->unk_0 = (B_009C20[(s32) (temp_a1_5 + temp_s0_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_5 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_5 + temp_s1_2) >> 6] << 8) | B_009F6D;
-        temp_t8_9 = temp_t8_8 + 2;
-        temp_v1_14 = *temp_t8_8 << 6;
-        var_s3->unk_4 = (s32) ((B_009C20[(s32) (temp_v1_14 + temp_s0_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_14 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_14 + temp_s1_2) >> 6] << 8) | B_009F6D);
-        temp_t8_10 = temp_t8_9 + 2;
-        temp_v1_15 = *temp_s4_4 - 0x80;
-        temp_t6_2 = (temp_v1_15 * 0x5A) + 0x4020;
-        temp_a0_6 = *temp_s5_4 - 0x80;
-        temp_t0_2 = (-(temp_v1_15 * 0x2E) - (temp_a0_6 * 0x16)) + 0x4020;
-        temp_a1_6 = *temp_t8_9 << 6;
-        temp_t7_2 = (temp_a0_6 * 0x71) + 0x4020;
-        var_s3->unk_8 = (s32) ((B_009C20[(s32) (temp_a1_6 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_6 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_6 + temp_t7_2) >> 6] << 8) | B_009F6D);
-        temp_s4_5 = temp_s4_4 + 2;
-        temp_s5_5 = temp_s5_4 + 2;
-        temp_v1_16 = *temp_t8_10 << 6;
-        var_s3->unk_C = (s32) ((B_009C20[(s32) (temp_v1_16 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_16 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_16 + temp_t7_2) >> 6] << 8) | B_009F6D);
-        temp_t9_8 = &var_t9_2[0][1];
-        temp_s4_6 = temp_s4_5 + 2;
-        temp_v1_17 = *temp_s4_5 - 0x80;
-        temp_t4_2 = (temp_v1_17 * 0x5A) + 0x4020;
-        temp_a0_7 = *temp_s5_5 - 0x80;
-        temp_a3_2 = (-(temp_v1_17 * 0x2E) - (temp_a0_7 * 0x16)) + 0x4020;
-        temp_a1_7 = var_t9_2[0][0] << 6;
-        temp_t5_2 = (temp_a0_7 * 0x71) + 0x4020;
-        var_s3->unk_10 = (s32) ((B_009C20[(s32) (temp_a1_7 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_7 + temp_a3_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_7 + temp_t5_2) >> 6] << 8) | B_009F6D);
-        temp_s5_6 = temp_s5_5 + 2;
-        temp_t9_9 = temp_t9_8 + 2;
-        temp_v1_18 = *temp_t9_8 << 6;
-        var_s3->unk_14 = (s32) ((B_009C20[(s32) (temp_v1_18 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_18 + temp_a3_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_18 + temp_t5_2) >> 6] << 8) | B_009F6D);
-        temp_t9_10 = temp_t9_9 + 2;
-        temp_v1_19 = *temp_s4_6 - 0x80;
-        temp_t1_2 = (temp_v1_19 * 0x5A) + 0x4020;
-        temp_a0_8 = *temp_s5_6 - 0x80;
-        temp_a2_2 = (-(temp_v1_19 * 0x2E) - (temp_a0_8 * 0x16)) + 0x4020;
-        temp_a1_8 = *temp_t9_9 << 6;
-        temp_t3_2 = (temp_a0_8 * 0x71) + 0x4020;
-        var_s3->unk_18 = (s32) ((B_009C20[(s32) (temp_a1_8 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1_8 + temp_a2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1_8 + temp_t3_2) >> 6] << 8) | B_009F6D);
-        temp_t8_11 = temp_t8_10 + 2;
-        temp_v1_20 = *temp_t9_10 << 6;
-        var_s3->unk_1C = (s32) ((B_009C20[(s32) (temp_v1_20 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_20 + temp_a2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_20 + temp_t3_2) >> 6] << 8) | B_009F6D);
-        temp_t8_12 = temp_t8_11 + 2;
-        temp_v1_21 = *temp_t8_11 << 6;
-        temp_s3_2 = &var_s3[B_009F24];
-        temp_s3_2->unk_0 = (B_009C20[(s32) (temp_v1_21 + temp_s0_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_21 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_21 + temp_s1_2) >> 6] << 8) | B_009F6D;
-        temp_t8_13 = temp_t8_12 + 2;
-        temp_v0_5 = *temp_t8_12 << 6;
-        temp_s3_2->unk_4 = (s32) ((B_009C20[(s32) (temp_v0_5 + temp_s0_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_5 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_5 + temp_s1_2) >> 6] << 8) | B_009F6D);
-        temp_t8_14 = temp_t8_13 + 2;
-        temp_v1_22 = *temp_t8_13 << 6;
-        temp_s3_2->unk_8 = (s32) ((B_009C20[(s32) (temp_v1_22 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_22 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_22 + temp_t7_2) >> 6] << 8) | B_009F6D);
-        temp_t9_11 = temp_t9_10 + 2;
-        temp_v0_6 = *temp_t8_14 << 6;
-        temp_s3_2->unk_C = (s32) ((B_009C20[(s32) (temp_v0_6 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_6 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_6 + temp_t7_2) >> 6] << 8) | B_009F6D);
-        temp_t9_12 = temp_t9_11 + 2;
-        temp_v1_23 = *temp_t9_11 << 6;
-        temp_s3_2->unk_10 = (s32) ((B_009C20[(s32) (temp_v1_23 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_23 + temp_a3_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_23 + temp_t5_2) >> 6] << 8) | B_009F6D);
-        temp_t9_13 = temp_t9_12 + 2;
-        temp_v0_7 = *temp_t9_12 << 6;
-        temp_s3_2->unk_14 = (s32) ((B_009C20[(s32) (temp_v0_7 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_7 + temp_a3_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_7 + temp_t5_2) >> 6] << 8) | B_009F6D);
-        var_s6_2 -= 2;
-        temp_t9_14 = temp_t9_13 + 2;
-        temp_v1_24 = *temp_t9_13 << 6;
-        temp_s3_2->unk_18 = (s32) ((B_009C20[(s32) (temp_v1_24 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v1_24 + temp_a2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v1_24 + temp_t3_2) >> 6] << 8) | B_009F6D);
-        var_s4 = temp_s4_6 + 2;
-        var_s5 = temp_s5_6 + 2;
-        temp_v0_8 = *temp_t9_14 << 6;
-        temp_s3_2->unk_1C = (s32) ((B_009C20[(s32) (temp_v0_8 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0_8 + temp_a2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0_8 + temp_t3_2) >> 6] << 8) | B_009F6D);
-        var_t8_2 = (u16 (*)[0x10]) (temp_t8_14 + 2);
-        var_t9_2 = (u16 (*)[0x10]) (temp_t9_14 + 2);
-        var_s3 = &temp_s3_2[B_009F24];
-    } while (var_s6_2 > 0);
+    u16 *var_t8;
+    u16 *var_t9;
+
+    s32 temp;
+    s32 temp2;
+
+    var_t8 = arg1[0];
+    var_t9 = arg1[1];
+
+    for (var_s6 = 4; var_s6 > 0; var_s6 -= 2) {
+        temp_a0 = *arg3++ - 0x80;
+
+        temp_a0_2 = *arg2++ - 0x80;
+        temp_s0 = 0x4020 + (temp_a0 * 0x5A);
+
+        temp = temp_a0_2 * 0x16;
+        temp_t2 = 0x4020 + (-(temp_a0 * 0x2E) - temp);
+
+        temp_s1 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t8++ << 6;
+        outbuf[0x0/4] = (B_009C20[(s32) (temp_a1 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_s1) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x4/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t6 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_t0 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t7 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t8++ << 6;
+        outbuf[0x8/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t7) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+
+        outbuf[0xC/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7) >> 6] << 8) | B_009F6D);
+
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t4 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_a3 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t5 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t9++ << 6;
+        outbuf[0x10/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t5) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x14/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t1 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_a2 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t3 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t9++ << 6;
+        outbuf[0x18/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t3) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x1C/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *var_t8++ << 6;
+
+        outbuf = &outbuf[B_009F24];
+
+        outbuf[0x0/4] = (B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x4/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x8/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0xC/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x10/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x14/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x18/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x1C/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3) >> 6] << 8) | B_009F6D);
+
+        outbuf = &outbuf[B_009F24];
+    }
+
+    var_t8 = arg1[2];
+    var_t9 = arg1[3];
+
+    for (var_s6 = 4; var_s6 > 0; var_s6 -= 2) {
+        temp_a0_5 = *arg3++ - 0x80;
+        temp_s0 = 0x4020 + (temp_a0_5 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_t2_2 = 0x4020 + (-(temp_a0_5 * 0x2E) - temp);
+
+        temp_s1 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t8++ << 6;
+        outbuf[0x0/4] = (B_009C20[(s32) (temp_a1 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_s1) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x4/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t6_2 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_t0_2 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t7_2 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t8++ << 6;
+        outbuf[0x8/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t7_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0xC/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7_2) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t4_2 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_a3 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t5_2 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t9++ << 6;
+        outbuf[0x10/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t5_2) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x14/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5_2) >> 6] << 8) | B_009F6D);
+
+
+        temp_v0 = *arg3++ - 0x80;
+        temp_t1_2 = 0x4020 + (temp_v0 * 0x5A);
+
+        temp_a0_2 = *arg2++ - 0x80;
+
+        temp = temp_a0_2 * 0x16;
+        temp_a2 = 0x4020 + (-(temp_v0 * 0x2E) - temp);
+
+        temp_t3_2 = 0x4020 + (temp_a0_2 * 0x71);
+
+        temp_a1 = *var_t9++ << 6;
+        outbuf[0x18/4] = (s32) ((B_009C20[(s32) (temp_a1 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_a1 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_a1 + temp_t3_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x1C/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3_2) >> 6] << 8) | B_009F6D);
+
+
+
+        temp_v0 = *var_t8++ << 6;
+
+        outbuf = &outbuf[B_009F24];
+
+        outbuf[0x0/4] = (B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D;
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x4/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_s0) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t2_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_s1) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0x8/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t8++ << 6;
+        outbuf[0xC/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t6_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_t0_2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t7_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x10/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x14/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t4_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a3) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t5_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x18/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3_2) >> 6] << 8) | B_009F6D);
+
+        temp_v0 = *var_t9++ << 6;
+        outbuf[0x1C/4] = (s32) ((B_009C20[(s32) (temp_v0 + temp_t1_2) >> 6] << 0x18) | (B_009C20[(s32) (temp_v0 + temp_a2) >> 6] << 0x10) | (B_009C20[(s32) (temp_v0 + temp_t3_2) >> 6] << 8) | B_009F6D);
+
+        outbuf = &outbuf[B_009F24];
+    }
 }
 #else
 void func_000018CC(u32 *outbuf, u16 arg1[4][0x10], u16 arg2[0x10], u16 arg3[0x10]);
